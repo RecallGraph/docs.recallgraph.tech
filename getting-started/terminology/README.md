@@ -97,11 +97,11 @@ In many queries that the _RecallGraph_ API supports, filters can be applied to r
 
 A pre-filter is a filter that is applied at the time of running a DB query.
 
-Pre-filters supported by _RecallGraph_ include the [path]() parameter and the time interval bounds that several API endpoints accept.
+Pre-filters supported by _RecallGraph_ include the [path](./#path) parameter and the time interval bounds that several API endpoints accept.
 
 ### Post-Filters
 
-Once a query returns some results, a post-filter can be applied on them to further restrict the number of matching results that are returned. These filters are executed within service code executed in a V8 context. For an in-depth explanation, follow the link below:
+Once a query returns some results, a post-filter can be applied on them to further restrict the number of matching results that are returned. These filters are executed within service code, in a V8 context. For an in-depth explanation, follow the link below:
 
 {% page-ref page="post-filters.md" %}
 
