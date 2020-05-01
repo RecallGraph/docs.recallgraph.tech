@@ -12,4 +12,6 @@
 ## Getting Started
 
 * [Concepts](getting-started/concepts.md)
+* [Terminology](getting-started/terminology.md)
+* [Installation](getting-started/installation.md)
 
