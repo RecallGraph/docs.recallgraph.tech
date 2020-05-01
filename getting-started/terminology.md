@@ -15,7 +15,14 @@ It is comprised of the following components:
 
 ### Event
 
-An event is a record of a write operation pertaining to a single document \(vertex/edge\) that takes place through _RecallGraph_'s API. The write operation is one of _create_, _update_, or _delete_. An event object contains information on a number of parameters related to the write op: 1. The `_id`, `_key` and `_rev` of the document which was written. 1. The _type_ of event - one of `created`, `updated` or `deleted`. 1. The UNIX timestamp \(in seconds\) of the instant when the write happened. This is also referred to as the **transaction time**. Decimal precision - 5 decimal points, ie., 0.1μs. 1. The sequence number of the write operation - this tracks the number of times this document was written, including creates, updates and deletes. 1. Distance from last [snapshot](). 1. Distance to next [snapshot]() \(which may or may not exist yet\).
+An event is a record of a write operation pertaining to a single document \(vertex/edge\) that takes place through _RecallGraph_'s API. The write operation is one of _create_, _update_, or _delete_. An event object contains information on a number of parameters related to the write op:
+
+1. The `_id`, `_key` and `_rev` of the document which was written.
+2. The _type_ of event - one of `created`, `updated` or `deleted`.
+3. The UNIX timestamp \(in seconds\) of the instant when the write happened. This is also referred to as the **transaction time**. Decimal precision - 5 decimal points, ie., 0.1μs.
+4. The sequence number of the write operation - this tracks the number of times this document was written, including creates, updates and deletes.
+5. Distance from last [snapshot](terminology.md#snapshot).
+6. Distance to next [snapshot](terminology.md#snapshot) \(which may or may not exist yet\).
 
 ### Diff
 
@@ -23,7 +30,7 @@ A reversible delta between two JSON objects, computed using the [JSON Patch \(RF
 
 ### Command
 
-A container for a single \(forward\) [Diff]() array. This is the storage unit for the difference between two successive [events]() that occur on a single document \(vertex/edge\). The command also contains a reference to the `_id` of the document whose change it records. Every event is associated with a corresponding command that records the changes caused by that event.
+A container for a single \(forward\) [Diff](terminology.md#diff) array. This is the storage unit for the difference between two successive [events](terminology.md#event) that occur on a single document \(vertex/edge\). The command also contains a reference to the `_id` of the document whose change it records. Every event is associated with a corresponding command that records the changes caused by that event.
 
 #### Special Cases
 
@@ -32,9 +39,9 @@ A container for a single \(forward\) [Diff]() array. This is the storage unit fo
 
 ### Snapshot
 
-After every configurable number of write [events]() on a document, a snapshot of the current state of the document is recorded in its entirety. This can later be used to quickly rebuild a document's state at a particular point in the past, without having to replay all the events starting from the creation of the document upto that instant.
+After every configurable number of write [events](terminology.md#event) on a document, a snapshot of the current state of the document is recorded in its entirety. This can later be used to quickly rebuild a document's state at a particular point in the past, without having to replay all the events starting from the creation of the document up to that instant.
 
-Instead, if a nearby snapshot is found \(before or after the instant\), it can be used as a starting point from where to replay the events, thus saving some computation time. In case the snapshot is in the future w.r.t. the instant asked for, the events are replayed in reverse chronological order, with their corresponding [diffs]() being first reversed before being applied.
+Instead, if a nearby snapshot is found \(before or after the instant\), it can be used as a starting point from where to replay the events, thus saving some computation time. In case the snapshot is in the future w.r.t. the instant asked for, the events are replayed in reverse chronological order, with their corresponding [diffs](terminology.md#diff) being first reversed before being applied.
 
 ## Patterns
 
@@ -58,23 +65,29 @@ This is essentially an unrestricted scope, i.e. it allows the entire database to
 
 ### Graph Scope
 
-This scope restricts the query to only look within the collections that belong to one or more \(named\) graphs whose names match a specified [glob pattern]() \(barring _RecallGraph_'s own service graphs\). The pattern is passed as a query parameter.
+This scope restricts the query to only look within the collections that belong to one or more \(named\) graphs whose names match a specified [glob pattern](terminology.md#glob-pattern) \(barring _RecallGraph_'s own service graphs\). The pattern is passed as a query parameter.
 
 ### Collection Scope
 
-This scope restricts the query to only look within collections whose names match a specified [glob pattern]() \(barring _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
+This scope restricts the query to only look within collections whose names match a specified [glob pattern](terminology.md#glob-pattern) \(barring _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
 
 ### Node-Glob Scope
 
-This scope restricts the query to only look within those documents \(vertex/edge\) whose `_id` matches a specified [glob pattern]() \(barring documents within _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
+This scope restricts the query to only look within those documents \(vertex/edge\) whose `_id` matches a specified [glob pattern](terminology.md#glob-pattern) \(barring documents within _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
 
 ### Node-Brace Scope
 
-This scope restricts the query to only look within those documents \(vertex/edge\) whose `_id` matches a specified [brace pattern]() \(barring documents within _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
+This scope restricts the query to only look within those documents \(vertex/edge\) whose `_id` matches a specified [brace pattern](terminology.md#brace-pattern) \(barring documents within _RecallGraph_'s own service collections\). The pattern is passed as a query parameter.
 
 ## Path
 
-A pattern used to select a particular scope to scan. This is not to be confused with a [graph traversal path](https://www.arangodb.com/docs/stable/aql/graphs-traversals-explained.html). In this context, _path_ refers to the UNIX directory-like navigation pointers that the patterns resemble. These are defined as follows: 1. `/` - **The root path**. This tells the log builder to basically pick everything - the entire database for logging - every user-defined collection and every document \(vertex/edge\) \(existing and deleted\) therein. This is essentially the [Database Scope](). 1. `/g/<glob pattern>` - **Named Graph**. A path that starts with `/g/` followed by a valid [glob pattern](). This is essentially the [Graph Scope](). 1. `/c/<glob pattern>` - **Collection**. A path that starts with `/c/` followed by a valid [glob pattern](). This is essentially the [Collection Scope](). 1. `/ng/<glob pattern>` - **Node Glob**. A path that starts with `/ng/` followed by a valid [glob pattern](). This is essentially the [Node-Glob Scope](). 1. `/n/<brace pattern>` - **Node Brace**. A path that starts with `/n/` followed by a valid [brace pattern](). This is essentially the [Node-Brace Scope](). This is much faster than a node-glob scan, and should be the preferred document selection pattern wherever possible.
+A pattern used to select a particular scope to scan. This is not to be confused with a [graph traversal path](https://www.arangodb.com/docs/stable/aql/graphs-traversals-explained.html). In this context, _path_ refers to the UNIX directory-like navigation pointers that the patterns resemble. These are defined as follows:
+
+1. `/` - **The root path**. This tells the log builder to basically pick everything - the entire database for logging - every user-defined collection and every document \(vertex/edge\) \(existing and deleted\) therein. This is essentially the [Database Scope](terminology.md#database-scope).
+2. `/g/<glob pattern>` - **Named Graph**. A path that starts with `/g/` followed by a valid [glob pattern](terminology.md#glob-pattern). This is essentially the [Graph Scope](terminology.md#graph-scope).
+3. `/c/<glob pattern>` - **Collection**. A path that starts with `/c/` followed by a valid [glob pattern](terminology.md#glob-pattern). This is essentially the [Collection Scope](terminology.md#collection-scope).
+4. `/ng/<glob pattern>` - **Node Glob**. A path that starts with `/ng/` followed by a valid [glob pattern](terminology.md#glob-pattern). This is essentially the [Node-Glob Scope](terminology.md#node-glob-scope).
+5. `/n/<brace pattern>` - **Node Brace**. A path that starts with `/n/` followed by a valid [brace pattern](terminology.md#brace-pattern). This is essentially the [Node-Brace Scope](terminology.md#node-brace-scope). This is much faster than a node-glob scan, and should be the preferred document selection pattern wherever possible.
 
 ## Filter
 

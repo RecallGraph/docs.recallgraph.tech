@@ -8,7 +8,7 @@ description: RecallGraph - A versioning data store for time-variant graph data.
 
 RecallGraph is a _versioned-graph_ data store - it retains all changes that its data \(vertices and edges\) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
 
-It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [ArangoDB](https://www.arangodb.com/) that features _VCS-like_ semantics in many parts of its interface, and is backed by a transactional event tracker. It is currently being developed and tested on ArangoDB v3.5, with support for v3.6 in the pipeline.
+It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [ArangoDB](https://www.arangodb.com/) that features _VCS-like_ semantics in many parts of its interface, and is backed by a transactional event tracker. It is currently being developed and tested on ArangoDB v3.5 and v3.6, with support for v3.7 in the pipeline.
 
 [![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
 
@@ -64,34 +64,17 @@ RecallGraph's API is split into 3 top-level categories:
 * **Traverse** - A point-in-time traversal \(walk\) of a past version of the graph, with the option to apply additional post-filters to the result.
 * **k Shortest Paths** - Point-in-time, weighted, shortest paths between two endpoints.
 
-### Installation
-
-RecallGraph installs like any other _Foxx Microservice_ inside a database, on an ArangoDB instance.
-
-1. Download the [latest release](https://github.com/RecallGraph/RecallGraph/releases).
-2. Follow the instructions in the [Foxx Deployment Manual](https://www.arangodb.com/docs/3.5/foxx-deployment.html). The web interface is the easiest, while the `foxx-cli` is more suitable for power users.
-
-#### Installation Notes
-
-1. Refer to the [wiki](https://github.com/RecallGraph/RecallGraph/wiki/Installation#from-source) if you want to install from source.
-2. A _one-click_ cloud deployment option might be made available in the future for those who wish to take RecallGraph for a test ride without having to set up a server from scratch.
-
-### Docs
-
-* Quick-reference API documentation is available directly in the Swagger console \(accessed through ArangoDB's web UI\).
-* Detailed API docs, tutorials and technical docs are being worked on, and are being uploaded to the [wiki](https://github.com/RecallGraph/RecallGraph/wiki) as and when they get ready.
-
 ### Limitations
 
 1. Although the test cases are quite extensive and have good coverage, this service has only been tested on single-instance DB deployments, and **not on clusters**.
-2. As of version 3.5, ArangoDB does not support ACID transactions for multi-document/collection writes in [cluster mode](https://www.arangodb.com/docs/3.5/transactions-limitations.html#in-clusters). Transactional ACIDity is not guaranteed for such deployments.
+2. As of version 3.6, ArangoDB does not support ACID transactions for multi-document/collection writes in [cluster mode](https://www.arangodb.com/docs/3.5/transactions-limitations.html#in-clusters). Transactional ACIDity is not guaranteed for such deployments.
 
 ### Development Roadmap
 
 1. Support for absolute/relative revision-based queries on individual documents \(in addition to the timestamp-based queries supported currently\),
 2. Branching/tag support,
 3. Support for the _valid time_ dimension in addition to the currently implemented _transaction time_ dimension \([https://www.researchgate.net/publication/221212735\_A\_Taxonomy\_of\_Time\_in\_Databases](https://www.researchgate.net/publication/221212735_A_Taxonomy_of_Time_in_Databases)\),
-4. Support for ArangoDB v3.6,
+4. Support for ArangoDB v3.7,
 5. Multiple, simultaneous materialized checkouts \(a la `git`\) of selectable sections of the database \(entire DB, named graph, named collection, document list, document pattern\), with eventual branch-level specificity,
 6. CQRS/ES operation mode \(async implicit commits\),
 7. Explicit commits,
@@ -100,7 +83,6 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
 
 ### Get in Touch
 
-* Raise an issue or PR on this repo, or
-* Mail me \(email link in Github profile\), or
-* Join the Gitter channel - [https://gitter.im/RecallGraph/community](https://gitter.im/RecallGraph/community).
+* Raise an issue or PR on the [project repository](https://github.com/RecallGraph/RecallGraph), or
+* Join the [Gitter channel](https://gitter.im/RecallGraph/community).
 

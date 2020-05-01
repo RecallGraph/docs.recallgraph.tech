@@ -7,7 +7,7 @@ description: >-
 
 # Concepts
 
-## What are Graph Datastores?
+## What are Graph Databases?
 
 Graph databases have become ubiquitous over the years due to their incredible representational and querying capabilities, when it comes to highly interconnected data. Wherever data has an inherent networked structure, graph databases fare better at storing and querying that data than other NoSQL databases as well as relational databases, because they naturally persist the underlying connected structure. This allows for traversal semantics in declarative graph query languages, and also, better performance than SQL - especially for deep traversals. Additionally, they often help unravel emergent network topologies in legacy data, that had not previously been mined for such structures. At the very least, they make the process a lot less tedious.
 
