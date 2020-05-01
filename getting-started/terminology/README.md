@@ -89,21 +89,23 @@ A pattern used to select a particular scope to scan. This is not to be confused 
 4. `/ng/<glob pattern>` - **Node Glob**. A path that starts with `/ng/` followed by a valid [glob pattern](./#glob-pattern). This is essentially the [Node-Glob Scope](./#node-glob-scope).
 5. `/n/<brace pattern>` - **Node Brace**. A path that starts with `/n/` followed by a valid [brace pattern](./#brace-pattern). This is essentially the [Node-Brace Scope](./#node-brace-scope). This is much faster than a node-glob scan, and should be the preferred document selection pattern wherever possible.
 
-## Filters
+## Operations
 
-In many queries that the _RecallGraph_ API supports, filters can be applied to restrict the results that are returned. These filters are classified according to whether they apply within a running DB query, or during post-processing steps on the query results \(defined in the service code, running in a V8 context\).
+In many queries that the _RecallGraph_ API supports, operations can be applied to transform the results before they are returned. These operations can execute within a running DB query, or during post-processing steps on the query results \(defined in the service code, running in a V8 context\).
 
-### Pre-Filters
+The order of operations that are applied to a result set with a request are as follows:
 
-A pre-filter is a filter that is applied at the time of running a DB query.
+1. **Pre-Filter** \(Applied to individual entries \(events/diffs/nodes\)\)
+   1. [Scope](./#scopes) \(Determined by [path](./#path) parameter\)
+   2. Transaction-Time Bounds \(Since/Until\)
+2. **Group**
+   1. Group Sort \(Sorting withing a group\)
+   2. Group Slice \(Skip/Limit within a group\)
+3. **Sort** \(Grouped/Ungrouped, driven by grouping parameter\)
+4. **Slice** \(Skip/Limit\) \(Applied on groups, if grouping parameter present\)
+5. **Post-Filter** \(Filter on the array result obtained at the end of step 4\)
 
-Pre-filters supported by _RecallGraph_ include the [path](./#path) parameter and the time interval bounds that several API endpoints accept.
-
-### Post-Filters
-
-Once a query returns some results, a post-filter can be applied on them to further restrict the number of matching results that are returned. These filters are executed within service code, in a V8 context. For an in-depth explanation, follow the link below:
-
-{% page-ref page="post-filters.md" %}
+All operations are explained in detail in the sub-pages that follow.
 
 
 
