@@ -1,8 +1,8 @@
 ---
 description: >-
   High level concepts that serve as the foundation for understanding and working
-  with RecallGraph. Skip if you're familiar with graph databases, ArangoDB and
-  temporal database constructs.
+  with RecallGraph. Skip this if you're familiar with graph databases, ArangoDB
+  and temporal database constructs.
 ---
 
 # Concepts
