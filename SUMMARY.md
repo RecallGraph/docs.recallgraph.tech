@@ -8,3 +8,7 @@
 * [Discussion Forum](https://gitter.im/RecallGraph/community)
 * [Releases](https://github.com/RecallGraph/RecallGraph/releases)
 
+## Getting Started
+
+* [Concepts](getting-started/concepts.md)
+
