@@ -105,7 +105,7 @@ The order of operations that are applied to a result set with a request are as f
 4. **Slice** \(Skip/Limit\) \(Applied on groups, if grouping parameter present\)
 5. **Post-Filter** \(Filter on the array result obtained at the end of step 4\)
 
-All operations are explained in detail in the sub-pages that follow.
+All operations are explained in detail in the child pages that follow.
 
 
 
