@@ -13,8 +13,6 @@
   * [Post-Filters](getting-started/terminology/post-filters.md)
 * [Installation](getting-started/installation.md)
 
-## API
-
 ## Links
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
