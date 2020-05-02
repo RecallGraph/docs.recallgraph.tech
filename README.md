@@ -87,5 +87,6 @@ RecallGraph's API is split into 3 top-level categories:
 ### Get in Touch
 
 * Raise an issue or PR on the [project repository](https://github.com/RecallGraph/RecallGraph), or
+* Mail me \(![Email Link](http://safemail.justlikeed.net/e/aa7232bbfc22c7580ae7a4b561562e0b.png)\), or
 * Join the [Gitter channel](https://gitter.im/RecallGraph/community).
 
