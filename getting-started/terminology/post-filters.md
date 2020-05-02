@@ -45,20 +45,71 @@ Some of the core JS operators listed above are actually implemented using extens
 
 Apart from the regular operators and member functions that the built-in data types support, it is often handy to be able to invoke `Math` functions or methods from the `lodash` utility. _jsep_ has been extended to provide access to these functions and some more, using named object literals that represent these modules. The available namespaces are listed below, along with special shortcuts, if any, to access them.
 
-#### **Binary Functions**
+#### **$\_Math - The `Math` Global Object**
 
-1. `eq(left, right)` - **Deep Equality**. Filters on deep equality. See [https://lodash.com/docs/4.17.15\#isEqual](https://lodash.com/docs/4.17.15#isEqual).
-2. `lt(left, right)` - **'Less Than' Comparison**. Filters on strict inequality. The `left` operand must be strictly less than the `right` operand. See [https://lodash.com/docs/4.17.15\#lt](https://lodash.com/docs/4.17.15#lt).
-3. `gt(left, right)` - **'Greater Than' Comparison**. Filters on strict inequality. The `left` operand must be strictly greater than the `right` operand. See [https://lodash.com/docs/4.17.15\#gt](https://lodash.com/docs/4.17.15#gt).
-4. `lte(left, right)` - **'Less Than or Equals' Comparison**. Filters on non-strict inequality. The `left` operand must be less than or equal to the `right` operand. See [https://lodash.com/docs/4.17.15\#lte](https://lodash.com/docs/4.17.15#lte).
-5. `gte(left, right)` - **'Greater Than or Equals' Comparison**. Filters on non-strict inequality. The `left` operand must be greater than or equal to the `right` operand. See [https://lodash.com/docs/4.17.15\#gte](https://lodash.com/docs/4.17.15#gte).
-6. `typeof(val)` - **Type Identifier**. Returns the type of `val` as per the specification defined at [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof).
-7. `in(needle, haystack)` - **Array Search**. Filters on an array search. The `needle` operand must be present in the array provided in the `haystack` operand. **Deep comparison** is performed for each element of `haystack` against `needle`.
-8. `glob(string, pattern)` - **Glob Match**. Filters on a [glob pattern](). The `string` operand must match the glob pattern given in the `pattern` operand for the filter to pass.
-9. `regx(string, pattern)` - **Regex Match**. Filters on a regex pattern. The `string` operand must [match the regex pattern](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) given in the `pattern` operand for the filter to pass.
+All methods and properties of the `Math` [global object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) are available under this namespace. An example usage may be:
 
-#### **Ternary Functions**
+```text
+$_Math.sin(this['x']) < $_Math.cos($_Math.PI) * this.y + z
 
-1. `all(op, array, value)` - **Array 'All Match'**. Filters on an array 'all match'. Every element `el` in `array` must satisfy the `op(el, value)` function filter, where `op` is one of the above [binary function filters]().
-2. `any(op, array, value)` - **Array 'Any Match'**. Filters on an array 'any match'. At least one element `el` in `array` must satisfy the `op(el, value)` function filter, where `op` is one of the above [binary function filters]().
+//this['x']: Bracket notation for accessing property 'x' of 'this'.
+//this.y: Dot notation for accessing property 'y' of 'this'.
+//z: Implicit notation for accessing property 'z' of 'this'.
+```
+
+#### $\_ - The `lodash` utility module
+
+All methods and properties of the `lodash` [utility module](https://lodash.com/docs/) are available under this namespace. In addition to being referred to by the `$_` namespace handle, this is also the default namespace under which methods are searched when they are invoked as standalone functions, without a property dereference. For example:
+
+```text
+1. $_.difference(this.x, y).length < 2
+2. some(x, partialRight($_.lte, 2))
+
+//partialRight is used in place of an anonymous function
+// defintion, since such function defs are not supported by
+// jsep.
+```
+
+Note that the default namespace is searched **only when a function call is made**, and not when just referencing the function as a member. In that case, the member will be searched for under the `this` context of the current object under iteration of the result array.
+
+#### **$\_RG - The** _**RecallGraph**_ **Namespace for Special Functions**
+
+This namespace is reserved for some special functions defined by RecallGraph. The supported methods are:
+
+{% tabs %}
+{% tab title="typeof\(<operand>\)" %}
+This method returns the type of the parameter passed to it.  Its behavior is identical to the [JavaScript `typeof` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof). For example:
+
+```text
+1. $_RG.typeof(x)
+2. $_RG.typeof(this.y)
+3. $_RG.typeof(this[z])
+
+//this[z] (without quotes) is shorthand for this[this.z],
+// i.e. an indirect property reference.
+```
+{% endtab %}
+
+{% tab title="glob\(str, pattern\)" %}
+This method performs a [glob match](./#glob-pattern) test on `str` against the provided `pattern`. For example:
+
+```text
+$_RG.glob('aaabbbccc', '*b*')
+
+//jsep supports string literals.
+```
+{% endtab %}
+
+{% tab title="regex\(str, pattern\)" %}
+This method performs a [regex match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) test on `str` against the provided `pattern`. For example:
+
+```text
+$_RG.regex('aaabbbccc', 'a+b{3}c*')
+
+//jsep supports string literals.
+```
+{% endtab %}
+{% endtabs %}
+
+For more examples, take a look at the test cases defined in [`helpers.test.js`](https://github.com/RecallGraph/RecallGraph/blob/b1d01aaf73bb05037ac68718ab8c661e134ee980/test/unit/lib/operations/helpers.test.js#L31).
 
