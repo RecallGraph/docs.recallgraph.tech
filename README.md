@@ -70,7 +70,7 @@ RecallGraph's API is split into 3 top-level categories:
 ### Limitations
 
 1. Although the test cases are quite extensive and have good coverage, this service has only been tested on single-instance DB deployments, and **not on clusters**.
-2. As of version 3.6, ArangoDB does not support ACID transactions for multi-document/collection writes in [cluster mode](https://www.arangodb.com/docs/3.5/transactions-limitations.html#in-clusters). Transactional ACIDity is not guaranteed for such deployments.
+2. As of version 3.6, ArangoDB does not support ACID transactions for multi-document/collection writes in [cluster mode](https://www.arangodb.com/docs/3.6/transactions-limitations.html#in-clusters). Transactional ACIDity is not guaranteed for such deployments.
 
 ### Development Roadmap
 
