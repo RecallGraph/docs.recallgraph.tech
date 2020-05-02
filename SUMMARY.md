@@ -15,11 +15,6 @@
 
 ## API
 
-## API <a id="api-1"></a>
-
-* [Untitled](api-1/untitled.md)
-* [Untitled](api-1/untitled-1.md)
-
 ## Links
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
