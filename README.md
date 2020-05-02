@@ -31,6 +31,8 @@ Also check out the recording below:
 
 {% embed url="https://www.youtube.com/watch?v=UP2KDQ\_kL4I" caption="RecallGraph presented @ ArangoDB Online Meetup" %}
 
+{% embed url="https://docs.google.com/presentation/d/1FHNfMxNnBiR4dXdqVJqInTiXdmX-9dSEtUrHMsw-O0E/edit\#slide=id.p" caption="The associated slide deck" %}
+
 **TL;DR:** RecallGraph is a potential fit for scenarios where data is best represented as a network of vertices and edges \(i.e., a graph\) having the following characteristics:
 
 1. Both vertices and edges can hold properties in the form of attribute/value pairs \(equivalent to JSON objects\).
