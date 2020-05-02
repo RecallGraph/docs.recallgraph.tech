@@ -65,6 +65,7 @@ RecallGraph's API is split into 3 top-level categories:
 * **Filter** - In addition to a path pattern like in **'Show'**, apply an expression-based, simple/compound post-filter on the retrieved documents.
 * **Traverse** - A point-in-time traversal \(walk\) of a past version of the graph, with the option to apply additional post-filters to the result.
 * **k Shortest Paths** - Point-in-time, weighted, shortest paths between two endpoints.
+* **\(Planned\) Purge** - Delete all history for specified nodes.
 
 ### Limitations
 
