@@ -16,6 +16,7 @@
 ## Links
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
+* [API Docs](https://app.swaggerhub.com/apis-docs/RecallGraph/RecallGraph/1.0.0#/)
 * [Community Forum](https://gitter.im/RecallGraph/community)
 * [Releases](https://github.com/RecallGraph/RecallGraph/releases)
 
