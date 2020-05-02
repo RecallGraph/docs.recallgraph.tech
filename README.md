@@ -6,7 +6,7 @@ description: RecallGraph - A versioning data store for time-variant graph data.
 
 ![](.gitbook/assets/recallgraph-inline.jpeg)
 
-RecallGraph is a _versioned-graph_ data store - it retains all changes that its data \(vertices and edges\) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
+[RecallGraph](https://github.com/RecallGraph/RecallGraph) is a _versioned-graph_ data store - it retains all changes that its data \(vertices and edges\) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
 
 It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [ArangoDB](https://www.arangodb.com/) that features _VCS-like_ semantics in many parts of its interface, and is backed by a transactional event tracker. It is currently being developed and tested on ArangoDB v3.5 and v3.6, with support for v3.7 in the pipeline.
 
