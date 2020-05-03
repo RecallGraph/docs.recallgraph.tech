@@ -6,7 +6,7 @@ description: 'Filters applied on a query result AFTER grouping, sorting and slic
 
 Once a query returns some results, a post-filter can be applied on them to further restrict the number of matching results that are returned.
 
-Post-filter expressions are processed in the V8 engine and **NOT the query engine**, using a [jsep](http://jsep.from.so/) expression parser that has been augmented with a few extensions.
+Post-filter expressions are processed in the V8 engine and **NOT the query engine**, using a [jsep](https://github.com/soney/jsep) expression parser that has been augmented with a few extensions.
 
 The filter expression is applied individually to each item in the result array \(these items may be entire groups\). Only those items for which the expression evaluates to a _truthy_ value are passed through.
 
