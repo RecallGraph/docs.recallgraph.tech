@@ -14,7 +14,7 @@ The filter expression is applied individually to each item in the result array \
 
 ## Core JS Operators
 
-The following \(non-mutating\) standard operators are understood by _jsep_ out of the box, and are processed exactly as they would be processed in a normal JavaScript runtime:
+Most of the following \(non-mutating\) standard operators are understood by _jsep_ out of the box. A few are implemented using extensions. Regardless, they are all processed exactly as they would be processed in a normal JavaScript runtime
 
 * [All comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison)
 * [All **non-mutating** arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic) \(everything except increment and decrement\)
