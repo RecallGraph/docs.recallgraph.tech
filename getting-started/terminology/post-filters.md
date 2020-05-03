@@ -45,12 +45,12 @@ Some of the core JS operators listed above are actually implemented using extens
 
 Apart from the regular operators and member functions that the built-in data types support, it is often handy to be able to invoke `Math` functions or methods from the `lodash` utility. _jsep_ has been extended to provide access to these functions and some more, using named object literals that represent these modules. The available namespaces are listed below, along with special shortcuts, if any, to access them.
 
-#### **$\_Math - The `Math` Global Object**
+#### **$Math - The `Math` Global Object**
 
 All methods and properties of the `Math` [global object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) are available under this namespace. An example usage may be:
 
 ```text
-$_Math.sin(this['x']) < $_Math.cos($_Math.PI) * this.y + z
+$Math.sin(this['x']) < $Math.cos($Math.PI) * this.y + z
 
 //this['x']: Bracket notation for accessing property 'x' of 'this'.
 //this.y: Dot notation for accessing property 'y' of 'this'.
@@ -72,7 +72,7 @@ All methods and properties of the `lodash` [utility module](https://lodash.com/d
 
 Note that the default namespace is searched **only when a function call is made**, and not when just referencing the function as a member. In that case, the member will be searched for under the `this` context of the current object under iteration of the result array.
 
-#### **$\_RG - The** _**RecallGraph**_ **Namespace for Special Functions**
+#### **$RG - The** _**RecallGraph**_ **Namespace for Special Functions**
 
 This namespace is reserved for some special functions defined by RecallGraph. The supported methods are:
 
@@ -81,9 +81,9 @@ This namespace is reserved for some special functions defined by RecallGraph. Th
 This method returns the type of the parameter passed to it.  Its behavior is identical to the [JavaScript `typeof` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof). For example:
 
 ```text
-1. $_RG.typeof(x)
-2. $_RG.typeof(this.y)
-3. $_RG.typeof(this[z])
+1. $RG.typeof(x)
+2. $RG.typeof(this.y)
+3. $RG.typeof(this[z])
 
 //this[z] (without quotes) is shorthand for this[this.z],
 // i.e. an indirect property reference.
@@ -94,7 +94,7 @@ This method returns the type of the parameter passed to it.  Its behavior is ide
 This method performs a [glob match](./#glob-pattern) test on `str` against the provided `pattern`. For example:
 
 ```text
-$_RG.glob('aaabbbccc', '*b*')
+$RG.glob('aaabbbccc', '*b*')
 
 //jsep supports string literals.
 ```
@@ -104,7 +104,7 @@ $_RG.glob('aaabbbccc', '*b*')
 This method performs a [regex match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) test on `str` against the provided `pattern`. For example:
 
 ```text
-$_RG.regex('aaabbbccc', 'a+b{3}c*')
+$RG.regex('aaabbbccc', 'a+b{3}c*')
 
 //jsep supports string literals.
 ```
