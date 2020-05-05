@@ -41,5 +41,5 @@ description: A record of what changed between successive versions
    1. Diffs are enhanced to return some event metadata along with command lists. This is to reduce overloading the `log` function with event+command-related queries.
    2. The `countsOnly` parameter now has an effect even when `groupBy` is `null` for `log` endpoints. It returns the overall total number of events based on the filters provided.
    3. `show` returns an array with total count when `groupBy` is `null`, instead of a bare object. This is for consistent post-filter application semantics.
-   4. `traverse` `minDepth` has been changed to `1`.
+   4. `traverse` `minDepth` has been changed from  `0` to `1`.
 
