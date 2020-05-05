@@ -15,6 +15,7 @@
 ## Working With RecallGraph
 
 * [Installation](working-with-recallgraph/installation.md)
+* [Changelog](working-with-recallgraph/changelog.md)
 * [Guide](working-with-recallgraph/guide/README.md)
   * [Persisting Documents](working-with-recallgraph/guide/persisting-documents.md)
   * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log.md)
