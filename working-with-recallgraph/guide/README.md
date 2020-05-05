@@ -8,6 +8,10 @@ description: A step-by-step guide to using RecallGraph's features.
 
 Before starting to work with RecallGraph, take a few minutes to go through the background and terminology to set the context for understanding the terms used in this guide. To make things easier, essential concepts and terms used in this guide will be linked to their respective documentation.
 
+{% page-ref page="../../understanding-recallgraph/concepts.md" %}
+
+{% page-ref page="../../understanding-recallgraph/terminology/" %}
+
 ## Initial Setup
 
 Before starting with the guide, you need to have RecallGraph installed on a server you can access \(e.g. your `localhost`\). Follow the instructions provided in the link below:
