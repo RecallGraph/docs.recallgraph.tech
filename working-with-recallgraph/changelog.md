@@ -1,3 +1,7 @@
+---
+description: A record of what changed between successive versions
+---
+
 # Changelog
 
 ## 1.0.0
