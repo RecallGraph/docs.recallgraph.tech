@@ -18,7 +18,7 @@ Before starting with the guide, you need to have RecallGraph installed on a serv
 
 {% page-ref page="../installation.md" %}
 
-After installation, once you login to the web console, you should have your service listed \(possibly among other installed services\) in the _SERVICES_ tab as shown below:
+After installation, once you login to the web console, you should see the service listed \(possibly among other installed services\) in the _SERVICES_ tab as shown below:
 
 ![Service mounted under /recallgraph](../../.gitbook/assets/screenshot_2020-05-05_19-10-37.png)
 
