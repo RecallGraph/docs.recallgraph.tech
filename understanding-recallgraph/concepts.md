@@ -5,7 +5,7 @@ description: >-
   and temporal database constructs.
 ---
 
-# Concepts
+# Background
 
 ## What are Graph Databases?
 

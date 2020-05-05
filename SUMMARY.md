@@ -4,7 +4,7 @@
 
 ## Undertanding RecallGraph <a id="understanding-recallgraph"></a>
 
-* [Concepts](understanding-recallgraph/concepts.md)
+* [Background](understanding-recallgraph/concepts.md)
 * [Terminology](understanding-recallgraph/terminology/README.md)
   * [Pre-Filters](understanding-recallgraph/terminology/pre-filters.md)
   * [Grouping](understanding-recallgraph/terminology/grouping.md)
