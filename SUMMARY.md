@@ -2,16 +2,19 @@
 
 * [Introduction](README.md)
 
-## Getting Started
+## Undertanding RecallGraph <a id="understanding-recallgraph"></a>
 
-* [Concepts](getting-started/concepts.md)
-* [Terminology](getting-started/terminology/README.md)
-  * [Pre-Filters](getting-started/terminology/pre-filters.md)
-  * [Grouping](getting-started/terminology/grouping.md)
-  * [Sorting](getting-started/terminology/sorting.md)
-  * [Slicing](getting-started/terminology/slicing.md)
-  * [Post-Filters](getting-started/terminology/post-filters.md)
-* [Installation](getting-started/installation.md)
+* [Concepts](understanding-recallgraph/concepts.md)
+* [Terminology](understanding-recallgraph/terminology/README.md)
+  * [Pre-Filters](understanding-recallgraph/terminology/pre-filters.md)
+  * [Grouping](understanding-recallgraph/terminology/grouping.md)
+  * [Sorting](understanding-recallgraph/terminology/sorting.md)
+  * [Slicing](understanding-recallgraph/terminology/slicing.md)
+  * [Post-Filters](understanding-recallgraph/terminology/post-filters.md)
+
+## Working With RecallGraph
+
+* [Installation](working-with-recallgraph/installation.md)
 
 ## Links
 
