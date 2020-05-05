@@ -24,7 +24,7 @@ After installation, once you login to the web console, you should see the servic
 
 ## Structure of this Guide
 
-RecallGraph works by keeping an internal log of all changes that its tracked documents \(vertices/edges\) have gone through. Based on this log, it supports point-in-time \(i.e. historical\) lookbacks, traversals and even weighted shortest path queries.
+RecallGraph works by maintaining an internal log of all changes that its tracked documents \(vertices/edges\) have gone through. Based on this log, it supports point-in-time \(i.e. historical\) lookbacks, traversals and even weighted shortest path queries.
 
 To align with the logical sequence of entering data, scanning the logs to identify interesting events and time points, and finally running historical graph and document queries, the guide is structured into the following sections in order:
 
