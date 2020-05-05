@@ -15,8 +15,12 @@
 ## Working With RecallGraph
 
 * [Installation](working-with-recallgraph/installation.md)
+* [Guide](working-with-recallgraph/guide/README.md)
+  * [Persisting Documents](working-with-recallgraph/guide/persisting-documents.md)
+  * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log.md)
+  * [Navigating History](working-with-recallgraph/guide/navigating-history.md)
 
-## Links
+## External Links <a id="links"></a>
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
 * [API Docs](https://app.swaggerhub.com/apis-docs/RecallGraph/RecallGraph/1.0.0#/)
