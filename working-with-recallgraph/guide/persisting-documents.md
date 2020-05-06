@@ -20,3 +20,9 @@ Eric now also realizes the need for a full-fledged [HRMS](https://en.wikipedia.o
 
 ### Org Info and Initial Employees
 
+Initially, before Kenny is hired, the org structure looks something like this:
+
+![](../../.gitbook/assets/examples-1%20%281%29.png)
+
+
+
