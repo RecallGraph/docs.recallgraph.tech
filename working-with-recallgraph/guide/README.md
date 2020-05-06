@@ -43,7 +43,7 @@ RecallGraph works by maintaining an internal log of all changes that its tracked
 To aid with the examples, we will build a simple narrative of an organization's employee database, where we track new hires, attrition, changes to reporting structure and designation \(promotions, temporary assignments, etc.\). The narrative will go through stages of first entering initial employees' data, followed by addition of new hires, a few cessations and a few internal movements. At each stage, the overall structure of the organization will be different, and we will see how to look at current and previous versions of  the organization.
 
 {% hint style="info" %}
-This guide assumes minimal knowledge of ArangoDB and its web console. Experienced users may find some sections a little tedious, but they had to be designed that way to help the newbies get comfortable with the interface.
+This guide assumes minimal knowledge of ArangoDB and its web console \(esp Swagger\). Experienced users may find some sections a little tedious, but they had to be designed that way to help new developers get comfortable with the interface.
 {% endhint %}
 
 To align with the logical sequence of entering data, scanning the logs to identify interesting events and time points, and finally running historical graph and document queries _as of_ those time points, the guide is structured into the following sections, in order:
