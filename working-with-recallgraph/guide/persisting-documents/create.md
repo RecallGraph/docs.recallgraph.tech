@@ -76,7 +76,7 @@ Note that the corresponding `curl` command is also shown for the request, and yo
 
 The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
 
-```text
+```bash
 {
   "_id": "departments/44787802",
   "_key": "44787802",
