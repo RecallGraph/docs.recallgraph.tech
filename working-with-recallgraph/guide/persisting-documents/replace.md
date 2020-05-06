@@ -15,7 +15,7 @@ We will correct this data entry error in our database by replacing the incorrect
 {% endhint %}
 
 {% hint style="info" %}
-If you missed taking note of the edge `_id` while inserting the reporting relationship between Kenny and Kyle, you can easily retrieve it by firing a simple AQL query. This is an exercise left to the reader.
+If you missed taking note of the edge `_id` while inserting the reporting relationship between Kenny and Kyle, you can easily retrieve it by firing a simple AQL query. This is an exercise left for the reader.
 {% endhint %}
 
 ## Entering Data
