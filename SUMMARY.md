@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 
-## Undertanding RecallGraph <a id="understanding-recallgraph"></a>
+## Understanding RecallGraph
 
 * [Background](understanding-recallgraph/concepts.md)
 * [Terminology](understanding-recallgraph/terminology/README.md)
