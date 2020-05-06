@@ -11,13 +11,11 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
 
 1. Install [ArangoDB](https://www.arangodb.com/docs/stable/getting-started-installation.html) and create a database and a user with admin privileges for that database.
 2. Install the _Foxx CLI_:
-
    ```
    $ npm install --global foxx-cli
    ```
 
 3. Assuming the database created in step 1 above is called `rgtest` and the admin user for that database is `rguser` having password `rgpasswd`, define a server endpoint for _Foxx CLI_:
-
    ```
    $ foxx server set local-rgtest http://localhost:8529 -D rgtest -u rguser -P
    ```
@@ -25,19 +23,16 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
    Enter `rgpasswd` at the prompt and press _Enter_ to finish the server definition step.
 
 4. Clone this repository:
-
    ```
    $ git clone https://github.com/RecallGraph/RecallGraph.git
    ```
 
 5. Install module dependencies:
-
    ```
    $ npm install
    ```
 
 6. Copy `.env.example` to `.env` and set the following values:
-
    ```text
     ARANGO_SERVER=local-rgtest
     EVSTORE_MOUNT_POINT=/recall
@@ -46,7 +41,6 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
    The mounted service will be available at `http://localhost:8529/_db/rgtest/recall` after the installation is complete.
 
 7. Install the service:
-
    ```
    $ npm run setup
    ```
