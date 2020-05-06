@@ -37,6 +37,8 @@ We start by entering data on the core entities \(departments and employees\), fo
 
 ### Core Entities
 
+#### Department Information
+
 We begin by entering data for the manufacturing department. In your web console, navigate to the services tab and click on the box that says /_recallgraph_ \(assuming you mounted the service at `/recallgraph`\).
 
 ![](../../../.gitbook/assets/screenshot_2020-05-05_19-10-37.png)
@@ -82,5 +84,11 @@ The response body contains the `_id` of the newly created department object, and
 }
 ```
 
+#### Employee Information
 
+We will use the _bulk_ method to create all employees at one go. The endpoint remains the same.
+
+1. In the `collections` field, enter `employees`.
+2. In the `body` field, enter the following JSON array: 
+3. kdsfs
 
