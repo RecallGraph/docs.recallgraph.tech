@@ -6,7 +6,7 @@ description: Create single / multiple nodes.
 
 ## The Story So Far...
 
-By now, Eric has realized the need for a full-fledged [HRMS](https://en.wikipedia.org/wiki/Human_resource_management_system) to keep track of payroll, reporting structure, etc. for his growing department, and has \(wisely\) selected a product that happens to use RecallGraph under the hood.
+> By now, Eric has realized the need for a full-fledged [HRMS](https://en.wikipedia.org/wiki/Human_resource_management_system) to keep track of payroll, reporting structure, etc. for his growing department, and has \(wisely\) selected a product that happens to use RecallGraph under the hood.
 
 ### Org Info and Initial Employees
 
