@@ -14,7 +14,7 @@ We will correct this data entry error in our database by replacing the incorrect
 **Important:** Note that the `REPLACE` operation behaves exactly as in the ArangoDB core REST API. It **does not** replace the underlying document, i.e. the body is replaced but the `_key` remains the same.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="success" %}
 If you missed taking note of the edge `_id` while inserting the reporting relationship between Kenny and Kyle, you can easily retrieve it by firing a simple AQL query. This is an exercise left for the reader.
 {% endhint %}
 
