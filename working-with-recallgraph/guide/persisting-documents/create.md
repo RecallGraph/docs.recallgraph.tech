@@ -158,7 +158,9 @@ We will use the _bulk_ method to create all employees at one go. The endpoint re
    ]
    ```
 
-#### Membership Relations
+### Relations
+
+#### Membership
 
 Now that employees have been added to the database, we need to make them all belong to the _Manufacturing_ department. We will do this by inserting edges pointing from each employee to the _Manufacturing_ department vertex created earlier.
 
@@ -207,7 +209,7 @@ Now that employees have been added to the database, we need to make them all bel
 ]
 ```
 
-#### Reporting Relations
+#### Reporting
 
 We need to add a couple of reporting relations to represent Kyle and Stan reporting to Eric. We do this as follows:
 
@@ -246,6 +248,8 @@ We need to add a couple of reporting relations to represent Kyle and Stan report
   }
 ]
 ```
+
+## End Result
 
 After inserting all the above, we can get a view of the current state of all inserted objects and their relations by running the following graph query:
 
