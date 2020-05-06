@@ -62,6 +62,13 @@ Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%28
 3. Next click on the ![](../../../.gitbook/assets/image%20%283%29.png) button and see the result.
 4. We should see a response similar to  ![](../../../.gitbook/assets/image%20%281%29.png)  Note that the corresponding `curl` command is also shown for the request, and you can use it to achieve the same result.
 5. The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
+   ```
+   {
+     "_id": "departments/44787802",
+     "_key": "44787802",
+     "_rev": "_ackLRwW---"
+   }
+   ```
 
 
 
