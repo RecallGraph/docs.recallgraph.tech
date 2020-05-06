@@ -12,7 +12,7 @@ description: Create single / multiple nodes.
 
 Initially, before Kenny is hired, the org structure looks something like this:
 
-![Eric heads the manufacturing unit. Kyle and Stan report to Eric.](../../../.gitbook/assets/examples-1.png)
+![Eric heads the manufacturing unit. Kyle and Stan report to Eric. Wile, while not an org member, is a valuable client.](../../../.gitbook/assets/examples-1.png)
 
 ## Initializing the Database
 
