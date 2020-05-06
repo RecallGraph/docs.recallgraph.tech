@@ -66,7 +66,7 @@ Next, jump straight to the `body` field and here we can fill in any valid JSON o
 }
 ```
 
-Next click on the `EXECUTE` button and see the result. We should see a response similar to:
+Next click on the `Execute` button and see the result. We should see a response similar to:
 
 ![201: The department vertex was successfully created.](../../../.gitbook/assets/image%20%281%29.png)
 
@@ -89,6 +89,68 @@ The response body contains the `_id` of the newly created department object, and
 We will use the _bulk_ method to create all employees at one go. The endpoint remains the same.
 
 1. In the `collections` field, enter `employees`.
-2. In the `body` field, enter the following JSON array: 
-3. kdsfs
-
+2. We want to map the generated document `_ids` to the employee names. So we set `returnNew` to `true`.
+3. In the `body` field, enter the following JSON array:
+ ```
+ [
+  {
+    "first_name": "Eric",
+    "last_name": "Cartman",
+    "role": "Unit Supervisor"
+  },
+  {
+    "first_name": "Stan",
+    "last_name": "Marsh",
+    "role": "Plant Manager"
+  },
+  {
+    "first_name": "Kyle",
+    "last_name": "Broflovski",
+    "role": "Plant Manager"
+  }
+]
+ ```
+4. Hit the `Execute` button to get a result similar to:
+ ```
+ [
+  {
+    "_id": "employees/44794449",
+    "_key": "44794449",
+    "_rev": "_aclQHR6---",
+    "new": {
+      "_key": "44794449",
+      "_id": "employees/44794449",
+      "_rev": "_aclQHR6---",
+      "first_name": "Eric",
+      "last_name": "Cartman",
+      "role": "Unit Supervisor"
+    }
+  },
+  {
+    "_id": "employees/44794453",
+    "_key": "44794453",
+    "_rev": "_aclQHSa---",
+    "new": {
+      "_key": "44794453",
+      "_id": "employees/44794453",
+      "_rev": "_aclQHSa---",
+      "first_name": "Stan",
+      "last_name": "Marsh",
+      "role": "Plant Manager"
+    }
+  },
+  {
+    "_id": "employees/44794457",
+    "_key": "44794457",
+    "_rev": "_aclQHSm---",
+    "new": {
+      "_key": "44794457",
+      "_id": "employees/44794457",
+      "_rev": "_aclQHSm---",
+      "first_name": "Kyle",
+      "last_name": "Broflovski",
+      "role": "Plant Manager"
+    }
+  }
+]
+ ```
