@@ -160,3 +160,104 @@ We will use the _bulk_ method to create all employees at one go. The endpoint re
 
 #### Membership Relations
 
+Now that employees have been added to the database, we need to make them all belong to the _Manufacturing_ department. We will do this by inserting edges pointing from each employee to the _Manufacturing_ department vertex created earlier.
+
+**Request similar to:**
+
+`collection`: `membership`
+
+`body`:
+
+```text
+[
+  {
+    "_from": "employees/44794449",
+    "_to": "departments/44787802"
+  },
+  {
+    "_from": "employees/44794453",
+    "_to": "departments/44787802"
+  },
+  {
+    "_from": "employees/44794457",
+    "_to": "departments/44787802"
+  }
+]
+```
+
+**Response similar to:**
+
+```text
+[
+  {
+    "_id": "membership/44795272",
+    "_key": "44795272",
+    "_rev": "_aclYlUy---"
+  },
+  {
+    "_id": "membership/44795280",
+    "_key": "44795280",
+    "_rev": "_aclYlVu---"
+  },
+  {
+    "_id": "membership/44795286",
+    "_key": "44795286",
+    "_rev": "_aclYlWC---"
+  }
+]
+```
+
+#### Reporting Relations
+
+We need to add a couple of reporting relations to represent Kyle and Stan reporting to Eric. We do this as follows:
+
+**Request similar to:**
+
+`collection`: `reporting`
+
+`body`:
+
+```text
+[
+  {
+    "_from": "employees/44794453",
+    "_to": "employees/44794449"
+  },
+  {
+    "_from": "employees/44794457",
+    "_to": "employees/44794449"
+  }
+]
+```
+
+**Response similar to:**
+
+```text
+[
+  {
+    "_id": "reporting/44795731",
+    "_key": "44795731",
+    "_rev": "_acldI2S---"
+  },
+  {
+    "_id": "reporting/44795739",
+    "_key": "44795739",
+    "_rev": "_acldI3i---"
+  }
+]
+```
+
+After inserting all the above, we can get a view of the current state of all inserted objects and their relations by running the following graph query:
+
+```text
+for v, e, p in 1..3
+inbound "departments/44787802"
+reporting, membership
+
+return p
+```
+
+The result \(in graph viewer\) should look like this:
+
+![Entities annotated for clarity.](../../../.gitbook/assets/examples-create-6.png)
+
