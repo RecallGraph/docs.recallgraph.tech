@@ -254,7 +254,7 @@ We need to add a couple of reporting relations to represent Kyle and Stan report
 After inserting all the above, we can get a view of the current state of all inserted objects and their relations by running the following graph query:
 
 ```text
-for v, e, p in 1..3
+for v, e, p in 1..2
 inbound "departments/44787802"
 reporting, membership
 
