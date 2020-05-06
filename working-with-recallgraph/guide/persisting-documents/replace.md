@@ -42,6 +42,6 @@ Running the graph query should now yield the correct relations:
 ![Kenny is now correctly shown to be reporting to Eric.](../../../.gitbook/assets/examples-replace.png)
 
 {% hint style="success" %}
-Although not demonstrated in this example, `REPLACE` also supports bulk mode.
+Although not demonstrated in this example, this endpoint also supports bulk replace, similar to `CREATE`.
 {% endhint %}
 
