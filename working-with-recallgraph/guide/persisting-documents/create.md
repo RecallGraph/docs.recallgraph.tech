@@ -27,7 +27,9 @@ After creation, the list of collections will look something like this \(in the w
 
 ![User-defined collections highlighted in blue.](../../../.gitbook/assets/examples-create.png)
 
-**Note:** Our example HRMS does not track customer relations, but a real-world full-fledged ERP will \(and can also theoretically use RecallGraph as a backend\).
+{% hint style="info" %}
+Our example HRMS does not track customer relations, but a real-world full-fledged ERP will \(and can also theoretically use RecallGraph as a backend\).
+{% endhint %}
 
 ## Entering Data
 
@@ -64,9 +66,11 @@ Next, jump straight to the `body` field and here we can fill in any valid JSON o
 
 Next click on the `EXECUTE` button and see the result. We should see a response similar to:
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![201: The department vertex was successfully created.](../../../.gitbook/assets/image%20%281%29.png)
 
+{% hint style="info" %}
 Note that the corresponding `curl` command is also shown for the request, and you can use it to achieve the same result.
+{% endhint %}
 
 The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
 

@@ -14,7 +14,11 @@ Before starting to work with RecallGraph, take a few minutes to go through the b
 
 {% page-ref page="../../understanding-recallgraph/terminology/" %}
 
-If you are migrating from an older version, be sure to carefully go through the changelog to understand what has changed. Take special note of **breaking changes**, if any.
+If you are migrating from an older version, be sure to carefully go through the changelog to understand what has changed.
+
+{% hint style="warning" %}
+Take special note of **breaking changes**, if any.
+{% endhint %}
 
 {% page-ref page="../changelog.md" %}
 
@@ -30,7 +34,9 @@ After installation, once you login to the web console, you should see the servic
 
 ## Structure of this Guide
 
-**Note:** For all examples shown in the following sections, it is assumed that the service has been locally installed in a database named `acme_hrms`, with mount point `/recallgraph`. This is purely for convenience, and does not in any way affect the API's behavior.
+{% hint style="info" %}
+For all examples shown in the following sections, it is assumed that the service has been locally installed in a database named `acme_hrms`, with mount point `/recallgraph`. This is purely for convenience, and does not in any way affect the API's behavior.
+{% endhint %}
 
 RecallGraph works by maintaining an internal log of all changes that its tracked documents \(vertices/edges\) have gone through. Based on this log, it supports point-in-time \(i.e. historical\) lookbacks, traversals and even weighted shortest path queries.
 

@@ -70,7 +70,9 @@ All methods and properties of the `lodash` [utility module](https://lodash.com/d
 // jsep.
 ```
 
+{% hint style="warning" %}
 Note that the default namespace is searched **only when a function call is made**, and not when just referencing the function as a member. In that case, the member will be searched for under the `this` context of the current object under iteration of the result array.
+{% endhint %}
 
 #### **$RG - The** _**RecallGraph**_ **Namespace for Special Functions**
 

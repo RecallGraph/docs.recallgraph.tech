@@ -19,7 +19,9 @@ If a grouping attribute is specified, an additional set of sub-parameters can be
 2. **Group Slice:** Skip and/or limit entries within a group, post group-sort.
 3. **Aggregation \(Count\):** Rather than return an entity list within a group, return their count \(group-wise totals\). If this sub-parameter is specified, the other sub-parameters are ignored.
 
-**Note:** There is a special case of aggregation, wherein counts are requested, but the grouping attribute is absent. In this case, the API returns the total count of ALL entities, rather than group-wise totals. In this case, the upper level sorting and slicing parameters are ignored.
+{% hint style="info" %}
+There is a special case of aggregation, wherein counts are requested, but the grouping attribute is absent. In this case, the API returns the total count of ALL entities, rather than group-wise totals. In this case, the upper level sorting and slicing parameters are ignored.
+{% endhint %}
 
 Grouping clauses are applied within the DB query that is used to fetch intermediate results.
 
