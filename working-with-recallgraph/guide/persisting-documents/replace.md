@@ -18,6 +18,8 @@ We will correct this data entry error in our database by replacing the incorrect
 If you missed taking note of the edge `_id` while inserting the reporting relationship between Kenny and Kyle, you can easily retrieve it by firing a simple AQL query. This is an exercise left to the reader.
 {% endhint %}
 
+## Entering Data
+
 In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%283%29.png) button. The `collection` parameter should be set to `reporting` and the body should contain the entire contents of the new reporting relationship \(only one of `key` or `id` need be present, `_rev` can be omitted\).
 
 ```text
@@ -27,6 +29,8 @@ In the Swagger console locate the tab with the ![](../../../.gitbook/assets/imag
     "_to": "employees/44794449"
 }
 ```
+
+## End Result
 
 Running the graph query should now yield the correct relations:
 
