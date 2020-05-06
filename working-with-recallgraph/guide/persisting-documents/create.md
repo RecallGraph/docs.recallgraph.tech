@@ -50,6 +50,12 @@ Once inside, click on the first green bar __marked ![](../../../.gitbook/assets/
 Once this tab is expanded, click on the `Try it out` button. You will now be presented with a form containing fields that map to request parameters for the `POST` request.
 
 1. In the `collection` field, fill in `departments` as we will enter the department first.   ![](../../../.gitbook/assets/image.png) 
-2. Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:   
+2. Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
+  ```
+  {
+    "name": "Manufacturing",
+    "org": "ACME Inc."
+  }
+  ```
 3. sadfasdf
 
