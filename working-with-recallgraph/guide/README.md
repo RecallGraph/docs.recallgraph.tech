@@ -14,13 +14,9 @@ Before starting to work with RecallGraph, take a few minutes to go through the b
 
 {% page-ref page="../../understanding-recallgraph/terminology/" %}
 
-If you are migrating from an older version, be sure to carefully go through the changelog to understand what has changed.
-
 {% hint style="warning" %}
-Take special note of **breaking changes**, if any.
+If you are migrating from an older version, be sure to carefully go through the [changelog](../changelog.md) to understand what has changed. Take special note of **breaking changes**, if any.
 {% endhint %}
-
-{% page-ref page="../changelog.md" %}
 
 ## Initial Setup
 
