@@ -11,7 +11,9 @@ Many bulk read endpoints support an optional grouping parameter, using which res
 3. **Type:** Group by the _type_ \(vertex or edge\) of node represented by an entity in the result set.
 4. **Event:** Group by the _type_ \(created/updated/deleted\) of event that the entity in a result set represents.
 
+{% hint style="info" %}
 It is not necessary that all of the above grouping attributes are available for all endpoints. It depends on the core structure of the data requested.
+{% endhint %}
 
 If a grouping attribute is specified, an additional set of sub-parameters can be optionally specified that determine how the entries within a group are arranged. These are:
 
@@ -23,5 +25,7 @@ If a grouping attribute is specified, an additional set of sub-parameters can be
 There is a special case of aggregation, wherein counts are requested, but the grouping attribute is absent. In this case, the API returns the total count of ALL entities, rather than group-wise totals. In this case, the upper level sorting and slicing parameters are ignored.
 {% endhint %}
 
+{% hint style="info" %}
 Grouping clauses are applied within the DB query that is used to fetch intermediate results.
+{% endhint %}
 
