@@ -10,5 +10,7 @@ The `skip` attribute only takes effect if the `limit` attribute is present and h
 
 For grouped results, slicing is applied on the groups themselves.
 
+{% hint style="info" %}
 Slicing clauses are applied within the DB query that is used to fetch intermediate results.
+{% endhint %}
 
