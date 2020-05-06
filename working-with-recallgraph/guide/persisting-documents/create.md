@@ -249,7 +249,7 @@ We need to add a couple of reporting relations to represent Kyle and Stan report
 ]
 ```
 
-## End Result
+### Intermediate Result
 
 After inserting all the above, we can get a view of the current state of all inserted objects and their relations by running the following graph query:
 
@@ -264,4 +264,16 @@ return p
 The result \(in graph viewer\) should look like this:
 
 ![Entities annotated for clarity.](../../../.gitbook/assets/examples-create-6.png)
+
+### Adding Kenny
+
+Now that the initial members and their relationships have been defined in the system, it is time to add details of the new hire - Kenny. This is done in steps similar to above:
+
+1. Adding employee information
+2. Adding department membership
+3. Adding reporting relationship.
+
+However, in a case of human error, Kenny was added as reporting to Kyle rather than Eric. The end result is shown below:
+
+![Kenny reporting to Kyle is a data entry error.](../../../.gitbook/assets/examples-create-7.png)
 
