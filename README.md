@@ -4,7 +4,7 @@ description: RecallGraph - A versioning data store for time-variant graph data.
 
 # Introduction
 
-{% embed url="https://github.com/RecallGraph/RecallGraph" %}
+{% embed url="https://github.com/RecallGraph/RecallGraph" caption="Project Source @ Github" %}
 
 [RecallGraph](https://github.com/RecallGraph/RecallGraph) is a _versioned-graph_ data store - it retains all changes that its data \(vertices and edges\) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
 
