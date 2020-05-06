@@ -6,11 +6,15 @@ description: 'Filters applied on a query result AFTER grouping, sorting and slic
 
 Once a query returns some results, a post-filter can be applied on them to further restrict the number of matching results that are returned.
 
+{% hint style="info" %}
 Post-filter expressions are processed in the V8 engine and **NOT the query engine**, using a [jsep](https://github.com/soney/jsep) expression parser that has been augmented with a few extensions.
+{% endhint %}
 
 The filter expression is applied individually to each item in the result array \(these items may be entire groups\). Only those items for which the expression evaluates to a _truthy_ value are passed through.
 
+{% hint style="warning" %}
 **Important:** _jsep_ does not support object literals, only array literals. This may be fixed in a fork, maintained by _RecallGraph_, in the future.
+{% endhint %}
 
 ## Core JS Operators
 
@@ -71,7 +75,7 @@ some(x, partialRight($_.lte, 2))
 // jsep.
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Note that the default namespace is searched **only when a function call is made**, and not when just referencing the function as a member. In that case, the member will be searched for under the `this` context of the current object under iteration of the result array.
 {% endhint %}
 
@@ -116,5 +120,7 @@ $RG.regex('aaabbbccc', 'a+b{3}c*')
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
 For more examples, take a look at the test cases defined in [`helpers.test.js`](https://github.com/RecallGraph/RecallGraph/blob/b1d01aaf73bb05037ac68718ab8c661e134ee980/test/unit/lib/operations/helpers.test.js#L31).
+{% endhint %}
 
