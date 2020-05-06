@@ -13,7 +13,11 @@ A pre-filter is the first step to execute in the operator pipeline for many bulk
    1. An **optional** lower bound \(inclusive\) - `since`,
    2. An **optional** upper bound \(exclusive\) - `until`
 
+{% hint style="warning" %}
 Conditions defined by the pre-filters apply to individual documents \(scope\) and events \(time bounds\). They do not apply to groups, which may be created later in the operator execution pipeline.
+{% endhint %}
 
+{% hint style="success" %}
 Pre-filters are applied within the DB query that is used to fetch intermediate results, and so it is desirable to use them to narrow down intermediate results as much as possible, before they are processed further in the rest of the pipeline.
+{% endhint %}
 

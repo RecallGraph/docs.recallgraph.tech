@@ -12,14 +12,14 @@ It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [Ar
 
 [![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
 
-{% hint style="warning" %}
-## Important!
+{% hint style="danger" %}
+## ☢ Important!
 
 While the software has demonstrated ample stability under test conditions, it is still under active development, and subject to potentially breaking changes from time to time. The latest tagged version may be used in lightweight, non-critical production deployments, i.e., systems which do not impact primary business functions if they face downtime or data loss/corruption.
 {% endhint %}
 
-{% hint style="danger" %}
-## Disclaimer
+{% hint style="warning" %}
+## 🚫Disclaimer
 
 The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
 {% endhint %}
