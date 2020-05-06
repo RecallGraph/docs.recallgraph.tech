@@ -12,15 +12,19 @@ It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [Ar
 
 [![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
 
-### Important!
+{% hint style="warning" %}
+## Important!
 
 While the software has demonstrated ample stability under test conditions, it is still under active development, and subject to potentially breaking changes from time to time. The latest tagged version may be used in lightweight, non-critical production deployments, i.e., systems which do not impact primary business functions if they face downtime or data loss/corruption.
+{% endhint %}
 
-#### Disclaimer
+{% hint style="danger" %}
+## Disclaimer
 
 The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
+{% endhint %}
 
-### Do I Need a 'Versioned Graph' Database?
+## Do I Need a 'Versioned Graph' Database?
 
 To get an idea of where such a data store might be used, see:
 
@@ -39,11 +43,11 @@ Also check out the recording below:
 2. Documents \(vertices/edges\) mutate within their lifespan \(both in their individual attributes/values and in their relations with each other\).
 3. Past states of documents are as important as their present, necessitating retention and queryability of their change history.
 
-### Salient API Features
+## Salient API Features
 
 RecallGraph's API is split into 3 top-level categories:
 
-#### Document
+### Document
 
 * **Create** - Create single/multiple documents \(vertices/edges\).
 * **Replace** - Replace entire single/multiple documents with new content.
@@ -52,14 +56,14 @@ RecallGraph's API is split into 3 top-level categories:
 * **\(Planned\) Explicit Commits** - Commit a document's changes separately, after it has been written to DB via other means \(AQL / Core REST API / Client\).
 * **\(Planned\) CQRS/ES Operation Mode** - Async implicit commits.
 
-#### Event
+### Event
 
 * **Log** - Fetch a log of events \(commits\) for a given path pattern \(path determines scope of documents to pick\). The log can be optionally grouped/sorted/sliced within a specified time interval.
 * **Diff** - Fetch a list of forward or reverse commands \(diffs\) between commits for specified documents.
 * **\(Planned\) Branch/Tag** - Create parallel versions of history, branching off from a specific event point of the main timeline. Also, tag specific points in branch+time for convenient future reference.
 * **\(Planned\) Materialization** - Point-in-time checkouts.
 
-#### History
+### History
 
 * **Show** - Fetch a set of documents, optionally grouped/sorted/sliced, that match a given path pattern, at a given point in time.
 * **Filter** - In addition to a path pattern like in **'Show'**, apply an expression-based, simple/compound post-filter on the retrieved documents.
@@ -67,12 +71,12 @@ RecallGraph's API is split into 3 top-level categories:
 * **k Shortest Paths** - Point-in-time, weighted, shortest paths between two endpoints.
 * **\(Planned\) Purge** - Delete all history for specified nodes.
 
-### Limitations
+## Limitations
 
 1. Although the test cases are quite extensive and have good coverage, this service has only been tested on single-instance DB deployments, and **not on clusters**.
 2. As of version 3.6, ArangoDB does not support ACID transactions for multi-document/collection writes in [cluster mode](https://www.arangodb.com/docs/3.6/transactions-limitations.html#in-clusters). Transactional ACIDity is not guaranteed for such deployments.
 
-### Development Roadmap
+## Development Roadmap
 
 1. Support for absolute/relative revision-based queries on individual documents \(in addition to the timestamp-based queries supported currently\),
 2. Branching/tag support,
@@ -84,7 +88,7 @@ RecallGraph's API is split into 3 top-level categories:
 8. Support for ArangoDB clusters \(limited at present by lack of support for multi-document ACID transactions in clusters\).
 9. Multiple authentication and authorization mechanisms.
 
-### Get in Touch
+## Get in Touch
 
 * Raise an issue or PR on the [project repository](https://github.com/RecallGraph/RecallGraph), or
 * Mail me \(![Email Link](http://safemail.justlikeed.net/e/aa7232bbfc22c7580ae7a4b561562e0b.png)\), or
