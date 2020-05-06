@@ -43,19 +43,25 @@ Now click on the _API_ tab to access the Swagger interface.
 
 ![](../../../.gitbook/assets/examples-create-2.png)
 
-Once inside, click on the first green bar __marked ![](../../../.gitbook/assets/image%20%281%29.png) in the _Documents_ category.
+Once inside, click on the first green bar _\_marked_ ![](../../../.gitbook/assets/image.png) _in the \_Documents_ category.
 
 ![](../../../.gitbook/assets/examples-create-3.png)
 
-Once this tab is expanded, click on the `Try it out` button. You will now be presented with a form containing fields that map to request parameters for the `POST` request.
+Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%282%29.png) button. You will now be presented with a form containing fields that map to request parameters for the `POST` request.
 
-1. In the `collection` field, fill in `departments` as we will enter the department first.   ![](../../../.gitbook/assets/image.png) 
+1. In the `collection` field, fill in `departments` as we will enter the department first.   ![](../../../.gitbook/assets/image%20%284%29.png) 
 2. Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
-  ```
-  {
+
+   ```text
+   {
     "name": "Manufacturing",
     "org": "ACME Inc."
-  }
-  ```
-3. sadfasdf
+   }
+   ```
+
+3. Next click on the ![](../../../.gitbook/assets/image%20%283%29.png) button and see the result.
+4. We should see a response similar to  ![](../../../.gitbook/assets/image%20%281%29.png)  Note that the corresponding `curl` command is also shown for the request, and you can use it to achieve the same result.
+5. The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
+
+
 
