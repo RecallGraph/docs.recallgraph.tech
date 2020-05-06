@@ -86,11 +86,11 @@ The response body contains the `_id` of the newly created department object, and
 
 #### Employee Information
 
-We will use the _bulk_ method to create all employees at one go. The endpoint remains the same.
+We will use the _bulk mode_ to create all employees in one go. The endpoint remains the same.
 
 1. In the `collections` field, enter `employees`.
 2. We want to map the generated document `_ids` to the employee names. So we set `returnNew` to `true`.
-3. In the `body` field, enter the following JSON array:
+3. In the `body` field, enter the following **JSON array**:
 
    ```text
    [
