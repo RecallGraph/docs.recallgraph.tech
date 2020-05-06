@@ -49,7 +49,7 @@ Apart from the regular operators and member functions that the built-in data typ
 
 All methods and properties of the `Math` [global object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) are available under this namespace. An example usage may be:
 
-```text
+```javascript
 $Math.sin(this['x']) < $Math.cos($Math.PI) * this.y + z
 
 //this['x']: Bracket notation for accessing property 'x' of 'this'.
@@ -61,9 +61,10 @@ $Math.sin(this['x']) < $Math.cos($Math.PI) * this.y + z
 
 All methods and properties of the `lodash` [utility module](https://lodash.com/docs/) are available under this namespace. In addition to being referred to by the `$_` namespace handle, this is also the default namespace under which methods are searched when they are invoked as standalone functions, without a property dereference. For example:
 
-```text
-1. $_.difference(this.x, y).length < 2
-2. some(x, partialRight($_.lte, 2))
+```javascript
+$_.difference(this.x, y).length < 2
+
+some(x, partialRight($_.lte, 2))
 
 //partialRight is used in place of an anonymous function
 // defintion, since such function defs are not supported by
@@ -82,10 +83,12 @@ This namespace is reserved for some special functions defined by RecallGraph. Th
 {% tab title="typeof\(<operand>\)" %}
 This method returns the type of the parameter passed to it.  Its behavior is identical to the [JavaScript `typeof` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof). For example:
 
-```text
-1. $RG.typeof(x)
-2. $RG.typeof(this.y)
-3. $RG.typeof(this[z])
+```javascript
+$RG.typeof(x)
+
+$RG.typeof(this.y)
+
+$RG.typeof(this[z])
 
 //this[z] (without quotes) is shorthand for this[this.z],
 // i.e. an indirect property reference.
@@ -95,7 +98,7 @@ This method returns the type of the parameter passed to it.  Its behavior is ide
 {% tab title="glob\(str, pattern\)" %}
 This method performs a [glob match](./#glob-pattern) test on `str` against the provided `pattern`. For example:
 
-```text
+```javascript
 $RG.glob('aaabbbccc', '*b*')
 
 //jsep supports string literals.
@@ -105,7 +108,7 @@ $RG.glob('aaabbbccc', '*b*')
 {% tab title="regex\(str, pattern\)" %}
 This method performs a [regex match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) test on `str` against the provided `pattern`. For example:
 
-```text
+```javascript
 $RG.regex('aaabbbccc', 'a+b{3}c*')
 
 //jsep supports string literals.

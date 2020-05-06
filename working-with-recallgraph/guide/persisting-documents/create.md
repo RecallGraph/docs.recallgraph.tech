@@ -76,7 +76,7 @@ Note that the corresponding `curl` command is also shown for the request, and yo
 
 The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
 
-```
+```text
 {
   "_id": "departments/44787802",
   "_key": "44787802",
@@ -92,7 +92,7 @@ We will use the _bulk_ method to create all employees at one go. The endpoint re
 2. We want to map the generated document `_ids` to the employee names. So we set `returnNew` to `true`.
 3. In the `body` field, enter the following JSON array:
 
-   ```
+   ```text
    [
     {
      "first_name": "Eric",
