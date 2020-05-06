@@ -30,7 +30,7 @@ After installation, once you login to the web console, you should see the servic
 
 ## Structure of this Guide
 
-**Note:** For all examples shown in the following sections, it is assumed that the service has been locally installed in a database named `evstore`, with mount point `/recallgraph`. This is purely for convenience, and does not in any way affect the API's behavior.
+**Note:** For all examples shown in the following sections, it is assumed that the service has been locally installed in a database named `acme_hrms`, with mount point `/recallgraph`. This is purely for convenience, and does not in any way affect the API's behavior.
 
 RecallGraph works by maintaining an internal log of all changes that its tracked documents \(vertices/edges\) have gone through. Based on this log, it supports point-in-time \(i.e. historical\) lookbacks, traversals and even weighted shortest path queries.
 
@@ -38,7 +38,7 @@ To aid with the examples, we will build a simple narrative of an organization's 
 
 To align with the logical sequence of entering data, scanning the logs to identify interesting events and time points, and finally running historical graph and document queries _as of_ those time points, the guide is structured into the following sections, in order:
 
-{% page-ref page="persisting-documents.md" %}
+{% page-ref page="persisting-documents/" %}
 
 {% page-ref page="analyzing-the-event-log.md" %}
 
