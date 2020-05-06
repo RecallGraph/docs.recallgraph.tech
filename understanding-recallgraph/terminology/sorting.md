@@ -10,7 +10,11 @@ The sorting attribute is dependent on the specific API endpoint, and the groupin
 
 For ungrouped results, the sorting attribute is a primary field of the members of the ungrouped intermediate result set \(for example, `ctime` or `_id`\). For grouped results, the sorting attribute is always the grouping attribute.
 
+{% hint style="info" %}
 Sorting clauses are applied within the DB query that is used to fetch intermediate results.
+{% endhint %}
 
+{% hint style="info" %}
 See the API docs for more details on attribute-specific sorting.
+{% endhint %}
 
