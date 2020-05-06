@@ -19,6 +19,7 @@
 * [Guide \(W.I.P.\)](working-with-recallgraph/guide/README.md)
   * [Persisting Documents](working-with-recallgraph/guide/persisting-documents/README.md)
     * [Create](working-with-recallgraph/guide/persisting-documents/create.md)
+    * [Replace](working-with-recallgraph/guide/persisting-documents/replace.md)
   * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log.md)
   * [Navigating History](working-with-recallgraph/guide/navigating-history.md)
 
