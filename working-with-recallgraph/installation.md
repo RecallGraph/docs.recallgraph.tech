@@ -12,7 +12,9 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
 1. Install [ArangoDB](https://www.arangodb.com/docs/stable/getting-started-installation.html) and create a database and a user with admin privileges for that database.
 2. Install the _Foxx CLI_:
 
-   `npm install --global foxx-cli`
+   ```bash
+   $ npm install --global foxx-cli
+   ```
 
 3. Assuming the database created in step 1 above is called `rgtest` and the admin user for that database is `rguser` having password `rgpasswd`, define a server endpoint for _Foxx CLI_:
 
