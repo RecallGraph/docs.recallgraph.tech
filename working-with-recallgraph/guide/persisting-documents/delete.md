@@ -44,9 +44,9 @@ In the Swagger console locate the tab with the ![](../../../.gitbook/assets/imag
 
 ```text
 //Query
-for e in employees
-filter e._key == '44799849'
-return e
+for r in reporting
+filter r._key == '44799849'
+return r
 
 Result
 []
