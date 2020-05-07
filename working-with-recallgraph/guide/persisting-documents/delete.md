@@ -40,7 +40,7 @@ In the Swagger console locate the tab with the ![](../../../.gitbook/assets/imag
 }
 ```
 
-## End Result
+### Intermediate Result
 
 ```text
 //Query
@@ -51,6 +51,12 @@ return r
 Result
 []
 ```
+
+![Kenny no longer reports to Eric. His department membership is yet to be removed.](../../../.gitbook/assets/examples-delete.png)
+
+### Removing the Department Membership Relation
+
+Similar to removing his reporting relation, we can remove his department membership relation. This is left as an exercise for the reader.
 
 {% hint style="success" %}
 Although not demonstrated in this example, this endpoint also supports bulk delete, similar to [`CREATE`](create.md#employee-information).
