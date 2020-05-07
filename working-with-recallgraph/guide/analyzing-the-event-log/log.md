@@ -37,6 +37,10 @@ The result obtained will have a structure as shown below. Your actual numbers ma
 
 This tells us that there have been a total of 27 events recorded in the system \(in the instance from which this result was pulled\). That looks a bit strange since we have not performed 27 write operations so far in our walkthrough.
 
+{% hint style="success" %}
+You can also use the `POST` variant to achieve the same results. In the `POST` variant, the `path` and the `postFilter` parameters are sent in the request body rather than as query parameters. This lets you specify large path patterns and/or filter expressions that would otherwise cause an `HTTP 414 URI Too Long` exception in the `GET` variant.
+{% endhint %}
+
 ### Counts by Type
 
 The root cause behind this anomaly cannot be determined from this singular number. Therefore, we decide to drill down a bit by using a more fine grained grouping clause. We split event counts by event type by using the parameters given below:
