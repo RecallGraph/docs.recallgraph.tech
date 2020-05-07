@@ -30,6 +30,7 @@ description: A record of what changed between successive versions
    1. Sort direction was not being honored in `log` when `groupBy` was specified. This has been fixed.
    2. Hard-coded service collection name in a query for `show` was removed.
    3. `traverse` no longer breaks if starting vertex is not found.
+   4. Fixed operation id for the `UPDATE` route, which was incorrectly marked as `replace`.
 
 ### Changed
 
