@@ -368,7 +368,7 @@ groupBy: node
 groupSort: asc
 ```
 
-No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect.
+No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect. Can you guess which method is generally faster?
 {% endhint %}
 
 Finally, we dig into events related to the `employees` collection.
@@ -565,6 +565,6 @@ groupBy: node
 groupSort: asc
 ```
 
-No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect.
+No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect. Can you guess which method is generally faster?
 {% endhint %}
 
