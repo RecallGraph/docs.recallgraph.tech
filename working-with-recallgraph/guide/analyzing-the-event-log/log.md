@@ -22,8 +22,8 @@ We don't know which events are of interest to us yet, so we begin with an ad hoc
 
 | Param | Value |
 | :--- | :--- |
-| countsOnly | true |
-| path | / |
+| `countsOnly` | `true` |
+| `path` | `/` |
 
 The result obtained will have a structure as shown below. Your actual numbers may vary. We will shortly see why.
 
@@ -47,9 +47,9 @@ The root cause behind this anomaly cannot be determined from this singular numbe
 
 | Param | Value |
 | :--- | :--- |
-| countsOnly | true |
-| groupBy | event |
-| path | / |
+| `countsOnly` | `true` |
+| `groupBy` | `event` |
+| `path` | `/` |
 
 We get the following result:
 
@@ -106,9 +106,9 @@ We split event counts by collection by using the parameters given below:
 
 | Param | Value |
 | :--- | :--- |
-| countsOnly | true |
-| groupBy | collection |
-| path | / |
+| `countsOnly` | `true` |
+| `groupBy` | `collection` |
+| `path` | `/` |
 
 We get the following result:
 
@@ -143,8 +143,8 @@ We fetch all events for the `departments` collection by using the parameters sho
 
 | Param | Value |
 | :--- | :--- |
-| path | /c/departments |
-| sort | asc |
+| `path` | `/c/departments` |
+| `sort` | `asc` |
 
 We get the following result:
 
@@ -215,9 +215,9 @@ We fetch event counts grouped by node for the `reporting` collection by using th
 
 | Param | Value |
 | :--- | :--- |
-| path | /c/reporting |
-| groupBy | node |
-| countsOnly | true |
+| `path` | `/c/reporting` |
+| `groupBy` | `node` |
+| `countsOnly` | `true` |
 
 We get the following result:
 
@@ -238,7 +238,7 @@ We get the following result:
 ]
 ```
 
-The two nodes with 1 event each seem to be in order, most likely representing the reporting relations between Kyle --&gt; Eric and Stan --&gt; Eric. We know that Kenny's reporting relationship had to undergo one modification, followed by a deletion. Including the initial creation, that should be a total of 3 events, but here we see 5. The next step is to drill down into this.
+The two nodes with 1 event each seem to be in order, most likely representing the reporting relations between `Kyle --> Eric` and `Stan --> Eric`. We know that Kenny's reporting relationship had to undergo one modification, followed by a deletion. Including the initial creation, that should be a total of 3 events, but here we see 5. The next step is to drill down into this.
 
 #### Post-Filtered Events
 
@@ -246,10 +246,10 @@ The ideal way to fetch events when node ids are known is to use the [node brace 
 
 | Param | Value |
 | :--- | :--- |
-| path | /c/reporting |
-| groupBy | node |
-| groupSort | asc |
-| postFilter | node === "reporting/44799849" |
+| `path` | `/c/reporting` |
+| `groupBy` | `node` |
+| `groupSort` | `asc` |
+| `postFilter` | `node === "reporting/44799849"` |
 
 We get the following result:
 
@@ -382,9 +382,9 @@ We fetch event counts grouped by node for the `employees` collection by using th
 
 | Param | Value |
 | :--- | :--- |
-| path | /c/employees |
-| groupBy | node |
-| countsOnly | true |
+| `path` | `/c/employees` |
+| `groupBy` | `node` |
+| `countsOnly` | `true` |
 
 We get the following result:
 
@@ -429,10 +429,10 @@ We use request parameters as shown below:
 
 | Param | Value |
 | :--- | :--- |
-| path | /c/employees |
-| groupBy | node |
-| groupSort | asc |
-| postFilter | !\(node =\* "employees/{44794449,44794453,44794457,44799683}" \) |
+| `path` | `/c/employees` |
+| `groupBy` | `node` |
+| `groupSort` | `asc` |
+| `postFilter` | `!(node =* "employees/{44794449,44794453,44794457,44799683}" )` |
 
 We get the following result:
 
