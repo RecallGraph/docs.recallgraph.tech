@@ -359,3 +359,212 @@ Note that events within a group are sorted in descending order in `ctime` by def
 
 As expected, we start with a `created` event and end with a `deleted` event. However, instead of 1 `updated` event, we have 3! What could have been modified in those extra 2 updates? We will find out when we explore the [`DIFF`](diff.md) endpoint.
 
+{% hint style="success" %}
+Executing `LOG` with the following parameters would yield the same result:
+
+```text
+path: /n/reporting/44799849
+groupBy: node
+groupSort: asc
+```
+
+No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect.
+{% endhint %}
+
+Finally, we dig into events related to the `employees` collection.
+
+### Employees
+
+#### Counts by Node
+
+We fetch event counts grouped by node for the `employees` collection by using the parameters shown below:
+
+| Param | Value |
+| :--- | :--- |
+| path | /c/employees |
+| groupBy | node |
+| countsOnly | true |
+
+We get the following result:
+
+```text
+[
+  {
+    "node": "employees/44794101",
+    "total": 2
+  },
+  {
+    "node": "employees/44794107",
+    "total": 2
+  },
+  {
+    "node": "employees/44794111",
+    "total": 2
+  },
+  {
+    "node": "employees/44794453",
+    "total": 2
+  },
+  {
+    "node": "employees/44799683",
+    "total": 2
+  },
+  {
+    "node": "employees/44794449",
+    "total": 1
+  },
+  {
+    "node": "employees/44794457",
+    "total": 1
+  }
+]
+```
+
+There are 7 employee records instead of the expected 4! We know the ids of the 4 employees we have been working with. Let us drill down into the events related to the remaining 3 mysterious employees. We will again use a post-filter to filter out nodes that are already known to us.
+
+### Post-Filtered Events
+
+We use request parameters as shown below:
+
+| Param | Value |
+| :--- | :--- |
+| path | /c/employees |
+| groupBy | node |
+| groupSort | asc |
+| postFilter | !\(node =\* "employees/{44794449,44794453,44794457,44799683}" \) |
+
+We get the following result:
+
+```text
+[
+  {
+    "node": "employees/44794111",
+    "events": [
+      {
+        "_key": "44794112",
+        "_id": "recallgraph_events/44794112",
+        "_rev": "_aclM0d2---",
+        "meta": {
+          "id": "employees/44794111",
+          "key": "44794111",
+          "rev": "_aclM0dy---"
+        },
+        "ctime": 1588765579.7735815,
+        "event": "created",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 2,
+        "hops-till-next-snapshot": 5,
+        "hops-from-origin": 1
+      },
+      {
+        "_key": "44794417",
+        "_id": "recallgraph_events/44794417",
+        "_rev": "_aclP1Oa---",
+        "meta": {
+          "id": "employees/44794111",
+          "key": "44794111",
+          "rev": "_aclM0dy---"
+        },
+        "ctime": 1588765777.157764,
+        "event": "deleted",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 3,
+        "hops-from-origin": 2
+      }
+    ]
+  },
+  {
+    "node": "employees/44794107",
+    "events": [
+      {
+        "_key": "44794108",
+        "_id": "recallgraph_events/44794108",
+        "_rev": "_aclM0dm---",
+        "meta": {
+          "id": "employees/44794107",
+          "key": "44794107",
+          "rev": "_aclM0di---"
+        },
+        "ctime": 1588765579.7697582,
+        "event": "created",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 2,
+        "hops-till-next-snapshot": 5,
+        "hops-from-origin": 1
+      },
+      {
+        "_key": "44794414",
+        "_id": "recallgraph_events/44794414",
+        "_rev": "_aclP1OK---",
+        "meta": {
+          "id": "employees/44794107",
+          "key": "44794107",
+          "rev": "_aclM0di---"
+        },
+        "ctime": 1588765777.1531398,
+        "event": "deleted",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 3,
+        "hops-from-origin": 2
+      }
+    ]
+  },
+  {
+    "node": "employees/44794101",
+    "events": [
+      {
+        "_key": "44794104",
+        "_id": "recallgraph_events/44794104",
+        "_rev": "_aclM0dK---",
+        "meta": {
+          "id": "employees/44794101",
+          "key": "44794101",
+          "rev": "_aclM0cq---"
+        },
+        "ctime": 1588765579.7554286,
+        "event": "created",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 2,
+        "hops-till-next-snapshot": 5,
+        "hops-from-origin": 1
+      },
+      {
+        "_key": "44794411",
+        "_id": "recallgraph_events/44794411",
+        "_rev": "_aclP1Nm---",
+        "meta": {
+          "id": "employees/44794101",
+          "key": "44794101",
+          "rev": "_aclM0cq---"
+        },
+        "ctime": 1588765777.142716,
+        "event": "deleted",
+        "collection": "employees",
+        "last-snapshot": "recallgraph_snapshots/origin-44778911",
+        "hops-from-last-snapshot": 3,
+        "hops-from-origin": 2
+      }
+    ]
+  }
+]
+```
+
+We now see that someone created 3 `employee` nodes, and for some reason subsequently deleted them. We will see how we can get a peek into the contents of these deleted nodes \(and possibly a motive behind deleting them\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint.
+
+{% hint style="success" %}
+We could also use the following parameters to get exactly the same results:
+
+```text
+path: /n/employees/{44794101,44794107,44794111}
+groupBy: node
+groupSort: asc
+```
+
+No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect.
+{% endhint %}
+
