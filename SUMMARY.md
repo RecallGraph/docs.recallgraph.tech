@@ -25,7 +25,10 @@
   * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log/README.md)
     * [Log](working-with-recallgraph/guide/analyzing-the-event-log/log.md)
     * [Diff](working-with-recallgraph/guide/analyzing-the-event-log/diff.md)
-  * [Navigating History](working-with-recallgraph/guide/navigating-history.md)
+  * [Navigating History](working-with-recallgraph/guide/navigating-history/README.md)
+    * [Show](working-with-recallgraph/guide/navigating-history/show.md)
+    * [Traverse](working-with-recallgraph/guide/navigating-history/traverse.md)
+    * [k Shortest Paths](working-with-recallgraph/guide/navigating-history/k-shortest-paths.md)
 
 ## External Links <a id="links"></a>
 
