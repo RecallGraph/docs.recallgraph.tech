@@ -16,3 +16,13 @@ All of RecallGraphs APIs are explored in this guide with the aid of a fictional 
 >
 > However, explosive tennis balls have a tendency to - well - explode, and so, Eric, out of prudence and concern for the safety of his production team, decides to hire a _Safety Officer_ who specializes in handling hazardous chemicals and flammable substances. After a quick search, they finalize on Kenny who has just recently been relieved of his duties at the last plant he was assigned to, since it had to shut down due to an unexplained fire that, as Kenny claimed, happened while he was on vacation. Eric gives him the benefit of the doubt and brings him on board.
 
+To align with the logical sequence of entering data, the reader is advised to go through the following sections, in order:
+
+{% page-ref page="create.md" %}
+
+{% page-ref page="replace.md" %}
+
+{% page-ref page="update.md" %}
+
+{% page-ref page="delete.md" %}
+
