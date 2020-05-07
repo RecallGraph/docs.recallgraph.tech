@@ -273,7 +273,11 @@ Now that the initial members and their relationships have been defined in the sy
 2. Adding department membership
 3. Adding reporting relationship.
 
-However, in a case of human error, Kenny was added as reporting to Kyle rather than Eric. The end result is shown below:
+However, in a case of human error, Kenny was added as reporting to Kyle rather than Eric. 
+
+## End Result
+
+The end result is shown below:
 
 ![Kenny reporting to Kyle is a data entry error.](../../../.gitbook/assets/examples-create-7.png)
 
