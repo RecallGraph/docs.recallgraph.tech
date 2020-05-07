@@ -423,7 +423,7 @@ We get the following result:
 
 There are 7 employee records instead of the expected 4! We know the ids of the 4 employees we have been working with. Let us drill down into the events related to the remaining 3 mysterious employees. We will again use a post-filter to filter out nodes that are already known to us.
 
-### Post-Filtered Events
+#### Post-Filtered Events
 
 We use request parameters as shown below:
 
