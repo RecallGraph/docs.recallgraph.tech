@@ -10,7 +10,7 @@ description: Delete single / multiple nodes.
 >
 > Of course, with so many tennis balls of the explosive kind lying around the place, they had to be careful not to inadvertently start playing with one of them \(Mr. Coyote had specifically asked for them to look, feel and weigh almost identical to real tennis balls\). But they were not worried, since they had a qualified Safety Officer to help with the matter.
 >
-> Kenny had always claimed to be extra careful in his handling of explosive material, and was super confident that the ball they had in hand was not of the explosive variety. Kyle and Stan were not too sure and asked if there was a way to check. Kenny, in a moment of absolute self-certainty, decided to give them a demonstration \(Kyle and Stan still insisted on keeping a safe distance, nevertheless\). Kenny proceeded to firmly grip the tennis ball and with all his might, flung it at the wall next to him.
+> Kenny had always claimed to be extra careful in his handling of explosive material, and was super confident that the ball they had in hand was not of the explosive variety. Kyle and Stan were not too sure and asked if there was a way to check. Kenny, in a moment of absolute self-certainty, decided to give them a demonstration \(Kyle and Stan still insisted on keeping a safe distance, nevertheless\). Kenny proceeded to firmly grip the tennis ball and with all his might, whacked it at the wall next to him.
 
 We will now explore how to delete entities through RecallGraph's API. Kenny, may his soul rest in peace, is no longer in the active employ of ACME Industries. We need to mark his employment duration as over, and dismantle his reporting relationship to Eric.
 
