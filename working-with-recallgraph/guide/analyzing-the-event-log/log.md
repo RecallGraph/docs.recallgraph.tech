@@ -137,7 +137,7 @@ Hmm, the `departments` collection has 3 events instead of the single create even
 
 ## Events for Collection
 
-### Departments \(No Aggregation\)
+### Departments
 
 We fetch all events for the `departments` collection by using the parameters shown below:
 
