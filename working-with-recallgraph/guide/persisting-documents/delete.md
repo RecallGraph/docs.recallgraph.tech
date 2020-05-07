@@ -12,7 +12,7 @@ description: Delete single / multiple nodes.
 >
 > Kenny had always claimed to be extra careful in his handling of explosive material, and was super confident that the ball they had in hand was not of the explosive variety. Kyle and Stan were not too sure and asked if there was a way to check. Kenny, in a moment of absolute self-certainty, decided to give them a demonstration \(Kyle and Stan still insisted on keeping a safe distance, nevertheless\). Kenny proceeded to firmly grip the tennis ball and with all his might, whacked it at the wall next to him.
 
-We will now explore how to delete entities through RecallGraph's API. Kenny, may his soul rest in peace, is no longer in the active employ of ACME Industries. We need to mark his employment duration as over, and dismantle his reporting relationship to Eric.
+We will now explore how to delete entities through RecallGraph's API. Kenny is no longer in the active employ of ACME Industries. We need to mark his employment duration as over, and dismantle his reporting relationship to Eric.
 
 {% hint style="info" %}
 The end of Kenny's employment can be marked using a a field named `leaving_date` in his personal data object. This can be done using the UPDATE endpoint as discussed earlier. Note that this too would be accompanied by a `valid_from` date if RecallGraph were bi-temporal. We will add it for now, nevertheless.
