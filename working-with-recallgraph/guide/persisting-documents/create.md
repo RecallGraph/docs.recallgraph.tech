@@ -55,7 +55,7 @@ Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%28
 
 In the `collection` field, fill in `departments` as we will enter the department first.
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%287%29.png)
 
 Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
 
@@ -274,6 +274,8 @@ Now that the initial members and their relationships have been defined in the sy
 3. Adding reporting relationship.
 
 However, in a case of human error, Kenny was added as reporting to Kyle rather than Eric. 
+
+![Kenny, the new Safety Officer](../../../.gitbook/assets/image%20%286%29.png)
 
 ## End Result
 
