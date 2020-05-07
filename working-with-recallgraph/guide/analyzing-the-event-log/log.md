@@ -14,7 +14,9 @@ Before proceeding with this section of the guide, make sure you have understood 
 The `LOG` endpoint is a very powerful and flexible querying tool with lots of option combinations, all of which cannot possibly be explored in this guide. However, hopefully, this guide will cover enough ground to make readers comfortable in exploring the rest of the options by themselves.
 {% endhint %}
 
-## All Events \(Count\)
+## All Events
+
+### Overall Count
 
 We don't know which events are of interest to us yet, so we begin with an ad hoc, exploratory analysis to get an idea of the number and types of events in the event log. We will use the `GET` variant here. The request parameters are shown below:
 
@@ -35,9 +37,9 @@ The result obtained will have a structure as shown below. Your actual numbers ma
 
 This tells us that there have been a total of 27 events recorded in the system \(in the instance from which this result was pulled\). That looks a bit strange since we have not performed 27 write operations so far in our walkthrough.
 
-## Events by Type \(Count\)
+### Counts by Type
 
-The root cause behind this anomaly cannot be determined from this singular number. Therefore, we decide to expand the result a bit by using a more fine grained grouping clause. We split event counts by event type by using the parameters given below:
+The root cause behind this anomaly cannot be determined from this singular number. Therefore, we decide to drill down a bit by using a more fine grained grouping clause. We split event counts by event type by using the parameters given below:
 
 | Param | Value |
 | :--- | :--- |
@@ -66,7 +68,7 @@ We get the following result:
 
 Now we're getting somewhere. Since we're dealing with a very small data set, we can easily keep track of how many legitimate create, update and delete operations we should have performed so far. These numbers are:
 
-### Expected Entity Creates
+#### Expected Entity Creates
 
 | Collection | Count |
 | :--- | ---: |
@@ -76,7 +78,7 @@ Now we're getting somewhere. Since we're dealing with a very small data set, we 
 | Reporting | 3 |
 | **Total** | **12** |
 
-### Expected Entity Updates
+#### Expected Entity Updates
 
 | Collection | Count |
 | :--- | ---: |
@@ -84,7 +86,7 @@ Now we're getting somewhere. Since we're dealing with a very small data set, we 
 | Reporting | 1 |
 | **Total** | **3** |
 
-### Expected Entity Deletes
+#### Expected Entity Deletes
 
 | Collection | Count |
 | :--- | ---: |
@@ -94,7 +96,7 @@ Now we're getting somewhere. Since we're dealing with a very small data set, we 
 
 Something fishy is going on here. There should be a total of only 17 events while we're getting 27 \(your number may vary or even be exactly 17 - we will see why\)! Let us run a grouping by collection to figure out where our tally goes out of sync.
 
-## Events by Collection \(Count\)
+### Counts by Collection
 
 We split event counts by collection by using the parameters given below:
 
@@ -129,7 +131,9 @@ We get the following result:
 
 Hmm, the `departments` collection has 3 events instead of the single create event that we would expect. Let's take a closer look.
 
-## Events for Collection \(No Aggregation\)
+## Events for Collection
+
+### Departments \(No Aggregation\)
 
 We fetch all events for the `departments` collection by using the parameters shown below:
 
@@ -190,6 +194,41 @@ We get the following result:
     "hops-from-last-snapshot": 2,
     "hops-till-next-snapshot": 5,
     "hops-from-origin": 1
+  }
+]
+```
+
+Now we have an answer! The last two events were a `create`, followed by a `delete` of the same node \(`departments/44787328`, see the `meta.id` field\). Someone created a department node, and for some reason subsequently deleted it. However RecallGraph remembers everything, and we will see how we can get a peek into the contents of this deleted node \(and possibly a motive behind deleting it\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint. For now, we know part of the answer to the discrepancy in the total count.
+
+We finish the exercise by similarly accessing the individual events for the `reporting` and the `employees` collections respectively \(`memberships` counts already match up\).
+
+### Reporting
+
+#### Counts by Node
+
+We fetch event counts grouped by node for the `reporting` collection by using the parameters shown below:
+
+| Param | Value |
+| :--- | :--- |
+| path | /c/reporting |
+| groupBy | node |
+| countsOnly | true |
+
+We get the following result:
+
+```text
+[
+  {
+    "node": "reporting/44799849",
+    "total": 5
+  },
+  {
+    "node": "reporting/44795731",
+    "total": 1
+  },
+  {
+    "node": "reporting/44795739",
+    "total": 1
   }
 ]
 ```
