@@ -17,7 +17,11 @@ In addition to reaping the benefits of living in graph databases, many real worl
 
 Particularly for graph databases, the concept of revisions applies not only to individual nodes and edges, but also to the structure of the graph as a whole, i.e. it should be relatively easy to store and retrieve not only individual document \(node/edge\) histories, but also the structural history of the graph or a portion of it. This is a key difference between a hypothetical versioned or historical graph database and a general purpose event store, which is usually tuned for the former but not the latter.
 
-There is a need for a practical, historical graph database that has the following minimal set of characteristics: 1. A mechanism for efficiently recording individual document \(node/edge\) writes \(creates/updates/deletes\) in such a way that they can be rewound and replayed. 1. An internal storage architecture that not only maintains the current structure of the graph, but also allows for a quick rebuild and retrieval of its structure at any point of time in the past. This could, optionally, be optimized to retrieve recent structures faster than older ones. 1. An efficient query engine that can traverse current/past graph structures to retrieve subgraphs or k-hop neighborhoods of specified nodes. In case of historical traversals, this should be optimized to rebuild only the relevant portions of the graph, where feasible.
+There is a need for a practical, historical graph database that has the following minimal set of characteristics:
+
+1. A mechanism for efficiently recording individual document \(node/edge\) writes \(creates/updates/deletes\) in such a way that they can be rewound and replayed.
+2. An internal storage architecture that not only maintains the current structure of the graph, but also allows for a quick rebuild and retrieval of its structure at any point of time in the past. This could, optionally, be optimized to retrieve recent structures faster than older ones.
+3. An efficient query engine that can traverse current/past graph structures to retrieve sub-graphs or k-hop neighborhoods of specified nodes. In case of historical traversals, this should be optimized to rebuild only the relevant portions of the graph, where feasible.
 
 ## About ArangoDB
 
