@@ -353,5 +353,5 @@ We get the following result:
 Note that events within a group are sorted in descending order in `ctime` by default, but we have reversed this order by using the `groupSort` parameter, so that now, the `created` event is listed at the top.
 {% endhint %}
 
-As expected, we start with a created event and end with a deleted event. However, instead of 1 updated event, we have 3! What could have been modified in those extra 2 updates? We will find out when we explore the [`DIFF`](diff.md) endpoint.
+As expected, we start with a `created` event and end with a `deleted` event. However, instead of 1 `updated` event, we have 3! What could have been modified in those extra 2 updates? We will find out when we explore the [`DIFF`](diff.md) endpoint.
 
