@@ -107,5 +107,3 @@ The order of operations that are applied to a result set with a request are as f
 
 All operations are explained in detail in the child pages that follow.
 
-
-
