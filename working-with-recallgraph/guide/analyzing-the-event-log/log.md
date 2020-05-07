@@ -66,7 +66,7 @@ We get the following result:
 ]
 ```
 
-Now we're getting somewhere. Since we're dealing with a very small data set, we can easily keep track of how many legitimate create, update and delete operations we should have performed so far. These numbers are:
+Now we're getting somewhere. Since we're dealing with a very small dataset, we can easily keep track of how many legitimate create, update and delete operations we should have performed so far. These numbers are:
 
 #### Expected Entity Creates
 
@@ -233,5 +233,125 @@ We get the following result:
 ]
 ```
 
+The two nodes with 1 event each seem to be in order, most likely representing the reporting relations between Kyle --&gt; Eric and Stan --&gt; Eric. We know that Kenny's reporting relationship had to undergo one modification, followed by a deletion. Including the initial creation, that should be a total of 3 events, but here we see 5. The next step is to drill down into this.
 
+#### Post-Filtered Events
+
+The ideal way to fetch events when node ids are known is to use the [node brace scope](../../../understanding-recallgraph/terminology/#node-brace-scope), but since this is a small dataset, we can get away with using the collection scope with a [post-filter](../../../understanding-recallgraph/terminology/post-filters.md), just to give an example of post-filter usage. We use request parameters as shown below:
+
+| Param | Value |
+| :--- | :--- |
+| path | /c/reporting |
+| groupBy | node |
+| groupSort | asc |
+| postFilter | node === "reporting/44799849" |
+
+We get the following result:
+
+```text
+[
+  {
+    "node": "reporting/44799849",
+    "events": [
+      {
+        "_key": "44799850",
+        "_id": "recallgraph_events/44799850",
+        "_rev": "_acmHVwO--A",
+        "meta": {
+          "id": "reporting/44799849",
+          "key": "44799849",
+          "rev": "_acmHVwO---",
+          "from": "employees/44799683",
+          "to": "employees/44794457"
+        },
+        "ctime": 1588769414.948146,
+        "event": "created",
+        "collection": "reporting",
+        "last-snapshot": "recallgraph_snapshots/origin-44778934",
+        "hops-from-last-snapshot": 2,
+        "hops-till-next-snapshot": 5,
+        "hops-from-origin": 1
+      },
+      {
+        "_key": "44801785",
+        "_id": "recallgraph_events/44801785",
+        "_rev": "_acmbKtO---",
+        "meta": {
+          "id": "reporting/44799849",
+          "key": "44799849",
+          "rev": "_acmbKt---_",
+          "oldRev": "_acmHVwO---",
+          "toNew": "employees/44794449",
+          "toOld": "employees/44794457"
+        },
+        "ctime": 1588770714.352307,
+        "event": "updated",
+        "collection": "reporting",
+        "last-snapshot": "recallgraph_snapshots/origin-44778934",
+        "hops-from-last-snapshot": 3,
+        "hops-till-next-snapshot": 4,
+        "hops-from-origin": 2
+      },
+      {
+        "_key": "44802064",
+        "_id": "recallgraph_events/44802064",
+        "_rev": "_acmeCcm---",
+        "meta": {
+          "id": "reporting/44799849",
+          "key": "44799849",
+          "rev": "_acmeCcG--_",
+          "oldRev": "_acmbKt---_"
+        },
+        "ctime": 1588770902.498967,
+        "event": "updated",
+        "collection": "reporting",
+        "last-snapshot": "recallgraph_snapshots/origin-44778934",
+        "hops-from-last-snapshot": 4,
+        "hops-till-next-snapshot": 3,
+        "hops-from-origin": 3
+      },
+      {
+        "_key": "44802110",
+        "_id": "recallgraph_events/44802110",
+        "_rev": "_acmeb3a---",
+        "meta": {
+          "id": "reporting/44799849",
+          "key": "44799849",
+          "rev": "_acmeb3S--_",
+          "oldRev": "_acmeCcG--_"
+        },
+        "ctime": 1588770928.5333633,
+        "event": "updated",
+        "collection": "reporting",
+        "last-snapshot": "recallgraph_snapshots/origin-44778934",
+        "hops-from-last-snapshot": 5,
+        "hops-till-next-snapshot": 2,
+        "hops-from-origin": 4
+      },
+      {
+        "_key": "44869570",
+        "_id": "recallgraph_events/44869570",
+        "_rev": "_acxc0_C---",
+        "meta": {
+          "id": "reporting/44799849",
+          "key": "44799849",
+          "rev": "_acmeb3S--_"
+        },
+        "ctime": 1588816959.5006447,
+        "event": "deleted",
+        "collection": "reporting",
+        "last-snapshot": "recallgraph_snapshots/origin-44778934",
+        "hops-from-last-snapshot": 6,
+        "hops-from-origin": 5
+      }
+    ]
+  }
+]
+```
+
+{% hint style="info" %}
+Note that events within a group are sorted in descending order in `ctime` by default, but we have reversed this order by using the `groupSort` parameter, so that now, the `created` event is listed at the top.
+{% endhint %}
+
+As expected, we start with a created event and end with a deleted event. However, instead of 1 updated event, we have 3! What could have been modified in those extra 2 updates? We will find out when we explore the [`DIFF`](diff.md) endpoint.
 
