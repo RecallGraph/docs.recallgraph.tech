@@ -53,3 +53,25 @@ One of `_key` or `_id` would still need to be present.
 }
 ```
 
+## End Result
+
+```text
+//Query
+for e in employees
+filter e._key == '44794453'
+return e
+
+//Result
+[
+  {
+    "_key": "44794453",
+    "_id": "employees/44794453",
+    "_rev": "_acx_g1C--_",
+    "first_name": "Stan",
+    "last_name": "Marsh",
+    "role": "Senior Plant Manager",
+    "valid_from": "2020-05-07"
+  }
+]
+```
+
