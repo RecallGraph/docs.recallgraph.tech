@@ -6,7 +6,7 @@ description: 'Creating, updating and deleting vertices and edges.'
 
 RecallGraph can only track history for nodes \(vertices /edges\) that are persisted through its _write_ APIs. This is because it needs to update the event log every time a node is written \(created / updated / deleted\). If a node is written through any means outside of RecallGraph's scope, it has no way of knowing, and hence its event log would fall out of sync with the node's data.
 
-RecallGraph supports 4 write endpoints - one each for create, update, replace and delete respectively. These endpoints support both individual as well as bulk node writes, and are purposely kept semantically as close to ArangoDB's core CRUD REST APIs as possible.
+RecallGraph supports 4 write endpoints - one each for create, update, replace and delete operations respectively. These endpoints support both individual as well as bulk node writes, and are purposely kept semantically as close to ArangoDB's core CRUD REST APIs as possible.
 
 ## **The Story**
 
