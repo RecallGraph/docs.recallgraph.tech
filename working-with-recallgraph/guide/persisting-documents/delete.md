@@ -52,3 +52,7 @@ Result
 []
 ```
 
+{% hint style="success" %}
+Although not demonstrated in this example, this endpoint also supports bulk delete, similar to [`CREATE`](create.md#employee-information).
+{% endhint %}
+
