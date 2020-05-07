@@ -51,11 +51,11 @@ Once inside, click on the first green bar _\_marked_ ![](../../../.gitbook/asset
 
 ![](../../../.gitbook/assets/examples-create-3.png)
 
-Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%283%29.png) button. You will now be presented with a form containing fields that map to request parameters for the `POST` request.
+Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%284%29.png) button. You will now be presented with a form containing fields that map to request parameters for the `POST` request.
 
 In the `collection` field, fill in `departments` as we will enter the department first.
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../.gitbook/assets/image%20%286%29.png)
 
 Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
 
@@ -68,7 +68,7 @@ Next, jump straight to the `body` field and here we can fill in any valid JSON o
 
 Next click on the `Execute` button and see the result. We should see a response similar to:
 
-![201: The department vertex was successfully created.](../../../.gitbook/assets/image%20%281%29.png)
+![201: The department vertex was successfully created.](../../../.gitbook/assets/image%20%282%29.png)
 
 {% hint style="info" %}
 Note that the corresponding `curl` command is also shown for the request, and you can use it to achieve the same result.
