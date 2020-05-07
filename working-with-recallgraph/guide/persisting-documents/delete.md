@@ -58,6 +58,12 @@ Result
 
 Similar to removing his reporting relation, we can remove his department membership relation. This is left as an exercise for the reader.
 
+## End Result
+
+The end result should look exactly like it [looked as in the `CREATE` operation](create.md#intermediate-result), just before adding any information on Kenny.
+
+![Kenny is no longer seen in the graph.](../../../.gitbook/assets/examples-create-6.png)
+
 {% hint style="success" %}
 Although not demonstrated in this example, this endpoint also supports bulk delete, similar to [`CREATE`](create.md#employee-information).
 {% endhint %}
