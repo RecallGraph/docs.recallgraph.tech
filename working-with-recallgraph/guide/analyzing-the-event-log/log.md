@@ -144,21 +144,22 @@ We fetch all events for the `departments` collection by using the parameters sho
 | Param | Value |
 | :--- | :--- |
 | path | /c/departments |
+| sort | asc |
 
 We get the following result:
 
 ```text
 [
   {
-    "_key": "44787803",
-    "_id": "recallgraph_events/44787803",
-    "_rev": "_ackLRwq---",
+    "_key": "44787331",
+    "_id": "recallgraph_events/44787331",
+    "_rev": "_ackGsY2---",
     "meta": {
-      "id": "departments/44787802",
-      "key": "44787802",
-      "rev": "_ackLRwW---"
+      "id": "departments/44787328",
+      "key": "44787328",
+      "rev": "_ackGsYm---"
     },
-    "ctime": 1588761284.3908088,
+    "ctime": 1588760983.9785848,
     "event": "created",
     "collection": "departments",
     "last-snapshot": "recallgraph_snapshots/origin-44778885",
@@ -183,15 +184,15 @@ We get the following result:
     "hops-from-origin": 2
   },
   {
-    "_key": "44787331",
-    "_id": "recallgraph_events/44787331",
-    "_rev": "_ackGsY2---",
+    "_key": "44787803",
+    "_id": "recallgraph_events/44787803",
+    "_rev": "_ackLRwq---",
     "meta": {
-      "id": "departments/44787328",
-      "key": "44787328",
-      "rev": "_ackGsYm---"
+      "id": "departments/44787802",
+      "key": "44787802",
+      "rev": "_ackLRwW---"
     },
-    "ctime": 1588760983.9785848,
+    "ctime": 1588761284.3908088,
     "event": "created",
     "collection": "departments",
     "last-snapshot": "recallgraph_snapshots/origin-44778885",
@@ -202,7 +203,7 @@ We get the following result:
 ]
 ```
 
-Now we have an answer! The last two events were a `create`, followed by a `delete` of the same node \(`departments/44787328`, see the `meta.id` field\). Someone created a department node, and for some reason subsequently deleted it. However RecallGraph remembers everything, and we will see how we can get a peek into the contents of this deleted node \(and possibly a motive behind deleting it\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint. For now, we know part of the answer to the discrepancy in the total count.
+Now we have an answer! The first two events were a `created`, followed by a `deleted` of the same node \(`departments/44787328`, see the `meta.id` field\). Someone created a department node, and for some reason subsequently deleted it. However RecallGraph remembers everything, and we will see how we can get a peek into the contents of this deleted node \(and possibly a motive behind deleting it\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint. For now, we know part of the answer to the discrepancy in the total count.
 
 We finish the exercise by similarly accessing the individual events for the `reporting` and the `employees` collections respectively \(`memberships` counts already match up\).
 
