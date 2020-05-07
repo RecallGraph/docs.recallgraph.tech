@@ -5,7 +5,7 @@ description: >-
   and temporal database constructs.
 ---
 
-# Background
+# Background \(W.I.P.\)
 
 ## What are Graph Databases?
 
