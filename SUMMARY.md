@@ -22,7 +22,9 @@
     * [Replace](working-with-recallgraph/guide/persisting-documents/replace.md)
     * [Update](working-with-recallgraph/guide/persisting-documents/update.md)
     * [Delete](working-with-recallgraph/guide/persisting-documents/delete.md)
-  * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log.md)
+  * [Analyzing the Event Log](working-with-recallgraph/guide/analyzing-the-event-log/README.md)
+    * [Log](working-with-recallgraph/guide/analyzing-the-event-log/log.md)
+    * [Diff](working-with-recallgraph/guide/analyzing-the-event-log/diff.md)
   * [Navigating History](working-with-recallgraph/guide/navigating-history.md)
 
 ## External Links <a id="links"></a>

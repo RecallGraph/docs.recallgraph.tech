@@ -46,7 +46,7 @@ To align with the logical sequence of entering data, scanning the logs to identi
 
 {% page-ref page="persisting-documents/" %}
 
-{% page-ref page="analyzing-the-event-log.md" %}
+{% page-ref page="analyzing-the-event-log/" %}
 
 {% page-ref page="navigating-history.md" %}
 
