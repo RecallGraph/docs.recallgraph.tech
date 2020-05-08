@@ -8,7 +8,7 @@ description: >-
 
 ## The Story So Far...
 
-> All necessary updates have been made to the HRMS after the incident at the plant. Now, as part of the investigation behind the incident, an auditor is called over to go over all records with a fine-toothed comb. He is particularly adamant on going through all historic records and changes over time to make sure no detail, however minute, is missed. Lucky for Eric, his HRMS uses RecallGraph under the hood. **Rewinding and replaying historic data is precisely what RecallGraph is built to do!**
+> All necessary updates have been made to the HRMS after the incident at the plant. Now, as part of the investigation behind the incident, an auditor is called over to go through all records with a fine-toothed comb. He is particularly adamant on having access to all historic records and changes over time to make sure no detail, however minute, is missed. Lucky for Eric, his HRMS uses RecallGraph under the hood. **Rewinding and replaying historic data is precisely what RecallGraph is built to do!**
 
 ![This auditor doesn&apos;t fool around.](../../../.gitbook/assets/image%20%288%29.png)
 
