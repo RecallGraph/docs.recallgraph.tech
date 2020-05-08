@@ -412,9 +412,8 @@ Finally, let's go back in time to a point when all was well, before Kenny had jo
 
 ## The Conclusion
 
-> All is well in ACME land \(the manufacturing unit, anyway\) again. Dogbert has left the premises for good \(but not before inking a sweet deal for his background-checking agency\) and all 10000 explosive tennis balls have been produced and shipped to Mr. Coyote. Eric has a few minutes of spare time to himself \(until the next batch of orders comes through\), these moments are spent wondering, for the first time, what use anyone would have for explosive tennis balls in the first place. If you're wondering the same thing, wonder no more. Take a look at the live demonstration below \(6:14\):
-
-{% embed url="https://www.dailymotion.com/video/x569rr7" %}
+> All is well in ACME land \(the manufacturing unit, anyway\) again. Dogbert has left the premises for good \(but not before inking a sweet deal for his background-checking agency\) and all 10000 explosive tennis balls have been produced and shipped to Mr. Coyote. Eric has a few minutes of spare time to himself \(until the next batch of orders comes through\), these moments are spent wondering, for the first time, what use anyone would have for explosive tennis balls in the first place. If you're wondering the same thing, wonder no more. See the live demo at [https://dai.ly/x569rr7](
+> https://dai.ly/x569rr7) \(6:14\).
 
 
 
