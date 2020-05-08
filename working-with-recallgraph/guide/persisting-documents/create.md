@@ -87,41 +87,7 @@ We will use the _bulk mode_ to create all employees in one go. The endpoint rema
 
 1. In the `collections` field, enter `employees`.
 2. We want to map the generated document `_ids` to the employee names. So we set `returnNew` to `true`.
-3. In the `body` field, enter the following **JSON array**:  
-   `[`
-
-     `{`
-
-     `"first_name": "Eric",`
-
-     `"last_name": "Cartman",`
-
-     `"role": "Unit Supervisor"`
-
-     `},`
-
-     `{`
-
-     `"first_name": "Stan",`
-
-     `"last_name": "Marsh",`
-
-     `"role": "Plant Manager"`
-
-     `},`
-
-     `{`
-
-     `"first_name": "Kyle",`
-
-     `"last_name": "Broflovski",`
-
-     `"role": "Plant Manager"`
-
-     `}`
-
-   `]`
-
+3. In the `body` field, enter the following **JSON array**: `[   {     "first_name": "Eric",     "last_name": "Cartman",     "role": "Unit Supervisor"   },   {     "first_name": "Stan",     "last_name": "Marsh",     "role": "Plant Manager"   },   {     "first_name": "Kyle",     "last_name": "Broflovski",     "role": "Plant Manager"   } ]`
 4. Hit the `Execute` button to get a result similar to:
 
    ```text
@@ -176,26 +142,10 @@ Now that employees have been added to the database, we need to make them all bel
 
 **Request similar to:**
 
-`collection`: `membership`
-
-`body`:
-
-```text
-[
-  {
-    "_from": "employees/44794449",
-    "_to": "departments/44787802"
-  },
-  {
-    "_from": "employees/44794453",
-    "_to": "departments/44787802"
-  },
-  {
-    "_from": "employees/44794457",
-    "_to": "departments/44787802"
-  }
-]
-```
+| **Param** | Value |
+| :--- | :--- |
+| `collection` | `membership` |
+| `body` | `[   {     "_from": "employees/44794449",     "_to": "departments/44787802"   },   {     "_from": "employees/44794453",     "_to": "departments/44787802"   },   {     "_from": "employees/44794457",     "_to": "departments/44787802"   } ]` |
 
 **Response similar to:**
 
