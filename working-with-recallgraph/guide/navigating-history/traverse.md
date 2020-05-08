@@ -10,9 +10,9 @@ description: >-
 
 > Dogbert, the auditor, has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, the new intern from the IT department, Asok, very nearly escaped with his job intact, albeit with a strong reprimand \(on record\).
 >
-> Eric, the Unit Supervisor hasn't had it easy either. He is currently under the scanner for his lax due diligence while hiring what turned out be an unqualified Safety Officer. Kenny, it was discovered, had faked his certificates. This lapse could have been easily avoided, had Eric had the foresight to hire a background-checking agency.
+> Eric, the Unit Supervisor, hasn't had it easy either. He is currently under the scanner for his lax due diligence while hiring what turned out be an unqualified Safety Officer. Kenny had faked his certificates! This lapse could have been easily avoided, had Eric had the foresight to hire a background-checking agency.
 >
-> Coincidentally, Dogbert is on the board of directors for one such agency, and has expressed his intention to strongly recommend mandatory background checks for new hires to the company management \(no doubt as an unbiased 3rd party\).
+> Incidentally, Dogbert is on the board of directors of just such an agency, and has expressed his intention to strongly recommend mandatory background checks for new hires to the company management \(no doubt as an unbiased 3rd party\).
 >
 > Eric can't wait to see the last of this pesky auditor, and does all he can to expedite the ongoing investigation.
 
