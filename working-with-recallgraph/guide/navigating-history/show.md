@@ -290,5 +290,5 @@ It all matches up!
 >
 > Dogbert's work here is nearly done. As a final item in his checklist, he asks to see the state of the org hierarchy at a few important time points. We will cover this in the next section, where we explore the [`TRAVERSE`](traverse.md) endpoint.
 
-![Asok does not handle infinite recursions very well.](../../../.gitbook/assets/image%20%287%29.png)
+![Asok the intern, in the middle of an infinite recursion.](../../../.gitbook/assets/image%20%287%29.png)
 
