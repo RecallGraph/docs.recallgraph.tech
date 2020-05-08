@@ -288,7 +288,7 @@ It all matches up!
 >
 > Dogbert realizes that this is no one's fault \(except to an extent, Asok's boss who sent an untrained intern over to operate a complex production system\), and poor Asok is let off the hook. However, he is sternly advised to [RTFM](https://en.wikipedia.org/wiki/RTFM) before touching the system further, and is pointed to the excellent documentation hosted at [https://docs.recallgraph.tech/](https://docs.recallgraph.tech/), that has a well-written guide with a realistic \(and eerily familiar\) storyline to help him learn the ropes.
 >
-> Dogbert's work here is done, but as a final item in his checklist, he asks to see the state of the org hierarchy at a few important time points. We will cover this in the next section, where we explore the [`TRAVERSE`](traverse.md) endpoint.
+> Dogbert's work here is nearly done. As a final item in his checklist, he asks to see the state of the org hierarchy at a few important time points. We will cover this in the next section, where we explore the [`TRAVERSE`](traverse.md) endpoint.
 
 ![Asok does not handle infinite recursions very well.](../../../.gitbook/assets/image%20%287%29.png)
 
