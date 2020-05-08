@@ -6,7 +6,7 @@ description: Delete single / multiple nodes.
 
 ## The Story So Far...
 
-> All is well in ACME Industries. Production is running at blinding speed and the shipment of 10000 explosive tennis balls is nearly ready. One day, near the end of this production cycle, Stan and Kyle had a few hours to kill after lunch, so they decide to spend it playing their favorite sport - Tennis!
+> All is well in ACME Inc. Production is running at blinding speed and the shipment of 10000 explosive tennis balls is nearly ready. One day, near the end of this production cycle, Stan and Kyle had a few hours to kill after lunch, so they decide to spend it playing their favorite sport - Tennis!
 >
 > Of course, with so many tennis balls of the explosive kind lying around the place, they had to be careful not to inadvertently start playing with one of them \(Mr. Coyote had specifically asked for them to look, feel and weigh almost identical to real tennis balls\). But they were not worried, since they had a qualified Safety Officer to help with the matter.
 >
