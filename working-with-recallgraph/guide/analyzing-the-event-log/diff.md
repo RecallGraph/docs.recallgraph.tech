@@ -14,6 +14,8 @@ The offending edge in question had the `_id` `reporting/44799849`.
 We will use the `GET` variant of the `DIFF` endpoint in this guide, although the `POST` variant can also be used to achieve the same results.
 {% endhint %}
 
+## Diffs in Node-Brace Scope
+
 Since we're only interested in fetching [diffs](../../../understanding-recallgraph/terminology/#diff) for a single entity, we will use the [node-brace scope](../../../understanding-recallgraph/terminology/#node-brace-scope) here, which is the most efficient [pre-filter](../../../understanding-recallgraph/terminology/pre-filters.md) to use when node ids are known beforehand.
 
 Since we're only interested in the `updated` events, we will omit the `created` and `deleted` events by using upper and lower time-bounds in the pre-filters:
@@ -121,6 +123,8 @@ We can get these values from the event log described in the [last section](log.m
 ```
 
 We can see the diffs, grouped by node \(in this case, there's only one node\), with each group containing a list of event in chronological order, followed by a list of [commands](../../../understanding-recallgraph/terminology/#command) corresponding to each event. These co are listed in the [JSON Patch \(RFC6902\)](https://tools.ietf.org/html/rfc6902) format, and are human-readable.
+
+## Conclusion
 
 We see that the first diff is the one that effected a change in reporting structure, replacing the `_to` destination from Kyle to Eric. The remaining two commands did not record anything significant. They have been executed by the HRMS operator with no content changes, and so have no impact on the actual edge.
 
