@@ -8,7 +8,7 @@ description: >-
 
 ## The Story So Far...
 
-> Dogbert, the auditor, has been asking some very difficult and uncomfortable questions ever since he arrived at the plant. Just recently, the new intern of the IT department, Asok, very nearly escaped with his job intact, albeit with a strong reprimand \(on record\).
+> Dogbert, the auditor, has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, the new intern of the IT department, Asok, very nearly escaped with his job intact, albeit with a strong reprimand \(on record\).
 >
 > Eric, the Unit Supervisor hasn't had it easy either. He is currently under the scanner for his apparent lack of due diligence while hiring what turned out be an unqualified Safety Officer \(Kenny, it was uncovered, had faked his certificates\) - an easily avoidable blunder, if only he had had the foresight to hire a background-checking agency.
 >
