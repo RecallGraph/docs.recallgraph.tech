@@ -8,7 +8,7 @@ description: Update single / multiple nodes.
 
 > Kenny has joined the manufacturing department as the Safety Officer in-charge, and all employee entries are now correctly recorded in the HRMS.
 >
-> It is the annual appraisal time, and Stan has been working extra hard the last few weeks to stay on the good books of Eric. Eric has taken note of this and has decided to promote Stan to the rank of _Senior Plant Manager_. Kyle is not too happy about this, since he too has been going the extra mile in hopes of earning that promotion, but alas, he failed to make his efforts adequately visible to Eric. Bummer, but Kyle has learnt a few tricks by observing Stan, so there's still hope for next time.
+> It is now annual appraisal time, and Stan has been working extra hard the last few weeks to stay on the good books of Eric. Eric has taken note of this and has decided to promote Stan to the rank of _Senior Plant Manager_. Kyle is not too happy about this, since he too has been going the extra mile in hopes of earning that promotion, but alas, he failed to make his efforts adequately visible to Eric. Bummer, but Kyle has learnt a few tricks by observing Stan, so there's still hope for next time.
 
 We need to update Stan's role in the HRMS. However, we note that it is not enough to just update the role, although RecallGraph will track history for the change - we need to also somehow keep track of the _effective date_ from which his promotion is valid. In real-world scenarios, this may not be the same as the time of entry of the new information, which may be done preemptively or retroactively.
 
