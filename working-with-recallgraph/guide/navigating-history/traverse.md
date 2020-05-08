@@ -225,3 +225,182 @@ Response:
 
 Here, we see Kenny's node present in the result, along with both its connections \(`reporting` and `membership`\).
 
+## When Kenny was 'Reporting' to Kyle
+
+Let's look at the state of the graph when Kenny incorrectly marked as reporting to Kyle. The request parameters are left as an exercise for the reader to work out. The response is shown below:
+
+```text
+{
+  "vertices": [
+    {
+      "org": "ACME Inc.",
+      "name": "Manufacturing",
+      "_rev": "_ackLRwW---",
+      "_id": "departments/44787802",
+      "_key": "44787802"
+    },
+    {
+      "role": "Unit Supervisor",
+      "last_name": "Cartman",
+      "first_name": "Eric",
+      "_rev": "_aclQHR6---",
+      "_id": "employees/44794449",
+      "_key": "44794449"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Marsh",
+      "first_name": "Stan",
+      "_rev": "_aclQHSa---",
+      "_id": "employees/44794453",
+      "_key": "44794453"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Broflovski",
+      "first_name": "Kyle",
+      "_rev": "_aclQHSm---",
+      "_id": "employees/44794457",
+      "_key": "44794457"
+    },
+    {
+      "role": "Safety Officer",
+      "last_name": "McCormick",
+      "first_name": "Kenny",
+      "_rev": "_acmFz6u---",
+      "_id": "employees/44799683",
+      "_key": "44799683"
+    }
+  ],
+  "edges": [
+    {
+      "_rev": "_aclYlUy---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794449",
+      "_id": "membership/44795272",
+      "_key": "44795272"
+    },
+    {
+      "_rev": "_aclYlVu---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794453",
+      "_id": "membership/44795280",
+      "_key": "44795280"
+    },
+    {
+      "_rev": "_aclYlWC---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794457",
+      "_id": "membership/44795286",
+      "_key": "44795286"
+    },
+    {
+      "_rev": "_acmGvEa---",
+      "_to": "departments/44787802",
+      "_from": "employees/44799683",
+      "_id": "membership/44799786",
+      "_key": "44799786"
+    },
+    {
+      "_rev": "_acldI2S---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794453",
+      "_id": "reporting/44795731",
+      "_key": "44795731"
+    },
+    {
+      "_rev": "_acldI3i---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794457",
+      "_id": "reporting/44795739",
+      "_key": "44795739"
+    },
+    {
+      "_rev": "_acmHVwO---",
+      "_to": "employees/44794457",
+      "_from": "employees/44799683",
+      "_id": "reporting/44799849",
+      "_key": "44799849"
+    }
+  ]
+}
+```
+
+## Before Kenny Joined
+
+Finally, let's go back in time to a point when all was well, before Kenny had joined the team. The result would be:
+
+```text
+{
+  "vertices": [
+    {
+      "org": "ACME Inc.",
+      "name": "Manufacturing",
+      "_rev": "_ackLRwW---",
+      "_id": "departments/44787802",
+      "_key": "44787802"
+    },
+    {
+      "role": "Unit Supervisor",
+      "last_name": "Cartman",
+      "first_name": "Eric",
+      "_rev": "_aclQHR6---",
+      "_id": "employees/44794449",
+      "_key": "44794449"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Marsh",
+      "first_name": "Stan",
+      "_rev": "_aclQHSa---",
+      "_id": "employees/44794453",
+      "_key": "44794453"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Broflovski",
+      "first_name": "Kyle",
+      "_rev": "_aclQHSm---",
+      "_id": "employees/44794457",
+      "_key": "44794457"
+    }
+  ],
+  "edges": [
+    {
+      "_rev": "_aclYlUy---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794449",
+      "_id": "membership/44795272",
+      "_key": "44795272"
+    },
+    {
+      "_rev": "_aclYlVu---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794453",
+      "_id": "membership/44795280",
+      "_key": "44795280"
+    },
+    {
+      "_rev": "_aclYlWC---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794457",
+      "_id": "membership/44795286",
+      "_key": "44795286"
+    },
+    {
+      "_rev": "_acldI2S---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794453",
+      "_id": "reporting/44795731",
+      "_key": "44795731"
+    },
+    {
+      "_rev": "_acldI3i---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794457",
+      "_id": "reporting/44795739",
+      "_key": "44795739"
+    }
+  ]
+```
+
