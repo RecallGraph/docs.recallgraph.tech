@@ -6,6 +6,12 @@ description: >-
 
 # Log
 
+## The Story So Far...
+
+All necessary updates have been made to the HRMS after the incident at the plant. Now, as part of the investigation behind the incident, an auditor is called over to go over all records with a fine-toothed comb. He is particularly adamant on going through all historic records and changes over time to make sure no detail, however minute, is missed. Lucky for Eric, his HRMS uses RecallGraph under the hood. Rewinding and replaying historic data is precisely what it was built for!
+
+![This auditor doesn&apos;t fool around.](../../../.gitbook/assets/image%20%288%29.png)
+
 {% hint style="info" %}
 Before proceeding with this section of the guide, make sure you have understood the concepts of [patterns](../../../understanding-recallgraph/terminology/#patterns), [scopes](../../../understanding-recallgraph/terminology/#scopes) and [paths](../../../understanding-recallgraph/terminology/#path), explained in the [terminology](../../../understanding-recallgraph/terminology/) page.
 {% endhint %}
