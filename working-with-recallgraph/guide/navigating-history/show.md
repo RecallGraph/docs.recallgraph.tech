@@ -284,11 +284,11 @@ It all matches up!
 
 ## The Closing Chapters
 
-> Looks like the HRMS operator has a few questions to answer. Dogbert, the auditor, calls him in. It turns out, the operator, named Asok, is just an intern, fresh out of college, and this was his first assignment. He was confused and it took some fumbling around with the system before he got the hang of it. Those deleted nodes were just Asok playing around, trying to understand its myriad options.
+> Looks like the HRMS operator has a few questions to answer. Dogbert, the auditor, calls him in. Turns out the operator is just an intern, fresh out of college, and this was his first assignment. He was confused and it took some fumbling around with the system before he got the hang of it. Those deleted nodes were just him playing around, trying to understand its myriad options.
 >
-> Dogbert realizes that this is no one's fault \(except to an extent, Asok's boss who sent an untrained intern over to operate a complex production system\), and poor Asok is let off the hook. However, he is sternly advised to [RTFM](https://en.wikipedia.org/wiki/RTFM) before touching the system further, and is pointed to the excellent documentation hosted at [https://docs.recallgraph.tech/](https://docs.recallgraph.tech/), that has a well-written guide with a realistic \(and eerily familiar\) storyline to help him learn the ropes.
+> Dogbert realizes that this is no one's fault \(except, perhaps, the IT manager who sent an untrained intern over to operate a complex production system\), and the poor rookie is let off the hook. However, he is sternly advised to [RTFM](https://en.wikipedia.org/wiki/RTFM) before touching the system further, and is pointed to the excellent documentation hosted at [https://docs.recallgraph.tech/](https://docs.recallgraph.tech/), that has a well-written guide with a realistic \(and eerily familiar\) storyline to help him learn the ropes.
 >
 > Dogbert's work here is nearly done. As a final item in his checklist, he asks to see the state of the org hierarchy at a few important time points. We will cover this in the next section, where we explore the [`TRAVERSE`](traverse.md) endpoint.
 
-![Asok the intern, in the middle of an infinite recursion.](../../../.gitbook/assets/image%20%287%29.png)
+![Asok the intern, working through an infinite recursion.](../../../.gitbook/assets/image%20%287%29.png)
 
