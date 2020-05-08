@@ -124,7 +124,7 @@ We can get these values from the event log described in the [last section](log.m
 ]
 ```
 
-We can see the diffs, grouped by node \(in this case, there's only one node\), with each group containing a list of event in chronological order, followed by a list of [commands](../../../understanding-recallgraph/terminology/#command) corresponding to each event. These co are listed in the [JSON Patch \(RFC6902\)](https://tools.ietf.org/html/rfc6902) format, and are human-readable.
+We can see the diffs, grouped by node \(in this case, there's only one node\), with each group containing a list of event in chronological order, followed by a list of [commands](../../../understanding-recallgraph/terminology/#command) corresponding to each event. These commands are listed in the [JSON Patch \(RFC6902\)](https://tools.ietf.org/html/rfc6902) format, and therefore, are human-readable.
 
 ## Conclusion
 
