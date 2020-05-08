@@ -6,3 +6,222 @@ description: >-
 
 # Traverse
 
+## The Story So Far...
+
+> Dogbert, the auditor, has been asking some very difficult and uncomfortable questions ever since he arrived at the plant. Just recently, the new intern of the IT department, Asok, very nearly escaped with his job intact, albeit with a strong reprimand \(on record\).
+>
+> Eric, the Unit Supervisor hasn't had it easy either. He is currently under the scanner for his apparent lack of due diligence while hiring what turned out be an unqualified Safety Officer \(Kenny, it was uncovered, had faked his certificates\) - an easily avoidable blunder, if only he had had the foresight to hire a background-checking agency.
+>
+> Coincidentally, Dogbert is on the board of directors for one such agency, and has expressed his intention to strongly recommend mandatory background checks for new hires to the company management \(no doubt as an unbiased 3rd party\).
+>
+> Eric can't wait to see the last of this pesky auditor, and does all he can to expedite the ongoing investigation.
+
+## Current Org Structure
+
+We want to start by looking at the entire organization hierarchy in its current state. This can be achieved by running an AQL traversal, but RecallGraph is also capable of this \(and more, when it's time to time-travel\). We fire a `POST` query at the `TRAVERSE` endpoint with the following parameters:
+
+| Param | Value |
+| :--- | :--- |
+| `svid` | `departments/44787802` |
+| `depth` | `2` |
+| `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
+
+**Response:**
+
+```text
+{
+  "vertices": [
+    {
+      "org": "ACME Inc.",
+      "name": "Manufacturing",
+      "_rev": "_ackLRwW---",
+      "_id": "departments/44787802",
+      "_key": "44787802"
+    },
+    {
+      "role": "Unit Supervisor",
+      "last_name": "Cartman",
+      "first_name": "Eric",
+      "_rev": "_aclQHR6---",
+      "_id": "employees/44794449",
+      "_key": "44794449"
+    },
+    {
+      "role": "Senior Plant Manager",
+      "last_name": "Marsh",
+      "first_name": "Stan",
+      "_rev": "_acx_g1C--_",
+      "_id": "employees/44794453",
+      "_key": "44794453",
+      "valid_from": "2020-05-07"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Broflovski",
+      "first_name": "Kyle",
+      "_rev": "_aclQHSm---",
+      "_id": "employees/44794457",
+      "_key": "44794457"
+    }
+  ],
+  "edges": [
+    {
+      "_rev": "_aclYlUy---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794449",
+      "_id": "membership/44795272",
+      "_key": "44795272"
+    },
+    {
+      "_rev": "_aclYlVu---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794453",
+      "_id": "membership/44795280",
+      "_key": "44795280"
+    },
+    {
+      "_rev": "_aclYlWC---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794457",
+      "_id": "membership/44795286",
+      "_key": "44795286"
+    },
+    {
+      "_rev": "_acldI2S---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794453",
+      "_id": "reporting/44795731",
+      "_key": "44795731"
+    },
+    {
+      "_rev": "_acldI3i---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794457",
+      "_id": "reporting/44795739",
+      "_key": "44795739"
+    }
+  ]
+}
+```
+
+This gives us all the departments, employees and their membership and reporting relations as of their current state.
+
+{% hint style="info" %}
+Note that Kenny is absent in the above result, even though his employee node was not deleted. This is because all edges connecting his node to the rest of the graph have been severed.
+{% endhint %}
+
+## When Kenny was Actively Employed
+
+Next, we want to travel back in time to a point when Kenny was still actively connected to the department and reporting to Eric. We obtain a suitable timestamp by running a `LOG` query and picking a timestamp before his deactivation. By now, the reader should know how to run this query.
+
+**Request:**
+
+| Param | Value |
+| :--- | :--- |
+| `timestamp` | `1588815039.3459842` |
+| `svid` | `departments/44787802` |
+| `depth` | `2` |
+| `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
+
+Response:
+
+```text
+{
+  "vertices": [
+    {
+      "org": "ACME Inc.",
+      "name": "Manufacturing",
+      "_rev": "_ackLRwW---",
+      "_id": "departments/44787802",
+      "_key": "44787802"
+    },
+    {
+      "role": "Unit Supervisor",
+      "last_name": "Cartman",
+      "first_name": "Eric",
+      "_rev": "_aclQHR6---",
+      "_id": "employees/44794449",
+      "_key": "44794449"
+    },
+    {
+      "role": "Senior Plant Manager",
+      "last_name": "Marsh",
+      "first_name": "Stan",
+      "_rev": "_acx_g1C--_",
+      "_id": "employees/44794453",
+      "_key": "44794453",
+      "valid_from": "2020-05-07"
+    },
+    {
+      "role": "Plant Manager",
+      "last_name": "Broflovski",
+      "first_name": "Kyle",
+      "_rev": "_aclQHSm---",
+      "_id": "employees/44794457",
+      "_key": "44794457"
+    },
+    {
+      "role": "Safety Officer",
+      "last_name": "McCormick",
+      "first_name": "Kenny",
+      "_rev": "_acmFz6u---",
+      "_id": "employees/44799683",
+      "_key": "44799683"
+    }
+  ],
+  "edges": [
+    {
+      "_rev": "_aclYlUy---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794449",
+      "_id": "membership/44795272",
+      "_key": "44795272"
+    },
+    {
+      "_rev": "_aclYlVu---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794453",
+      "_id": "membership/44795280",
+      "_key": "44795280"
+    },
+    {
+      "_rev": "_aclYlWC---",
+      "_to": "departments/44787802",
+      "_from": "employees/44794457",
+      "_id": "membership/44795286",
+      "_key": "44795286"
+    },
+    {
+      "_rev": "_acmGvEa---",
+      "_to": "departments/44787802",
+      "_from": "employees/44799683",
+      "_id": "membership/44799786",
+      "_key": "44799786"
+    },
+    {
+      "_rev": "_acldI2S---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794453",
+      "_id": "reporting/44795731",
+      "_key": "44795731"
+    },
+    {
+      "_rev": "_acldI3i---",
+      "_to": "employees/44794449",
+      "_from": "employees/44794457",
+      "_id": "reporting/44795739",
+      "_key": "44795739"
+    },
+    {
+      "_rev": "_acmeb3S--_",
+      "_to": "employees/44794449",
+      "_from": "employees/44799683",
+      "_id": "reporting/44799849",
+      "_key": "44799849"
+    }
+  ]
+}
+```
+
+Here, we see Kenny's node present in the result, along with both its connections \(`reporting` and `membership`\).
+
