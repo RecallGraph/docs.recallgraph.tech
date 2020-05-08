@@ -18,7 +18,7 @@ We will use the `GET` variant of the `DIFF` endpoint in this guide, although the
 
 ## Diffs in Node-Brace Scope
 
-Since we're only interested in fetching [diffs](../../../understanding-recallgraph/terminology/#diff) for a single entity, we will use the [node-brace scope](../../../understanding-recallgraph/terminology/#node-brace-scope) here, which is the most efficient [pre-filter](../../../understanding-recallgraph/terminology/pre-filters.md) to use when node ids are known beforehand.
+Since we're only interested in fetching [diffs](../../../understanding-recallgraph/terminology/#diff) for a single entity, we will use the [node-brace scope](../../../understanding-recallgraph/terminology/#node-brace-scope) here, which is the most efficient [pre-filter](../../../understanding-recallgraph/terminology/pre-filters.md) to use when node ids are known in advance.
 
 Since we're only interested in the `updated` events, we will omit the `created` and `deleted` events by using upper and lower time-bounds in the pre-filters:
 
