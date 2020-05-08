@@ -22,18 +22,16 @@ If you missed taking note of the edge `_id` while inserting the reporting relati
 
 In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%285%29.png) button. The `collection` parameter should be set to `reporting` and the body should contain the **entire contents** of the new reporting relationship.
 
+`{  
+  "_id": "reporting/44799849",  
+  "_from": "employees/44799683",  
+  "_to": "employees/44794449"  
+}`
+
 {% hint style="info" %}
 1. Only one of `_key` or `_id` need be present.
 2. `_rev` can be omitted \(ignored if present\).
 {% endhint %}
-
-```text
-{
-    "_id": "reporting/44799849",
-    "_from": "employees/44799683",
-    "_to": "employees/44794449"
-}
-```
 
 ## End Result
 
