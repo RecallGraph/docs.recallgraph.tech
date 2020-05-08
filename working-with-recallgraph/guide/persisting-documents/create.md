@@ -1,5 +1,5 @@
 ---
-description: Create single / multiple nodes.
+description: Create single/multiple documents (vertices/edges).
 ---
 
 # Create

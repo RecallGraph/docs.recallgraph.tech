@@ -1,5 +1,5 @@
 ---
-description: Delete single / multiple nodes.
+description: Delete single/multiple documents.
 ---
 
 # Delete

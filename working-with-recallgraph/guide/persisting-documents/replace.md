@@ -1,5 +1,5 @@
 ---
-description: Replace single / multiple nodes.
+description: Replace entire single/multiple documents with new content.
 ---
 
 # Replace

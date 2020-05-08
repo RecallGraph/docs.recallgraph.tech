@@ -1,5 +1,5 @@
 ---
-description: Update single / multiple nodes.
+description: Add/Update specific fields in single/multiple documents.
 ---
 
 # Update
