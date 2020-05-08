@@ -23,14 +23,14 @@ Since we're only interested in fetching [diffs](../../../understanding-recallgra
 Since we're only interested in the `updated` events, we will omit the `created` and `deleted` events by using upper and lower time-bounds in the pre-filters:
 
 1. The lower time bound will be the `ctime` of the first `updated` event in chronological order, since it is inclusive.
-2. The upper time bound will be the `ctime` of the final `deleted` event, since it is exclusive.
+2. The upper time bound will be the `ctime` of the final `updated` event, since it is also inclusive.
 
 We can get these values from the event log described in the [last section](log.md#post-filtered-events). The request parameters would be as follows:
 
 | Param | Value |
 | :--- | :--- |
 | `since` | `1588770714.352307` |
-| `until` | `1588816959.5006447` |
+| `until` | `1588770928.5333633` |
 | `path` | `/n/reporting/44799849` |
 
 **Response:**
