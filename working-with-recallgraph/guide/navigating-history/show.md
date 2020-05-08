@@ -238,15 +238,16 @@ We can therefore use the timestamp of the last `created` event to fetch the cont
 ]
 ```
 
-Nothing wrong with these either! Just to be doubly sure, let us fetch the current employee set \(remember, Kenny is no longer listed\).
+Nothing wrong with these either! Just to be doubly sure, let us fetch the current employee set, as of a time when the first 3 employee records \(Eric, Stan and Kyle\) were just created.
 
-### Current Entries
+### Available Entries
 
 Request:
 
 | Param | Value |
 | :--- | :--- |
 | path | /c/employees |
+| timestamp | 1588765795.6586728 |
 
 Response:
 
@@ -261,13 +262,12 @@ Response:
     "_key": "44794449"
   },
   {
-    "role": "Senior Plant Manager",
+    "role": "Plant Manager",
     "last_name": "Marsh",
     "first_name": "Stan",
-    "_rev": "_acx_g1C--_",
+    "_rev": "_aclQHSa---",
     "_id": "employees/44794453",
-    "_key": "44794453",
-    "valid_from": "2020-05-07"
+    "_key": "44794453"
   },
   {
     "role": "Plant Manager",
