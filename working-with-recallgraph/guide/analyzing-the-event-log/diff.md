@@ -6,6 +6,8 @@ description: >-
 
 # Diff
 
+## The Story So Far...
+
 As we noticed in the previous section, one of the reporting edges had undergone [more updates than expected](log.md#post-filtered-events). We will dig deeper into those extra updates in this section.
 
 The offending edge in question had the `_id` `reporting/44799849`.
