@@ -6,11 +6,11 @@ description: Delete single / multiple nodes.
 
 ## The Story So Far...
 
-> All is well in ACME Inc. Production is running at blinding speed and the shipment of 10000 explosive tennis balls is nearly ready. One day, near the end of this production cycle, Stan and Kyle had a few hours to kill after lunch, so they decide to spend it playing their favorite sport - Tennis!
+> All is well in ACME Inc. Production is running at blinding speed and the shipment of 10000 explosive tennis balls is nearly ready. One day, near the end of this production cycle, Stan and Kyle have a few hours to kill after lunch, so they decide to spend it playing their favorite sport - Tennis!
 >
-> Of course, with so many tennis balls of the explosive kind lying around the place, they had to be careful not to inadvertently start playing with one of them \(Mr. Coyote had specifically asked for them to look, feel and weigh almost identical to real tennis balls\). But they were not worried, since they had a qualified Safety Officer to help with the matter.
+> Of course, with so many tennis balls of the explosive kind lying around the place, they had to be careful not to inadvertently start playing with one of them \(Mr. Coyote had specifically asked for them to look, feel and weigh almost exactly like real tennis balls\). But they were not worried, since they had a qualified Safety Officer to help with the matter.
 >
-> Kenny had always claimed to be extra careful in his handling of explosive material, and was super confident that the ball they had in hand was not of the explosive variety. Kyle and Stan were not too sure and asked if there was a way to check. Kenny, in a moment of absolute self-certainty, decided to give them a demonstration \(Kyle and Stan insisted on keeping a safe distance, nevertheless\). Kenny proceeded to firmly grip the tennis ball and, with all his might, whack it against the wall next to him.
+> Kenny had always claimed to be extra careful in his handling of explosive materials, and was super confident that the ball they had in hand was not of the explosive variety. Kyle and Stan were not too sure and asked if there was a way to check. Kenny, in a moment of absolute self-certainty, decided to give them a demonstration \(Kyle and Stan insisted on keeping a safe distance, nevertheless\). Kenny proceeded to firmly grip the tennis ball in his hand and, with all his might, whack it against the wall next to him.
 
 We will now explore how to delete entities through RecallGraph's API. Kenny is no longer in the active employ of ACME Inc. We need to mark his employment term as over, and dismantle his reporting relationship to Eric.
 
