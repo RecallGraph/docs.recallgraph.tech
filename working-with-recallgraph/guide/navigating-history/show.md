@@ -18,7 +18,7 @@ We will use the `GET` variant of the `SHOW` endpoint in this guide, although the
 
 ### The Deleted Entry
 
-We last saw an extra department that was created and then deleted. We will now look into the contents of the now deleted department by invoking `SHOW` with a timestamp just at the time of creation \(any timestamp from creation \(inclusive\) to deletion \(exclusive\) will do\).
+We last saw an extra department that was created and then deleted. We will now look into the contents of the now deleted department by invoking `SHOW` with a timestamp just at the time of creation \(any timestamp between creation \(inclusive\) and deletion \(exclusive\) will do\).
 
 {% hint style="info" %}
 We can find the department's id from the logs we fetched earlier.
