@@ -57,14 +57,11 @@ In the `collection` field, fill in `departments` as we will enter the department
 
 ![](../../../.gitbook/assets/image%20%287%29.png)
 
-Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
-
-```text
-{
- "name": "Manufacturing",
- "org": "ACME Inc."
-}
-```
+Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:  
+`{  
+  "name": "Manufacturing",  
+  "org": "ACME Inc."  
+}`
 
 Next click on the `Execute` button and see the result. We should see a response similar to:
 
@@ -74,7 +71,7 @@ Next click on the `Execute` button and see the result. We should see a response 
 Note that the corresponding `curl` command is also shown for the request, and you can use it to achieve the same result.
 {% endhint %}
 
-The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on.
+The response body contains the `_id` of the newly created department object, and we make a note of it for reference later on:
 
 ```text
 {
@@ -90,27 +87,40 @@ We will use the _bulk mode_ to create all employees in one go. The endpoint rema
 
 1. In the `collections` field, enter `employees`.
 2. We want to map the generated document `_ids` to the employee names. So we set `returnNew` to `true`.
-3. In the `body` field, enter the following **JSON array**:
+3. In the `body` field, enter the following **JSON array**:  
+   `[`
 
-   ```text
-   [
-    {
-     "first_name": "Eric",
-     "last_name": "Cartman",
-     "role": "Unit Supervisor"
-    },
-    {
-     "first_name": "Stan",
-     "last_name": "Marsh",
-     "role": "Plant Manager"
-    },
-    {
-     "first_name": "Kyle",
-     "last_name": "Broflovski",
-     "role": "Plant Manager"
-    }
-   ]
-   ```
+     `{`
+
+     `"first_name": "Eric",`
+
+     `"last_name": "Cartman",`
+
+     `"role": "Unit Supervisor"`
+
+     `},`
+
+     `{`
+
+     `"first_name": "Stan",`
+
+     `"last_name": "Marsh",`
+
+     `"role": "Plant Manager"`
+
+     `},`
+
+     `{`
+
+     `"first_name": "Kyle",`
+
+     `"last_name": "Broflovski",`
+
+     `"role": "Plant Manager"`
+
+     `}`
+
+   `]`
 
 4. Hit the `Execute` button to get a result similar to:
 
