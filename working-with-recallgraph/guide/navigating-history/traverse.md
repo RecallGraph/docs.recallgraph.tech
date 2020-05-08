@@ -8,7 +8,7 @@ description: >-
 
 ## The Story So Far...
 
-> Dogbert has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, the new intern from the IT department only barely escaped with his job intact \(and with a strong reprimand on record\).
+> Dogbert has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, Asok from the IT department only barely escaped with his internship intact \(and with a strong reprimand on record\).
 >
 > Eric hasn't had it easy either. He is currently under the scanner for his lax diligence while hiring what turned out be an unqualified Safety Officer \(Kenny had faked his certificates\). This lapse could have been easily avoided, had Eric had the foresight to hire a background-checking agency.
 >
