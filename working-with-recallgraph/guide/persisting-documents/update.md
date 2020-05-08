@@ -34,13 +34,11 @@ One of `_key` or `_id` would still need to be present.
 
 **Request:**
 
-```text
-{
-  "_key": "44794453",
-  "role": "Senior Plant Manager",
-  "valid_from": "2020-05-07"
-}
-```
+`{  
+  "_key": "44794453",  
+  "role": "Senior Plant Manager",  
+  "valid_from": "2020-05-07"  
+}`
 
 **Response:**
 
