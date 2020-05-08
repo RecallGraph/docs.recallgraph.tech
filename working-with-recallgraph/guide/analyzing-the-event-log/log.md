@@ -11,7 +11,7 @@ Before proceeding with this section of the guide, make sure you have understood 
 {% endhint %}
 
 {% hint style="info" %}
-The `LOG` endpoint is a very powerful and flexible querying tool with lots of option combinations, all of which cannot possibly be explored in this guide. However, hopefully, this guide will cover enough ground to make readers comfortable in exploring the rest of the options by themselves.
+The `LOG` endpoint is a very powerful and flexible querying tool with a huge number of parameter combinations, all of which cannot possibly be explored in this guide. However, hopefully this guide will cover enough ground to make readers comfortable in exploring the rest of the combinations by themselves.
 {% endhint %}
 
 ## All Events
