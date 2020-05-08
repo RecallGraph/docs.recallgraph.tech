@@ -22,13 +22,11 @@ The end of Kenny's employment can be marked using a a field named `leaving_date`
 
 In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%281%29.png) button. The `collection` parameter should be set to `reporting` and the body need contain **only the `_id` or the `_key`** of the entity.
 
-**Request:**
+**Request Body:**
 
-```text
-{
-    "_key": "44799849"
-}
-```
+`{  
+  "_key": "44799849"  
+}`
 
 **Response:**
 

@@ -57,7 +57,8 @@ In the `collection` field, fill in `departments` as we will enter the department
 
 ![](../../../.gitbook/assets/image%20%287%29.png)
 
-Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:  
+Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
+
 `{  
   "name": "Manufacturing",  
   "org": "ACME Inc."  

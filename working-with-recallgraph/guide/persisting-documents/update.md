@@ -32,7 +32,7 @@ In the Swagger console locate the tab with the ![](../../../.gitbook/assets/imag
 One of `_key` or `_id` would still need to be present.
 {% endhint %}
 
-**Request:**
+**Request Body:**
 
 `{  
   "_key": "44794453",  
