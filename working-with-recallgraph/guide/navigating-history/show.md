@@ -71,7 +71,7 @@ Just to be sure, let us fetch the currently active department's contents for com
 ]
 ```
 
-The contents are identical and there is no apparent reason for the previous node to have been deleting. This is looking more and more like a case of operator confusion/incompetence than any actual data issue.
+The contents are identical and there is no apparent reason for the previous node to have been deleted. This is looking more and more like a case of operator confusion/incompetence than any actual data issue.
 
 Let us next look at the extra employee data.
 
