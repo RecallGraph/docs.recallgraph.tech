@@ -412,7 +412,7 @@ Finally, let's go back in time to a point when all was well, before Kenny had jo
 
 ## The Conclusion
 
-> Dogbert has left the premises for now, but not before inking a sweet deal for his background-checking agency, in exchange for leaving some critical lapses out of his audit report. However, he realizes that such convenient omissions will be impossible to sneak in the next time, as ACME Inc. has decided to purchase a full-blown ERP from the same firm that sold them the HRMS. **The ERP also uses RecallGraph as its underlying data store. By now, Dogbert knows only too well that you can't hide anything from this clever foxx!**
+> Dogbert has left the premises for now \(much to everyone's relief\), but not before inking a sweet deal for his background-checking agency, in exchange for leaving some critical lapses out of his audit report. However, he realizes that such convenient omissions will be impossible to sneak in the next time, as ACME Inc. has decided to purchase a full-blown ERP from the same vendor that sold them the HRMS. **This ERP also uses RecallGraph as its underlying data store. By now, Dogbert knows only too well that you can't hide anything from this clever foxx!**
 >
 > All is well in ACME land again. All 10000 explosive tennis balls have been shipped to an ecstatic Mr. Coyote. Eric now has a few minutes to himself, until the next batch of orders comes through. He spends these moments wondering, for the first time, what anyone could possibly use these incendiary devils for. If you're wondering about the same thing, wonder no more. See the recorded demo at [https://www.dailymotion.com/video/x569rr7?start=374](https://www.dailymotion.com/video/x569rr7?start=374)
 
