@@ -8,7 +8,7 @@ description: >-
 
 ## The Story So Far...
 
-> All necessary updates have been made to the HRMS after the incident at the plant. Now, as part of the investigation behind the incident, an auditor is called over to go through all records with a fine-toothed comb. He is particularly adamant on having access to all historic records and changes over time to make sure no detail, however minute, is missed. Luckily for Eric, his HRMS uses RecallGraph under the hood. **Rewinding and replaying historic data is precisely what RecallGraph was built to do!**
+> All necessary updates have been made to the HRMS after the incident at the plant. As part of the investigation behind the incident, an auditor is called over to go through all records with a fine-toothed comb. He is particularly adamant on having access to all historic records and changes over time to make sure no detail, however minute, is missed. Luckily for Eric, his **HRMS uses RecallGraph under the hood. Rewinding and replaying historic data is precisely what RecallGraph was built to do!**
 
 ![This auditor does not fool around.](../../../.gitbook/assets/image%20%289%29.png)
 
@@ -17,7 +17,7 @@ Before proceeding with this section of the guide, make sure you have understood 
 {% endhint %}
 
 {% hint style="info" %}
-The `LOG` endpoint is a very powerful and flexible querying tool with a huge number of parameter combinations, all of which cannot possibly be explored in this guide. However, hopefully this guide will cover enough ground to make readers comfortable in exploring the rest of the combinations by themselves.
+The `LOG` endpoint is a powerful and flexible querying tool with a huge number of parameter combinations, all of which cannot possibly be explored in this guide. However, hopefully this guide will cover enough ground to make readers comfortable in exploring the rest of the combinations by themselves.
 {% endhint %}
 
 ## All Events
