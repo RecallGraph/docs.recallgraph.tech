@@ -12,7 +12,7 @@ As we noticed in the previous section, one of the reporting edges had undergone 
 
 The offending edge in question had the id `reporting/44799849`.
 
-{% hint style="info" %}
+{% hint style="success" %}
 We will use the `GET` variant of the `DIFF` endpoint in this guide, although the `POST` variant can also be used to achieve the same results.
 {% endhint %}
 

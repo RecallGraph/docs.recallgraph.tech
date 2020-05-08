@@ -55,7 +55,7 @@ Once this tab is expanded, click on the ![](../../../.gitbook/assets/image%20%28
 
 In the `collection` field, fill in `departments` as we will enter the department first.
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![](../../../.gitbook/assets/image%20%288%29.png)
 
 Next, jump straight to the `body` field and here we can fill in any valid JSON object. For this example, we use the following:
 
