@@ -326,6 +326,12 @@ Let's look at the state of the graph when Kenny was incorrectly marked as report
 }
 ```
 
+{% hint style="info" %}
+Note that Stan had not been promoted at the time Kenny was 'reporting' to Kyle. As expected, he is shown as just a Plant Manager in the above result.
+
+Also note the last entry in the edge list \(the outbound reporting edge from Kenny\), where it clearly points to Kyle.
+{% endhint %}
+
 ## Before Kenny Joined
 
 Finally, let's go back in time to a point when all was well, before Kenny had joined the team. The result would be:
