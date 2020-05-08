@@ -175,22 +175,10 @@ We need to add a couple of reporting relations to represent Kyle and Stan report
 
 **Request similar to:**
 
-`collection`: `reporting`
-
-`body`:
-
-```text
-[
-  {
-    "_from": "employees/44794453",
-    "_to": "employees/44794449"
-  },
-  {
-    "_from": "employees/44794457",
-    "_to": "employees/44794449"
-  }
-]
-```
+| **Param** | Value |
+| :--- | :--- |
+| `collection` | `reporting` |
+| `body` | `[   {     "_from": "employees/44794453",     "_to": "employees/44794449"   },   {     "_from": "employees/44794457",     "_to": "employees/44794449"   } ]` |
 
 **Response similar to:**
 
