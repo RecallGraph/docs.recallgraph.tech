@@ -112,7 +112,7 @@ Note that Kenny is absent in the above result, even though his employee node was
 
 ## When Kenny was Actively Employed
 
-Next, we want to travel back in time to a point when Kenny was still actively connected to the department and reporting to Eric. We obtain a suitable timestamp by running a `LOG` query and picking a timestamp before his deactivation. By now, the reader should know how to run this query.
+Next, we want to travel back in time to a point when Kenny was still actively connected to the department and reported to Eric. We obtain a suitable timestamp by running a `LOG` query and picking a timestamp before his deactivation. By now, the reader should know how to run this query.
 
 **Request:**
 
@@ -227,7 +227,7 @@ Here, we see Kenny's node present in the result, along with both its connections
 
 ## When Kenny was 'Reporting' to Kyle
 
-Let's look at the state of the graph when Kenny incorrectly marked as reporting to Kyle. The request parameters are left as an exercise for the reader to work out. The response is shown below:
+Let's look at the state of the graph when Kenny was incorrectly marked as reporting to Kyle. The request parameters are left as an exercise for the reader to work out. The response is shown below:
 
 ```text
 {
