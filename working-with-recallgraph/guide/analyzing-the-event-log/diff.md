@@ -10,7 +10,7 @@ description: >-
 
 As we noticed in the previous section, one of the reporting edges had undergone [more updates than expected](log.md#post-filtered-events). We will dig deeper into those extra updates in this section.
 
-The offending edge in question had the `_id` `reporting/44799849`.
+The offending edge in question had the id `reporting/44799849`.
 
 {% hint style="info" %}
 We will use the `GET` variant of the `DIFF` endpoint in this guide, although the `POST` variant can also be used to achieve the same results.
