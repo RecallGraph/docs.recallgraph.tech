@@ -12,18 +12,6 @@ It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [Ar
 
 [![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
 
-{% hint style="danger" %}
-## ☢ Important!
-
-While the software has demonstrated ample stability under test conditions, it is still under active development, and subject to potentially breaking changes from time to time. The latest tagged version may be used in lightweight, non-critical production deployments, i.e., systems which do not impact primary business functions if they face downtime or data loss/corruption.
-{% endhint %}
-
-{% hint style="warning" %}
-## 🚫Disclaimer
-
-The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
-{% endhint %}
-
 ## Do I Need a 'Versioned Graph' Database?
 
 To get an idea of where such a data store might be used, see:
@@ -43,7 +31,7 @@ Also check out the recording below:
 2. Documents \(vertices/edges\) mutate within their lifespan \(both in their individual attributes/values and in their relations with each other\).
 3. Past states of documents are as important as their present, necessitating retention and queryability of their change history.
 
-## Salient API Features
+## API Features
 
 RecallGraph's API is split into 3 top-level categories:
 
@@ -93,4 +81,12 @@ RecallGraph's API is split into 3 top-level categories:
 * Raise an issue or PR on the [project repository](https://github.com/RecallGraph/RecallGraph), or
 * Mail me \(![Email Link](http://safemail.justlikeed.net/e/aa7232bbfc22c7580ae7a4b561562e0b.png)\), or
 * Join the [Gitter channel](https://gitter.im/RecallGraph/community).
+
+{% hint style="warning" %}
+## 🚫Disclaimer
+
+The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
+{% endhint %}
+
+## 
 
