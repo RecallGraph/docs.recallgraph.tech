@@ -265,7 +265,7 @@ Weight functions are defined using the same constructs that are used to build [p
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
 | `k` | `2` |
-| `body` | `{   "edges": {     "reporting": "any",     "membership": "any",     "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1"   } }` |
+| `body` | `{   "edges": {     "reporting": "any",     "membership": "any"   },   "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1" }` |
 
 {% hint style="info" %}
 You can go real crazy with post-filter-like expressions, but it is probably best to keep them simple for the sake of readability.
@@ -399,16 +399,58 @@ Vertex and edge filters also use post-filter syntax.
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588769414.948146` |
-| `svid` | `employees/44799683` |
-| `evid` | `employees/44794453` |
-| `depth` | `4` |
-| `k` | `2` |
-| `body` | `{   "edges": {     "reporting": "any",     "membership": "any",     "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1",     "vFilter": "_key !== '44794449'"   } }` |
-
-**Response:**
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>timestamp</code>
+      </td>
+      <td style="text-align:left"><code>1588769414.948146</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>svid</code>
+      </td>
+      <td style="text-align:left"><code>employees/44799683</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>evid</code>
+      </td>
+      <td style="text-align:left"><code>employees/44794453</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>depth</code>
+      </td>
+      <td style="text-align:left"><code>4</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>k</code>
+      </td>
+      <td style="text-align:left"><code>2</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>body</code>
+      </td>
+      <td style="text-align:left">
+        <p><code>{<br />  &quot;edges&quot;: {<br />    &quot;reporting&quot;: &quot;any&quot;,<br />    &quot;membership&quot;: &quot;any&quot;<br />  },</code>
+        </p>
+        <p><code>  &quot;weightExpr&quot;: &quot;_id.split(&apos;/&apos;)[0] === &apos;membership&apos; ? 2 : 1&quot;,</code>
+        </p>
+        <p><code>  &quot;vFilter&quot;: &quot;_key !== &apos;44794449&apos;&quot;<br />}</code>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>**Response:**
 
 ```text
 [
