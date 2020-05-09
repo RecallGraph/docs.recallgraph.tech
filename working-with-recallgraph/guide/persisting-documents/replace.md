@@ -20,7 +20,7 @@ If you missed taking note of the edge `_id` while inserting the reporting relati
 
 ## Entering Data
 
-In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%285%29.png) button. The `collection` parameter should be set to `reporting` and the body should contain the **entire contents** of the new reporting relationship.
+In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%286%29.png) button. The `collection` parameter should be set to `reporting` and the body should contain the **entire contents** of the new reporting relationship.
 
 `{  
   "_id": "reporting/44799849",  

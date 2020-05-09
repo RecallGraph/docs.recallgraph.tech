@@ -26,7 +26,7 @@ User-defined _valid time_ fields can only be used for create and update operatio
 
 ## Entering Data
 
-In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%283%29.png) button. The `collection` parameter should be set to `employees` and the body should contain **only the new and the changed content** of the entity.
+In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%284%29.png) button. The `collection` parameter should be set to `employees` and the body should contain **only the new and the changed content** of the entity.
 
 {% hint style="info" %}
 One of `_key` or `_id` would still need to be present.
