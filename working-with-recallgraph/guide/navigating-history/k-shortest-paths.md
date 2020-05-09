@@ -153,8 +153,10 @@ We have not provided a weight function for the edges. This means **every edge ca
 
 We get 2 paths, one of length 2, and one of length 3, viz:
 
-1. KY -&gt; M -&gt; S \(length = 2\)
-2. KY -&gt; M -&gt; E -&gt; S \(length = 3\)
+| \# | Path | Length |
+| :--- | :--- | ---: |
+| 1 | `KY -> M -> S` | 2 |
+| 2 | `KY -> M -> E -> S` | 3 |
 
 {% hint style="warning" %}
 There are multiple paths of length 3 having equal weight for the given parameters, of which only one can be returned. In such cases, we **cannot predict** which one will be selected.
