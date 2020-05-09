@@ -38,7 +38,7 @@ We have not provided a weight function for the edges. This means **every edge ca
 | `svid` | `employees/44799683` |
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
-| `k` | `1` |
+| `k` | `2` |
 | `body` | `{   "edges": {"reporting": "any", "membership": "any"} }` |
 
 **Response:**
