@@ -88,5 +88,3 @@ RecallGraph's API is split into 3 top-level categories:
 The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
 {% endhint %}
 
-## 
-
