@@ -518,7 +518,7 @@ Vertex and edge filters also use post-filter syntax.
 ]
 ```
 
-Now with Cartman gone, we again have our 2-hop path \(still with cost 4\) turning out to be the cheapest!
+With Cartman gone, our 2-hop path \(still with cost 4\) emerges on top again!
 
 ![Eric doesn&apos;t like being left out!](../../../.gitbook/assets/image%20%282%29.png)
 
