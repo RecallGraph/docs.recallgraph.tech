@@ -6,9 +6,9 @@ description: 'Point-in-time, weighted, shortest paths between two endpoints.'
 
 ## The Setup
 
-Finally, we take a moment to run a few weighted shortest path queries. For this, we will use a specific historical version of the graph - the one at the [end of the Create section](../persisting-documents/create.md#end-result). This graph has Kenny wrongly marked as reporting to Kyle. Let us look at the graph again \(replicated below\):
+Finally, we take a moment to run a few weighted shortest path queries. For this, we will use a specific historical version of the graph - the one at the [end of the Create section](../persisting-documents/create.md#end-result). This graph has Kenny wrongly marked as reporting to Kyle. Let us look at the graph again \(reproduced below\):
 
-![How many paths exist from Kenny to Stan?](../../../.gitbook/assets/examples-create-7.png)
+![How many paths are there from Kenny to Stan?](../../../.gitbook/assets/examples-create-7.png)
 
 Let us first manually enumerate the number of undirected paths \(with unique vertices\) that go from Kenny to Stan. They are as follows:
 
