@@ -12,13 +12,15 @@ Finally, we take a moment to run a few weighted shortest path queries. For this,
 
 Let us first manually enumerate the number of undirected paths \(with unique vertices\) that go from Kenny to Stan. They are as follows:
 
-1. KY -&gt; M -&gt; S \(length = 2\)
-2. KY -&gt; KL -&gt; E -&gt; S \(length = 3\)
-3. KY -&gt; KL -&gt; M -&gt; S \(length = 3\)
-4. KY -&gt; M -&gt; E -&gt; S \(length = 3\)
-5. KY -&gt; KL -&gt; E -&gt; M -&gt; S \(length = 4\)
-6. KY -&gt; KL -&gt; M -&gt; E -&gt; S \(length = 4\)
-7. KY -&gt; M -&gt; KL  -&gt; E -&gt; S \(length = 4\)
+| \# | Path | Length |
+| :--- | :--- | ---: |
+| 1 | `KY -> M -> S` | 2 |
+| 2 | `KY -> KL -> E -> S` | 3 |
+| 3 | `KY -> KL -> M -> S` | 3 |
+| 4 | `KY -> M -> E -> S` | 3 |
+| 5 | `KY -> KL -> E -> M -> S` | 4 |
+| 6 | `KY -> KL -> M -> E -> S` | 4 |
+| 7 | `KY -> M -> KL  -> E -> S` | 4 |
 
 Let us run some shortest path queries on this past version to see if get the results we expect.
 
