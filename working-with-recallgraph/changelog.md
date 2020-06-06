@@ -4,7 +4,7 @@ description: A record of what changed between successive versions
 
 # Changelog
 
-## 1.0.0 \(W.I.P.\)
+## 1.0.0
 
 ### Added
 
