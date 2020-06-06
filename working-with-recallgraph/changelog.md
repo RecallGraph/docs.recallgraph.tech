@@ -22,7 +22,7 @@ description: A record of what changed between successive versions
 12. **Data:**
     1. Event objects have a `collection` field to identify the collection to which their corresponding document belongs.
     2. Skeleton graph objects have a `collection` field to identify the collection to which their corresponding document belongs.
-    3. Origin events have `collection` , `ctime` and `event` fields to allow building dense indexes on them.
+    3. Origin events have `hops-from-origin`, `collection` , `ctime` and `event` fields to allow building dense indexes on them.
     4. Migration script to automatically upgrade event and skeleton trees created using older versions.
     5. Migration script to remove stale indices.
 
