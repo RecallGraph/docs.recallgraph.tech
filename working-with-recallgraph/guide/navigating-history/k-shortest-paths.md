@@ -38,7 +38,7 @@ We have not provided a weight function for the edges. This means **every edge ca
 | `svid` | `employees/44799683` |
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
-| `k` | `2` |
+| `limit` | `2` |
 | `body` | `{   "edges": {"reporting": "any", "membership": "any"} }` |
 
 **Response:**
@@ -174,7 +174,7 @@ Let us now change the traversal criteria by adding an `inbound` constraint on th
 | `svid` | `employees/44799683` |
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
-| `k` | `2` |
+| `limit` | `2` |
 | `body` | `{   "edges": {     "reporting": "any",     "membership": "inbound"   } }` |
 
 **Response:**
@@ -264,7 +264,7 @@ Weight functions are defined using the same constructs that are used to build [p
 | `svid` | `employees/44799683` |
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
-| `k` | `2` |
+| `limit` | `2` |
 | `body` | `{   "edges": {     "reporting": "any",     "membership": "any"   },   "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1" }` |
 
 {% hint style="info" %}
@@ -405,7 +405,7 @@ Vertex and edge filters also use post-filter syntax.
 | `svid` | `employees/44799683` |
 | `evid` | `employees/44794453` |
 | `depth` | `4` |
-| `k` | `2` |
+| `limit` | `2` |
 | `body` | `{   "edges": {     "reporting": "any",     "membership": "any"   },   "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1",   "vFilter": "_key !== '44794449'" }` |
 
 **Response:**
