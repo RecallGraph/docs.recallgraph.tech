@@ -23,7 +23,8 @@ We want to start by looking at the entire organization hierarchy in its current 
 | Param | Value |
 | :--- | :--- |
 | `svid` | `departments/44787802` |
-| `depth` | `2` |
+| `minDepth` | `0` |
+| `maxDepth` | `2` |
 | `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
 
 **Response:**
@@ -120,7 +121,8 @@ Next, we want to travel back in time to a point when Kenny was still actively co
 | :--- | :--- |
 | `timestamp` | `1588815039.3459842` |
 | `svid` | `departments/44787802` |
-| `depth` | `2` |
+| `minDepth` | `0` |
+| `maxDepth` | `2` |
 | `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
 
 Response:
