@@ -2,7 +2,7 @@
 description: A step-by-step guide to using RecallGraph's features.
 ---
 
-# Guide \(W.I.P.\)
+# Guide
 
 ![](../../.gitbook/assets/rg-1-trans.png)
 

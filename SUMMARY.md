@@ -16,7 +16,7 @@
 
 * [Installation](working-with-recallgraph/installation.md)
 * [Changelog](working-with-recallgraph/changelog.md)
-* [Guide \(W.I.P.\)](working-with-recallgraph/guide/README.md)
+* [Guide](working-with-recallgraph/guide/README.md)
   * [Persisting Documents](working-with-recallgraph/guide/persisting-documents/README.md)
     * [Create](working-with-recallgraph/guide/persisting-documents/create.md)
     * [Replace](working-with-recallgraph/guide/persisting-documents/replace.md)
@@ -29,6 +29,10 @@
     * [Show](working-with-recallgraph/guide/navigating-history/show.md)
     * [Traverse](working-with-recallgraph/guide/navigating-history/traverse.md)
     * [k Shortest Paths](working-with-recallgraph/guide/navigating-history/k-shortest-paths.md)
+* [Advanced Guide \(W.I.P.\)](working-with-recallgraph/advanced-guide-w.i.p./README.md)
+  * [Provider API](working-with-recallgraph/advanced-guide-w.i.p./provider-api.md)
+  * [Tracing](working-with-recallgraph/advanced-guide-w.i.p./tracing.md)
+  * [Configuration](working-with-recallgraph/advanced-guide-w.i.p./configuration.md)
 
 ## External Links <a id="links"></a>
 
