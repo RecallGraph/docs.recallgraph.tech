@@ -4,7 +4,7 @@ description: A step-by-step guide to using RecallGraph's features.
 
 # Guide \(W.I.P.\)
 
-![](../../.gitbook/assets/recallgraph-inline.jpeg)
+![](../../.gitbook/assets/rg-1-trans.png)
 
 ## Before You Begin
 
