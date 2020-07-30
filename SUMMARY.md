@@ -37,8 +37,8 @@
 ## External Links <a id="links"></a>
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
-* [API Docs](https://app.swaggerhub.com/apis-docs/RecallGraph/RecallGraph/1.0.0#/)
+* [HTTP API](https://app.swaggerhub.com/apis-docs/RecallGraph/RecallGraph/1.0.0#/)
+* [Provider API](https://recallgraph.github.io/RecallGraph/)
 * [Community Forum](https://gitter.im/RecallGraph/community)
 * [Releases](https://github.com/RecallGraph/RecallGraph/releases)
-* [Annotated Source](https://recallgraph.github.io/RecallGraph/)
 
