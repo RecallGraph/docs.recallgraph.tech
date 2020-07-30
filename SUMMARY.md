@@ -38,7 +38,7 @@
 
 * [Project Home](https://github.com/RecallGraph/RecallGraph)
 * [HTTP API](https://app.swaggerhub.com/apis-docs/RecallGraph/RecallGraph/1.0.0#/)
-* [Provider API](https://recallgraph.github.io/RecallGraph/)
+* [Provider API](https://recallgraph.github.io/RecallGraph/lib/handlers/providers.html)
 * [Community Forum](https://gitter.im/RecallGraph/community)
 * [Releases](https://github.com/RecallGraph/RecallGraph/releases)
 
