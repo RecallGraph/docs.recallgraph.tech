@@ -1,5 +1,5 @@
 ---
-description: Service-level settings
+description: Service-level settings.
 ---
 
 # Configuration
@@ -8,7 +8,7 @@ RecallGraph exports two settings - `snapshot-intervals` and `sampling-probabilit
 
 ## `snapshot-intervals`
 
-This is a JSON object that stores the [snapshot](../../understanding-recallgraph/terminology/#snapshot) interval for each collection. Its keys are collection names and values are non-negative integers. If the value is 0, then snapshots are disabled for that collection. For a number greater than 0, RecallGraph interprets the number as the minimum number of [events](../../understanding-recallgraph/terminology/#event) that must occur on a document until a snapshot is generated for that document. A snapshot is created only if the event is not a `DELETE` event.
+This is a JSON object that stores the [snapshot](../../understanding-recallgraph/terminology/#snapshot) interval for each collection. Its keys are collection names and values are non-negative integers. If the value is 0, then snapshots are disabled for that collection. For a number greater than 0, RecallGraph interprets the number as the minimum number of [events](../../understanding-recallgraph/terminology/#event) that must occur on a document until a snapshot is generated for that document. A snapshot is created only if the latest event is not a `DELETE`.
 
 There is also a global setting for snapshot intervals which applies to all collections which are not explicitly listed in this object. This global setting is stored in the key `_default` in the same object. The default value for this setting is:
 

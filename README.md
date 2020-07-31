@@ -19,11 +19,17 @@ To get an idea of where such a data store might be used, see:
 1. [The Case for Versioned Graph Databases](https://adityamukho.com/the-case-for-versioned-graph-databases/),
 2. [Illustrative Problems in Dynamic Network Analysis](https://en.wikipedia.org/wiki/Dynamic_network_analysis#Illustrative_problems_that_people_in_the_DNA_area_work_on)
 
-Also check out the recording below:
+Also check out the recordings/slides below:
 
 {% embed url="https://www.youtube.com/watch?v=UP2KDQ\_kL4I" caption="RecallGraph presented @ ArangoDB Online Meetup" %}
 
 {% embed url="https://docs.google.com/presentation/d/1FHNfMxNnBiR4dXdqVJqInTiXdmX-9dSEtUrHMsw-O0E/edit\#slide=id.p" caption="The associated slide deck" %}
+
+{% embed url="https://www.youtube.com/watch?v=A953O3hT1Os" caption="A discussion on RecallGraph\'s development roadmap" %}
+
+{% embed url="https://docs.google.com/presentation/d/12YkSXqh4eTiA6I3mXxK3d\_RS2vX5dpayjvYlQhs9gzE/edit?usp=sharing" caption="The associate slide deck" %}
+
+
 
 **TL;DR:** RecallGraph is a potential fit for scenarios where data is best represented as a network of vertices and edges \(i.e., a graph\) having the following characteristics:
 
