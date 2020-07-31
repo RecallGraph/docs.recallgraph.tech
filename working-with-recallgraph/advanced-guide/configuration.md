@@ -1,5 +1,5 @@
 ---
-description: Settings for RecallGraph
+description: Service-level settings
 ---
 
 # Configuration
