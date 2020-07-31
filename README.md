@@ -29,8 +29,6 @@ Also check out the recordings/slides below:
 
 {% embed url="https://docs.google.com/presentation/d/12YkSXqh4eTiA6I3mXxK3d\_RS2vX5dpayjvYlQhs9gzE/edit?usp=sharing" caption="The associate slide deck" %}
 
-
-
 **TL;DR:** RecallGraph is a potential fit for scenarios where data is best represented as a network of vertices and edges \(i.e., a graph\) having the following characteristics:
 
 1. Both vertices and edges can hold properties in the form of attribute/value pairs \(equivalent to JSON objects\).
