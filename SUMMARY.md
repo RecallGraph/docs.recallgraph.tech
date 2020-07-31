@@ -29,10 +29,10 @@
     * [Show](working-with-recallgraph/guide/navigating-history/show.md)
     * [Traverse](working-with-recallgraph/guide/navigating-history/traverse.md)
     * [k Shortest Paths](working-with-recallgraph/guide/navigating-history/k-shortest-paths.md)
-* [Advanced Guide \(W.I.P.\)](working-with-recallgraph/advanced-guide/README.md)
+* [Advanced Guide](working-with-recallgraph/advanced-guide/README.md)
   * [Configuration](working-with-recallgraph/advanced-guide/configuration.md)
   * [Provider API](working-with-recallgraph/advanced-guide/provider-api.md)
-  * [Tracing](working-with-recallgraph/advanced-guide/tracing.md)
+  * [Tracing \(W.I.P.\)](working-with-recallgraph/advanced-guide/tracing.md)
 
 ## External Links <a id="links"></a>
 
