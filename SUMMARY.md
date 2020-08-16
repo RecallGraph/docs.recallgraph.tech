@@ -32,7 +32,7 @@
 * [Advanced Guide](working-with-recallgraph/advanced-guide/README.md)
   * [Configuration](working-with-recallgraph/advanced-guide/configuration.md)
   * [Provider API](working-with-recallgraph/advanced-guide/provider-api.md)
-  * [Tracing \(W.I.P.\)](working-with-recallgraph/advanced-guide/tracing.md)
+  * [Tracing](working-with-recallgraph/advanced-guide/tracing.md)
 
 ## External Links <a id="links"></a>
 
