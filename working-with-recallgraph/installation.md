@@ -40,7 +40,7 @@ RecallGraph installs like any other _Foxx Microservice_ inside a database, on an
 
    ```text
     ARANGO_SERVER=local-rgtest
-    EVSTORE_MOUNT_POINT=/recall
+    MOUNT_POINT=/recall
    ```
 
    The mounted service will be available at `http://localhost:8529/_db/rgtest/recall` after the installation is complete.
