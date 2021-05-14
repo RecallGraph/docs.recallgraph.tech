@@ -5,7 +5,7 @@ description: >-
   and temporal database constructs.
 ---
 
-# Background \(W.I.P.\)
+# Background
 
 ## What are Graph Databases?
 
@@ -23,6 +23,10 @@ There is a need for a practical, historical graph database that has the followin
 2. An internal storage architecture that not only maintains the current structure of the graph, but also allows for a quick rebuild and retrieval of its structure at any point of time in the past. This could, optionally, be optimized to retrieve recent structures faster than older ones.
 3. An efficient query engine that can traverse current/past graph structures to retrieve sub-graphs or k-hop neighborhoods of specified nodes. In case of historical traversals, this should be optimized to rebuild only the relevant portions of the graph, where feasible.
 
+{% hint style="info" %}
+For a deep dive into the criticality of versioning your data, and how RecallGraph helps meet your data versioning needs, see [https://blog.recallgraph.tech/never-lose-your-old-data-again](https://blog.recallgraph.tech/never-lose-your-old-data-again).
+{% endhint %}
+
 ## About ArangoDB
 
 [ArangoDB](https://www.arangodb.com/) is a [free and open-source](https://en.wikipedia.org/wiki/Free_and_open-source) native [multi-model database](https://en.wikipedia.org/wiki/Multi-model_database) system developed by ArangoDB GmbH. The database system supports three data models \(key/value, documents, graphs\) with one database core and a unified query language AQL \(ArangoDB Query Language\). The query language is declarative and allows the combination of different data access patterns in a single query. ArangoDB is a NoSQL database system but AQL is similar in many ways to SQL.
@@ -31,11 +35,17 @@ ArangoDB has been referred to as a universal database but its creators refer to 
 
 ## Why RecallGraph?
 
+There is a general consensus in the computing and scientific research community for the need of a historical graph database. A database that records entity write operations \(creates/updates/deletes\) as a series of deltas wrapped in events. Each delta is the difference between the contents of the updated entity and its previous version. It is part of an event payload, where the event represents the particular write operation \(create/update/delete\) that occurred. Thus, deltas encode the entire write history of the entity. RecallGraph was developed to fulfill this.
+
 ### Built-In _Transaction Time_ Dimension
 
-There is a general consensus in the computing and scientific research community for the need of a historical graph database. A database that records entity write operations \(creates/updates/deletes\) as a series of deltas wrapped in events. Each delta is the difference between the contents of the updated entity and its previous version. It is part of an event payload, where the event represents the particular write operation \(create/update/delete\) that occurred. Thus, deltas encode the entire write history of the entity. RecallGraph was developed to fulfill this.
+Transaction time is the record of the actual time in the real world when a fact was recorded in the database. This is often auto-filled by the database itself, using its system clock.
 
 ### \(Planned\) Built-In _Valid Time_ Dimension
 
-TODO.
+Valid time is a marker of the time of a real-world or business context-specific event, of which a database record is a representation. The time of occurrence of the actual event may be different from the time when it was recorded in the DB. This necessitates the existence of _valid time_ as being separate and independent from _transaction time_, in order to distinguish between the two timestamps.
+
+{% hint style="info" %}
+For an in-depth explanation of temporal dimensions and temporality as applies to databases, see [https://adityamukho.com/exploring-temporality-in-databases](https://adityamukho.com/exploring-temporality-in-databases).
+{% endhint %}
 

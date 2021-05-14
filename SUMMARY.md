@@ -4,7 +4,7 @@
 
 ## Understanding RecallGraph
 
-* [Background \(W.I.P.\)](understanding-recallgraph/concepts.md)
+* [Background](understanding-recallgraph/concepts.md)
 * [Terminology](understanding-recallgraph/terminology/README.md)
   * [Pre-Filters](understanding-recallgraph/terminology/pre-filters.md)
   * [Grouping](understanding-recallgraph/terminology/grouping.md)
