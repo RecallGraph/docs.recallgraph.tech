@@ -8,7 +8,7 @@ description: >-
 
 ## The Story So Far...
 
-As we noticed in a couple of sections \([here](../analyzing-the-event-log/log.md#departments) and [here](../analyzing-the-event-log/log.md#post-filtered-events-1)\) in the Log guide, a few extra nodes were added and later deleted. We will dig deeper into the contents of those extra nodes in this section.
+As we noticed in a couple of sections ([here](../analyzing-the-event-log/log.md#departments) and [here](../analyzing-the-event-log/log.md#post-filtered-events-1)) in the Log guide, a few extra nodes were added and later deleted. We will dig deeper into the contents of those extra nodes in this section.
 
 {% hint style="success" %}
 We will use the `GET` variant of the `SHOW` endpoint in this guide, although the `POST` variant can also be used to achieve the same results.
@@ -18,7 +18,7 @@ We will use the `GET` variant of the `SHOW` endpoint in this guide, although the
 
 ### The Deleted Entry
 
-We last saw an extra department that was created and then deleted. We will now look into the contents of the now deleted department by invoking `SHOW` with a timestamp just at the time of creation \(any timestamp between creation \(inclusive\) and deletion \(exclusive\) will do\).
+We last saw an extra department that was created and then deleted. We will now look into the contents of the now deleted department by invoking `SHOW` with a timestamp just at the time of creation (any timestamp between creation (inclusive) and deletion (exclusive) will do).
 
 {% hint style="info" %}
 We can find the department's id from the logs we fetched earlier.
@@ -26,14 +26,14 @@ We can find the department's id from the logs we fetched earlier.
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588760983.9785848` |
-| `path` | `/n/departments/44787328` |
+| Param       | Value                     |
+| ----------- | ------------------------- |
+| `timestamp` | `1588760983.9785848`      |
+| `path`      | `/n/departments/44787328` |
 
 **Response:**
 
-```text
+```
 [
   {
     "org": "ACME Inc.",
@@ -49,17 +49,17 @@ Nothing wrong with the content, it seems.
 
 ### The Current Entry
 
-Just to be sure, let us fetch the currently active department's contents for comparison. This can be done using just an AQL query \(since it is an active, current object in the database\), but we can also use `SHOW` to fetch it.
+Just to be sure, let us fetch the currently active department's contents for comparison. This can be done using just an AQL query (since it is an active, current object in the database), but we can also use `SHOW` to fetch it.
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
+| Param  | Value            |
+| ------ | ---------------- |
 | `path` | `/c/departments` |
 
 **Response:**
 
-```text
+```
 [
   {
     "org": "ACME Inc.",
@@ -83,14 +83,14 @@ We know that some employee data was created and immediately deleted from the dat
 
 We have already determined the offending employee ids in the log section. We will use them to fetch their contents. To help us identify a convenient time point to fire the query, we first fetch an ungrouped `LOG` for these nodes using the following request parameters:
 
-| Param | Value |
-| :--- | :--- |
-| path | /n/employees/{44794101,44794107,44794111} |
-| sort | asc |
+| Param | Value                                     |
+| ----- | ----------------------------------------- |
+| path  | /n/employees/{44794101,44794107,44794111} |
+| sort  | asc                                       |
 
 **Response:**
 
-```text
+```
 [
   {
     "_key": "44794104",
@@ -202,14 +202,14 @@ We can therefore use the timestamp of the last `created` event to fetch the cont
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `path` | `/n/employees/{44794101,44794107,44794111}` |
-| `timestamp` | `1588765579.7735815` |
+| Param       | Value                                       |
+| ----------- | ------------------------------------------- |
+| `path`      | `/n/employees/{44794101,44794107,44794111}` |
+| `timestamp` | `1588765579.7735815`                        |
 
 **Response:**
 
-```text
+```
 [
   {
     "role": "Unit Supervisor",
@@ -238,20 +238,20 @@ We can therefore use the timestamp of the last `created` event to fetch the cont
 ]
 ```
 
-Nothing wrong with these either! Just to be doubly sure, let us fetch the current employee set, as of a time when the first 3 employee records \(Eric, Stan and Kyle\) were just created.
+Nothing wrong with these either! Just to be doubly sure, let us fetch the current employee set, as of a time when the first 3 employee records (Eric, Stan and Kyle) were just created.
 
 ### Available Entries
 
 Request:
 
-| Param | Value |
-| :--- | :--- |
-| path | /c/employees |
+| Param     | Value              |
+| --------- | ------------------ |
+| path      | /c/employees       |
 | timestamp | 1588765795.6586728 |
 
 Response:
 
-```text
+```
 [
   {
     "role": "Unit Supervisor",
@@ -286,9 +286,8 @@ It all matches up!
 
 > Looks like the HRMS operator has a few questions to answer. Dogbert, the auditor, calls him in. Turns out the operator is just an intern, fresh out of college, and this was his first assignment. He was confused, and it took some fumbling around with the system before he got the hang of it. Those deleted nodes were just him playing around, trying to understand its myriad options.
 >
-> Dogbert realizes that this is no one's fault \(except, perhaps, the IT manager who sent an untrained intern over to operate a complex production system\), and the poor rookie is let off the hook. However, he is sternly advised to [RTFM](https://en.wikipedia.org/wiki/RTFM) before touching the system further, and is pointed to the excellent documentation hosted at [https://docs.recallgraph.tech/](https://docs.recallgraph.tech/), that has a well-written guide with a realistic \(and eerily familiar\) storyline to help him learn the ropes.
+> Dogbert realizes that this is no one's fault (except, perhaps, the IT manager who sent an untrained intern over to operate a complex production system), and the poor rookie is let off the hook. However, he is sternly advised to [RTFM](https://en.wikipedia.org/wiki/RTFM) before touching the system further, and is pointed to the excellent documentation hosted at [https://docs.recallgraph.tech/](https://docs.recallgraph.tech/), that has a well-written guide with a realistic (and eerily familiar) storyline to help him learn the ropes.
 >
 > Dogbert's work here is nearly done. As a final item in his checklist, he asks to see the state of the org hierarchy at a few important time points. We will cover this in the next section, where we explore the [`TRAVERSE`](traverse.md) endpoint.
 
-![Asok the intern, processing an infinite recursion.](../../../.gitbook/assets/image%20%288%29.png)
-
+![Asok the intern, processing an infinite recursion.](<../../../.gitbook/assets/image (7).png>)

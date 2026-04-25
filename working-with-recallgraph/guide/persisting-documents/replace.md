@@ -20,26 +20,25 @@ If you missed taking note of the edge `_id` while inserting the reporting relati
 
 ## Entering Data
 
-In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%286%29.png) button. The `collection` parameter should be set to `reporting` and the body should contain the **entire contents** of the new reporting relationship.
+In the Swagger console locate the tab with the <img src="../../../.gitbook/assets/image (3).png" alt="" data-size="line"> button. The `collection` parameter should be set to `reporting` and the body should contain the **entire contents** of the new reporting relationship.
 
-`{  
-  "_id": "reporting/44799849",  
-  "_from": "employees/44799683",  
-  "_to": "employees/44794449"  
-}`
+`{`\
+&#x20; `"_id": "reporting/44799849",`\
+&#x20; `"_from": "employees/44799683",`\
+&#x20; `"_to": "employees/44794449"`\
+`}`
 
 {% hint style="info" %}
 1. Only one of `_key` or `_id` need be present.
-2. `_rev` can be omitted \(ignored if present\).
+2. `_rev` can be omitted (ignored if present).
 {% endhint %}
 
 ## End Result
 
 Running the graph query should now yield the correct relations:
 
-![Kenny is now correctly shown to be reporting to Eric.](../../../.gitbook/assets/examples-replace.png)
+![Kenny is now correctly shown to be reporting to Eric.](../../../.gitbook/assets/Examples-Replace.png)
 
 {% hint style="success" %}
 Although not demonstrated in this example, this endpoint also supports bulk replace, similar to [`CREATE`](create.md#employee-information).
 {% endhint %}
-

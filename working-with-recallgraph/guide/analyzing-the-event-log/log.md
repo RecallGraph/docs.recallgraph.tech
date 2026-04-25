@@ -10,7 +10,7 @@ description: >-
 
 > All necessary updates have been made to the HRMS after the incident at the plant. As part of the investigation behind the incident, an auditor is called over to go through all records with a fine-toothed comb. He is particularly adamant on having access to all historic records and changes over time to make sure no detail, however minute, is missed. Luckily for Eric, his **HRMS uses RecallGraph under the hood. Rewinding and replaying historic data is precisely what RecallGraph was built to do!**
 
-![This auditor does not fool around.](../../../.gitbook/assets/image%20%2810%29.png)
+![This auditor does not fool around.](<../../../.gitbook/assets/image (5).png>)
 
 {% hint style="info" %}
 Before proceeding with this section of the guide, make sure you have understood the concepts of [patterns](../../../understanding-recallgraph/terminology/#patterns), [scopes](../../../understanding-recallgraph/terminology/#scopes) and [paths](../../../understanding-recallgraph/terminology/#path), explained in the [terminology](../../../understanding-recallgraph/terminology/) page.
@@ -26,14 +26,14 @@ The `LOG` endpoint is a powerful and flexible querying tool with a huge number o
 
 We don't know which events are of interest to us yet, so we begin with an ad hoc, exploratory analysis to get an idea of the number and types of events in the event log. We will use the `GET` variant here. The request parameters are shown below:
 
-| Param | Value |
-| :--- | :--- |
+| Param        | Value  |
+| ------------ | ------ |
 | `countsOnly` | `true` |
-| `path` | `/` |
+| `path`       | `/`    |
 
 The result obtained will have a structure as shown below. Your actual numbers may vary. We will shortly see why.
 
-```text
+```
 [
   {
     "total": 27
@@ -41,7 +41,7 @@ The result obtained will have a structure as shown below. Your actual numbers ma
 ]
 ```
 
-This tells us that there have been a total of 27 events recorded in the system \(in the instance from which this result was pulled\). That looks a bit strange since we have not performed 27 write operations so far in our walkthrough.
+This tells us that there have been a total of 27 events recorded in the system (in the instance from which this result was pulled). That looks a bit strange since we have not performed 27 write operations so far in our walkthrough.
 
 {% hint style="success" %}
 You can also use the `POST` variant to achieve the same results. In the `POST` variant, the `path` and the `postFilter` parameters are sent in the request body rather than as query parameters. This lets you specify large path patterns and/or filter expressions that would otherwise cause an `HTTP 414 URI Too Long` exception in the `GET` variant.
@@ -51,15 +51,15 @@ You can also use the `POST` variant to achieve the same results. In the `POST` v
 
 The root cause behind this anomaly cannot be determined from this singular number. Therefore, we decide to drill down a bit by using a more fine grained grouping clause. We split event counts by event type by using the parameters given below:
 
-| Param | Value |
-| :--- | :--- |
-| `countsOnly` | `true` |
-| `groupBy` | `event` |
-| `path` | `/` |
+| Param        | Value   |
+| ------------ | ------- |
+| `countsOnly` | `true`  |
+| `groupBy`    | `event` |
+| `path`       | `/`     |
 
 We get the following result:
 
-```text
+```
 [
   {
     "event": "created",
@@ -80,45 +80,45 @@ Now we're getting somewhere. Since we're dealing with a very small dataset, we c
 
 #### Expected Entity Creates
 
-| Collection | Count |
-| :--- | ---: |
-| Departments | 1 |
-| Employees | 4 |
-| Memberships | 4 |
-| Reporting | 3 |
-| **Total** | **12** |
+| Collection  |  Count |
+| ----------- | -----: |
+| Departments |      1 |
+| Employees   |      4 |
+| Memberships |      4 |
+| Reporting   |      3 |
+| **Total**   | **12** |
 
 #### Expected Entity Updates
 
 | Collection | Count |
-| :--- | ---: |
-| Employees | 2 |
-| Reporting | 1 |
-| **Total** | **3** |
+| ---------- | ----: |
+| Employees  |     2 |
+| Reporting  |     1 |
+| **Total**  | **3** |
 
 #### Expected Entity Deletes
 
 | Collection | Count |
-| :--- | ---: |
-| Reporting | 1 |
-| Membership | 1 |
-| **Total** | **2** |
+| ---------- | ----: |
+| Reporting  |     1 |
+| Membership |     1 |
+| **Total**  | **2** |
 
-Something fishy is going on here. There should be a total of only 17 events while we're getting 27 \(your number may vary or even be exactly 17 - we will see why\)! Let us run a grouping by collection to figure out where our tally goes out of sync.
+Something fishy is going on here. There should be a total of only 17 events while we're getting 27 (your number may vary or even be exactly 17 - we will see why)! Let us run a grouping by collection to figure out where our tally goes out of sync.
 
 ### Counts by Collection
 
 We split event counts by collection by using the parameters given below:
 
-| Param | Value |
-| :--- | :--- |
-| `countsOnly` | `true` |
-| `groupBy` | `collection` |
-| `path` | `/` |
+| Param        | Value        |
+| ------------ | ------------ |
+| `countsOnly` | `true`       |
+| `groupBy`    | `collection` |
+| `path`       | `/`          |
 
 We get the following result:
 
-```text
+```
 [
   {
     "collection": "employees",
@@ -147,14 +147,14 @@ Hmm, the `departments` collection has 3 events instead of the single create even
 
 We fetch all events for the `departments` collection by using the parameters shown below:
 
-| Param | Value |
-| :--- | :--- |
+| Param  | Value            |
+| ------ | ---------------- |
 | `path` | `/c/departments` |
-| `sort` | `asc` |
+| `sort` | `asc`            |
 
 We get the following result:
 
-```text
+```
 [
   {
     "_key": "44787331",
@@ -209,9 +209,9 @@ We get the following result:
 ]
 ```
 
-Now we have an answer! The first two events were a `created`, followed by a `deleted` of the same node \(`departments/44787328`, see the `meta.id` field\). Someone created a department node, and for some reason subsequently deleted it. However RecallGraph remembers everything, and we will see how we can get a peek into the contents of this deleted node \(and possibly a motive behind deleting it\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint. For now, we know part of the answer to the discrepancy in the total count.
+Now we have an answer! The first two events were a `created`, followed by a `deleted` of the same node (`departments/44787328`, see the `meta.id` field). Someone created a department node, and for some reason subsequently deleted it. However RecallGraph remembers everything, and we will see how we can get a peek into the contents of this deleted node (and possibly a motive behind deleting it) when we explore the [`SHOW`](../navigating-history/show.md) endpoint. For now, we know part of the answer to the discrepancy in the total count.
 
-We finish the exercise by similarly accessing the individual events for the `reporting` and the `employees` collections respectively \(`memberships` counts already match up\).
+We finish the exercise by similarly accessing the individual events for the `reporting` and the `employees` collections respectively (`memberships` counts already match up).
 
 ### Reporting
 
@@ -219,15 +219,15 @@ We finish the exercise by similarly accessing the individual events for the `rep
 
 We fetch event counts grouped by node for the `reporting` collection by using the parameters shown below:
 
-| Param | Value |
-| :--- | :--- |
-| `path` | `/c/reporting` |
-| `groupBy` | `node` |
-| `countsOnly` | `true` |
+| Param        | Value          |
+| ------------ | -------------- |
+| `path`       | `/c/reporting` |
+| `groupBy`    | `node`         |
+| `countsOnly` | `true`         |
 
 We get the following result:
 
-```text
+```
 [
   {
     "node": "reporting/44799849",
@@ -250,16 +250,16 @@ The two nodes with 1 event each seem to be in order, most likely representing th
 
 The ideal way to fetch events when node ids are known is to use the [node brace scope](../../../understanding-recallgraph/terminology/#node-brace-scope), but since this is a small dataset, we can get away with using the collection scope with a [post-filter](../../../understanding-recallgraph/terminology/post-filters.md), just to give an example of post-filter usage. We use request parameters as shown below:
 
-| Param | Value |
-| :--- | :--- |
-| `path` | `/c/reporting` |
-| `groupBy` | `node` |
-| `groupSort` | `asc` |
+| Param        | Value                           |
+| ------------ | ------------------------------- |
+| `path`       | `/c/reporting`                  |
+| `groupBy`    | `node`                          |
+| `groupSort`  | `asc`                           |
 | `postFilter` | `node === "reporting/44799849"` |
 
 We get the following result:
 
-```text
+```
 [
   {
     "node": "reporting/44799849",
@@ -369,13 +369,13 @@ As expected, we start with a `created` event and end with a `deleted` event. How
 {% hint style="success" %}
 Executing `LOG` with the following parameters would yield the same result:
 
-```text
+```
 path: /n/reporting/44799849
 groupBy: node
 groupSort: asc
 ```
 
-No post-filter is needed in this case, as the [pre-filter](../../../understanding-recallgraph/terminology/pre-filters.md) \(in the scope defined by the path parameter\) is restricting the node list to identical effect. Can you guess which method is generally faster?
+No post-filter is needed in this case, as the [pre-filter](../../../understanding-recallgraph/terminology/pre-filters.md) (in the scope defined by the path parameter) is restricting the node list to identical effect. Can you guess which method is generally faster?
 {% endhint %}
 
 Finally, we dig into events related to the `employees` collection.
@@ -386,15 +386,15 @@ Finally, we dig into events related to the `employees` collection.
 
 We fetch event counts grouped by node for the `employees` collection by using the parameters shown below:
 
-| Param | Value |
-| :--- | :--- |
-| `path` | `/c/employees` |
-| `groupBy` | `node` |
-| `countsOnly` | `true` |
+| Param        | Value          |
+| ------------ | -------------- |
+| `path`       | `/c/employees` |
+| `groupBy`    | `node`         |
+| `countsOnly` | `true`         |
 
 We get the following result:
 
-```text
+```
 [
   {
     "node": "employees/44794101",
@@ -433,16 +433,16 @@ There are 7 employee records instead of the expected 4! We know the ids of the 4
 
 We use request parameters as shown below:
 
-| Param | Value |
-| :--- | :--- |
-| `path` | `/c/employees` |
-| `groupBy` | `node` |
-| `groupSort` | `asc` |
+| Param        | Value                                                           |
+| ------------ | --------------------------------------------------------------- |
+| `path`       | `/c/employees`                                                  |
+| `groupBy`    | `node`                                                          |
+| `groupSort`  | `asc`                                                           |
 | `postFilter` | `!(node =* "employees/{44794449,44794453,44794457,44799683}" )` |
 
 We get the following result:
 
-```text
+```
 [
   {
     "node": "employees/44794111",
@@ -561,17 +561,16 @@ We get the following result:
 ]
 ```
 
-We now see that someone created 3 `employee` nodes, and for some reason subsequently deleted them. We will see how we can get a peek into the contents of these deleted nodes \(and possibly a motive behind deleting them\) when we explore the [`SHOW`](../navigating-history/show.md) endpoint.
+We now see that someone created 3 `employee` nodes, and for some reason subsequently deleted them. We will see how we can get a peek into the contents of these deleted nodes (and possibly a motive behind deleting them) when we explore the [`SHOW`](../navigating-history/show.md) endpoint.
 
 {% hint style="success" %}
 We could also use the following parameters to get exactly the same results:
 
-```text
+```
 path: /n/employees/{44794101,44794107,44794111}
 groupBy: node
 groupSort: asc
 ```
 
-No post-filter is needed in this case, as the pre-filter \(in the scope defined by the path parameter\) is restricting the node list to identical effect. Can you guess which method is generally faster?
+No post-filter is needed in this case, as the pre-filter (in the scope defined by the path parameter) is restricting the node list to identical effect. Can you guess which method is generally faster?
 {% endhint %}
-

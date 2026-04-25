@@ -4,15 +4,25 @@ description: RecallGraph - A versioning data store for time-variant graph data.
 
 # Introduction
 
-{% embed url="https://github.com/RecallGraph/RecallGraph" caption="Project Source @ Github" %}
+{% hint style="info" %}
+**RecallGraph is no longer under active development.** The project is archived and these docs are preserved for reference.
 
-[RecallGraph](https://github.com/RecallGraph/RecallGraph) is a _versioned-graph_ data store - it retains all changes that its data \(vertices and edges\) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
+Its successor — [**Minigraf**](https://github.com/project-minigraf/minigraf) — is an embedded, single-file, bi-temporal graph database written in Rust, with Datalog as its query language. It addresses the deployment friction (Foxx/ArangoDB dependency) and missing valid-time dimension that this project never resolved.
+
+If you arrived here looking for a versioned graph database to use today, start there. Background on the transition: [Minigraf: A Spiritual Successor to RecallGraph](https://adityamukho.com/minigraf-a-spiritual-successor-to-recallgraph).
+{% endhint %}
+
+{% embed url="https://github.com/RecallGraph/RecallGraph" %}
+Project Source @ Github
+{% endembed %}
+
+[RecallGraph](https://github.com/RecallGraph/RecallGraph) is a _versioned-graph_ data store - it retains all changes that its data (vertices and edges) have gone through to reach their current state. It supports _point-in-time_ graph traversals, letting the user query any past state of the graph just as easily as the present.
 
 It is a [Foxx Microservice](https://www.arangodb.com/why-arangodb/foxx/) for [ArangoDB](https://www.arangodb.com/) that features _VCS-like_ semantics in many parts of its interface, and is backed by a transactional event tracker. It is currently being developed and tested on ArangoDB v3.5 and v3.6, with support for v3.7 in the pipeline.
 
 **Example:** [**A Time-Travelling Mind Map Tool**](https://hivemind.vercel.app/)**.**
 
-[![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
+[![Build Status](https://travis-ci.org/RecallGraph/RecallGraph.svg?branch=development)](https://travis-ci.org/RecallGraph/RecallGraph) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore\&metric=alert_status)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore\&metric=coverage)](https://sonarcloud.io/component_measures?id=adityamukho_evstore\&metric=coverage) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore\&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore\&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adityamukho_evstore\&metric=security_rating)](https://sonarcloud.io/dashboard?id=adityamukho_evstore)
 
 ## Do I Need a 'Versioned Graph' Database?
 
@@ -23,18 +33,26 @@ To get an idea of where such a data store might be used, see:
 
 Also check out the recordings/slides below:
 
-{% embed url="https://www.youtube.com/watch?v=UP2KDQ\_kL4I" caption="RecallGraph presented @ ArangoDB Online Meetup" %}
+{% embed url="https://www.youtube.com/watch?v=UP2KDQ_kL4I" %}
+RecallGraph presented @ ArangoDB Online Meetup
+{% endembed %}
 
-{% embed url="https://docs.google.com/presentation/d/1FHNfMxNnBiR4dXdqVJqInTiXdmX-9dSEtUrHMsw-O0E/edit\#slide=id.p" caption="The associated slide deck" %}
+{% embed url="https://docs.google.com/presentation/d/1FHNfMxNnBiR4dXdqVJqInTiXdmX-9dSEtUrHMsw-O0E/edit#slide=id.p" %}
+The associated slide deck
+{% endembed %}
 
-{% embed url="https://www.youtube.com/watch?v=A953O3hT1Os" caption="A discussion on RecallGraph\'s development roadmap" %}
+{% embed url="https://www.youtube.com/watch?v=A953O3hT1Os" %}
+A discussion on RecallGraph's development roadmap
+{% endembed %}
 
-{% embed url="https://docs.google.com/presentation/d/12YkSXqh4eTiA6I3mXxK3d\_RS2vX5dpayjvYlQhs9gzE/edit?usp=sharing" caption="The associate slide deck" %}
+{% embed url="https://docs.google.com/presentation/d/12YkSXqh4eTiA6I3mXxK3d_RS2vX5dpayjvYlQhs9gzE/edit?usp=sharing" %}
+The associate slide deck
+{% endembed %}
 
-**TL;DR:** RecallGraph is a potential fit for scenarios where data is best represented as a network of vertices and edges \(i.e., a graph\) having the following characteristics:
+**TL;DR:** RecallGraph is a potential fit for scenarios where data is best represented as a network of vertices and edges (i.e., a graph) having the following characteristics:
 
-1. Both vertices and edges can hold properties in the form of attribute/value pairs \(equivalent to JSON objects\).
-2. Documents \(vertices/edges\) mutate within their lifespan \(both in their individual attributes/values and in their relations with each other\).
+1. Both vertices and edges can hold properties in the form of attribute/value pairs (equivalent to JSON objects).
+2. Documents (vertices/edges) mutate within their lifespan (both in their individual attributes/values and in their relations with each other).
 3. Past states of documents are as important as their present, necessitating retention and queryability of their change history.
 
 ## API Features
@@ -43,26 +61,26 @@ RecallGraph's API is split into 3 top-level categories:
 
 ### Document
 
-* **Create** - Create single/multiple documents \(vertices/edges\).
+* **Create** - Create single/multiple documents (vertices/edges).
 * **Replace** - Replace entire single/multiple documents with new content.
 * **Delete** - Delete single/multiple documents.
 * **Update** - Add/Update specific fields in single/multiple documents.
 * **Restore** - Restore deleted nodes back to their last known undeleted state.
-* **\(Planned\) Materialization** - Point-in-time checkouts.
-* **\(Planned\) CQRS/ES Operation Mode** - Async implicit commits.
+* **(Planned) Materialization** - Point-in-time checkouts.
+* **(Planned) CQRS/ES Operation Mode** - Async implicit commits.
 
 ### Event
 
-* **Log** - Fetch a log of events \(commits\) for a given path pattern \(path determines scope of documents to pick\). The log can be optionally grouped/sorted/sliced within a specified time interval.
-* **Diff** - Fetch a list of forward or reverse commands \(diffs\) between commits for specified documents.
-* **Explicit Commits** - Commit a document's changes separately, after it has been written to DB via other means \(AQL / Core REST API / Client\).
-* **\(Planned\) Branch/Tag** - Create parallel versions of history, branching off from a specific event point of the main timeline. Also, tag specific points in branch+time for convenient future reference.
+* **Log** - Fetch a log of events (commits) for a given path pattern (path determines scope of documents to pick). The log can be optionally grouped/sorted/sliced within a specified time interval.
+* **Diff** - Fetch a list of forward or reverse commands (diffs) between commits for specified documents.
+* **Explicit Commits** - Commit a document's changes separately, after it has been written to DB via other means (AQL / Core REST API / Client).
+* **(Planned) Branch/Tag** - Create parallel versions of history, branching off from a specific event point of the main timeline. Also, tag specific points in branch+time for convenient future reference.
 
 ### History
 
 * **Show** - Fetch a set of documents, optionally grouped/sorted/sliced, that match a given path pattern, at a given point in time.
 * **Filter** - In addition to a path pattern like in **'Show'**, apply an expression-based, simple/compound post-filter on the retrieved documents.
-* **Traverse** - A point-in-time traversal \(walk\) of a past version of the graph, with the option to apply additional post-filters to the result.
+* **Traverse** - A point-in-time traversal (walk) of a past version of the graph, with the option to apply additional post-filters to the result.
 * **k Shortest Paths** - Point-in-time, weighted, shortest paths between two endpoints.
 * **Purge** - Delete all history for specified nodes.
 
@@ -73,24 +91,23 @@ RecallGraph's API is split into 3 top-level categories:
 
 ## Development Roadmap
 
-1. Support for absolute/relative revision-based queries on individual documents \(in addition to the timestamp-based queries supported currently\),
+1. Support for absolute/relative revision-based queries on individual documents (in addition to the timestamp-based queries supported currently),
 2. Branching/tag support,
-3. Support for the _valid time_ dimension in addition to the currently implemented _transaction time_ dimension \([https://www.researchgate.net/publication/221212735\_A\_Taxonomy\_of\_Time\_in\_Databases](https://www.researchgate.net/publication/221212735_A_Taxonomy_of_Time_in_Databases)\),
+3. Support for the _valid time_ dimension in addition to the currently implemented _transaction time_ dimension ([https://www.researchgate.net/publication/221212735\_A\_Taxonomy\_of\_Time\_in\_Databases](https://www.researchgate.net/publication/221212735_A_Taxonomy_of_Time_in_Databases)),
 4. Support for ArangoDB v3.7,
-5. Multiple, simultaneous materialized checkouts \(a la `git`\) of selectable sections of the database \(entire DB, named graph, named collection, document list, document pattern\), with eventual branch-level specificity,
-6. CQRS/ES operation mode \(async implicit commits\),
-7. Support for ArangoDB clusters \(limited at present by lack of support for multi-document ACID transactions in clusters\).
+5. Multiple, simultaneous materialized checkouts (a la `git`) of selectable sections of the database (entire DB, named graph, named collection, document list, document pattern), with eventual branch-level specificity,
+6. CQRS/ES operation mode (async implicit commits),
+7. Support for ArangoDB clusters (limited at present by lack of support for multi-document ACID transactions in clusters).
 8. Multiple authentication and authorization mechanisms.
 
 ## Get in Touch
 
 * Raise an issue or PR on the [project repository](https://github.com/RecallGraph/RecallGraph), or
-* Mail me \(![](.gitbook/assets/687474703a2f2f736166656d61696c2e6a7573746c696b6565642e6e65742f652f61613732333262626663323263373538306165376134623536313536326530622e706e67.png)\)  or
+* Mail me (<img src=".gitbook/assets/687474703a2f2f736166656d61696c2e6a7573746c696b6565642e6e65742f652f61613732333262626663323263373538306165376134623536313536326530622e706e67.png" alt="" data-size="original">)  or
 * Join the [Gitter channel](https://gitter.im/RecallGraph/community).
 
 {% hint style="warning" %}
-## 🚫Disclaimer
+## :no\_entry\_sign:Disclaimer
 
-The authors and maintainers of RecallGraph are not liable for damages or indemnity \(express or implied\) for loss of any kind incurred directly or indirectly as a result of using this software.
+The authors and maintainers of RecallGraph are not liable for damages or indemnity (express or implied) for loss of any kind incurred directly or indirectly as a result of using this software.
 {% endhint %}
-

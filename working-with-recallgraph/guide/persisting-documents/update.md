@@ -26,7 +26,7 @@ User-defined _valid time_ fields can only be used for create and update operatio
 
 ## Entering Data
 
-In the Swagger console locate the tab with the ![](../../../.gitbook/assets/image%20%284%29.png) button. The `collection` parameter should be set to `employees` and the body should contain **only the new and the changed content** of the entity.
+In the Swagger console locate the tab with the <img src="../../../.gitbook/assets/image (2).png" alt="" data-size="line"> button. The `collection` parameter should be set to `employees` and the body should contain **only the new and the changed content** of the entity.
 
 {% hint style="info" %}
 One of `_key` or `_id` would still need to be present.
@@ -34,15 +34,15 @@ One of `_key` or `_id` would still need to be present.
 
 **Request Body:**
 
-`{  
-  "_key": "44794453",  
-  "role": "Senior Plant Manager",  
-  "valid_from": "2020-05-07"  
-}`
+`{`\
+&#x20; `"_key": "44794453",`\
+&#x20; `"role": "Senior Plant Manager",`\
+&#x20; `"valid_from": "2020-05-07"`\
+`}`
 
 **Response:**
 
-```text
+```
 {
   "_id": "employees/44794453",
   "_key": "44794453",
@@ -53,7 +53,7 @@ One of `_key` or `_id` would still need to be present.
 
 ## End Result
 
-```text
+```
 //Query
 for e in employees
 filter e._key == '44794453'
@@ -76,4 +76,3 @@ return e
 {% hint style="success" %}
 Although not demonstrated in this example, this endpoint also supports bulk update, similar to [`CREATE`](create.md#employee-information).
 {% endhint %}
-

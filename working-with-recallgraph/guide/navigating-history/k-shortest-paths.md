@@ -1,30 +1,30 @@
 ---
-description: 'Point-in-time, weighted, shortest paths between two endpoints.'
+description: Point-in-time, weighted, shortest paths between two endpoints.
 ---
 
 # k Shortest Paths
 
 ## The Setup
 
-Finally, we take a moment to run a few weighted shortest path queries. For this, we will use a specific historical version of the graph - the one at the [end of the Create section](../persisting-documents/create.md#end-result). This graph has Kenny wrongly marked as reporting to Kyle. Let us look at the graph again \(reproduced below\):
+Finally, we take a moment to run a few weighted shortest path queries. For this, we will use a specific historical version of the graph - the one at the [end of the Create section](../persisting-documents/create.md#end-result). This graph has Kenny wrongly marked as reporting to Kyle. Let us look at the graph again (reproduced below):
 
-![How many paths are there from Kenny to Stan?](../../../.gitbook/assets/examples-create-7.png)
+![How many paths are there from Kenny to Stan?](../../../.gitbook/assets/Examples-Create-7.png)
 
-Let us first manually enumerate the number of undirected paths \(with unique vertices\) that go from Kenny to Stan. They are as follows:
+Let us first manually enumerate the number of undirected paths (with unique vertices) that go from Kenny to Stan. They are as follows:
 
-| \# | Path | Length |
-| :--- | :--- | ---: |
-| 1 | `KY -> M -> S` | 2 |
-| 2 | `KY -> KL -> E -> S` | 3 |
-| 3 | `KY -> KL -> M -> S` | 3 |
-| 4 | `KY -> M -> E -> S` | 3 |
-| 5 | `KY -> KL -> E -> M -> S` | 4 |
-| 6 | `KY -> KL -> M -> E -> S` | 4 |
-| 7 | `KY -> M -> KL  -> E -> S` | 4 |
+| # | Path                       | Length |
+| - | -------------------------- | -----: |
+| 1 | `KY -> M -> S`             |      2 |
+| 2 | `KY -> KL -> E -> S`       |      3 |
+| 3 | `KY -> KL -> M -> S`       |      3 |
+| 4 | `KY -> M -> E -> S`        |      3 |
+| 5 | `KY -> KL -> E -> M -> S`  |      4 |
+| 6 | `KY -> KL -> M -> E -> S`  |      4 |
+| 7 | `KY -> M -> KL  -> E -> S` |      4 |
 
 Let us run some shortest path queries on this past version to see if get the results we expect.
 
-## No Weight Function \(weight = 1\)
+## No Weight Function (weight = 1)
 
 ### Undirected Paths
 
@@ -32,18 +32,18 @@ We have not provided a weight function for the edges. This means **every edge ca
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588769414.948146` |
-| `svid` | `employees/44799683` |
-| `evid` | `employees/44794453` |
-| `depth` | `4` |
-| `limit` | `2` |
-| `body` | `{   "edges": {"reporting": "any", "membership": "any"} }` |
+| Param       | Value                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `timestamp` | `1588769414.948146`                                                                                          |
+| `svid`      | `employees/44799683`                                                                                         |
+| `evid`      | `employees/44794453`                                                                                         |
+| `depth`     | `4`                                                                                                          |
+| `limit`     | `2`                                                                                                          |
+| `body`      | <p><code>{</code><br>  <code>"edges": {"reporting": "any", "membership": "any"}</code><br><code>}</code></p> |
 
 **Response:**
 
-```text
+```
 [
   {
     "vertices": [
@@ -153,10 +153,10 @@ We have not provided a weight function for the edges. This means **every edge ca
 
 We get 2 paths, one of length 2, and one of length 3, viz:
 
-| \# | Path | Length |
-| :--- | :--- | ---: |
-| 1 | `KY -> M -> S` | 2 |
-| 2 | `KY -> M -> E -> S` | 3 |
+| # | Path                | Length |
+| - | ------------------- | -----: |
+| 1 | `KY -> M -> S`      |      2 |
+| 2 | `KY -> M -> E -> S` |      3 |
 
 {% hint style="warning" %}
 There are multiple paths of length 3 having equal weight for the given parameters, of which only one can be returned. In such cases, we **cannot predict** which one will be selected.
@@ -168,18 +168,18 @@ Let us now change the traversal criteria by adding an `inbound` constraint on th
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588769414.948146` |
-| `svid` | `employees/44799683` |
-| `evid` | `employees/44794453` |
-| `depth` | `4` |
-| `limit` | `2` |
-| `body` | `{   "edges": {     "reporting": "any",     "membership": "inbound"   } }` |
+| Param       | Value                                                                                                                                                                        |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timestamp` | `1588769414.948146`                                                                                                                                                          |
+| `svid`      | `employees/44799683`                                                                                                                                                         |
+| `evid`      | `employees/44794453`                                                                                                                                                         |
+| `depth`     | `4`                                                                                                                                                                          |
+| `limit`     | `2`                                                                                                                                                                          |
+| `body`      | <p><code>{</code><br>  <code>"edges": {</code><br>    <code>"reporting": "any",</code><br>    <code>"membership": "inbound"</code><br>  <code>}</code><br><code>}</code></p> |
 
 **Response:**
 
-```text
+```
 [
   {
     "vertices": [
@@ -258,14 +258,14 @@ Weight functions are defined using the same constructs that are used to build [p
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588769414.948146` |
-| `svid` | `employees/44799683` |
-| `evid` | `employees/44794453` |
-| `depth` | `4` |
-| `limit` | `2` |
-| `body` | `{   "edges": {     "reporting": "any",     "membership": "any"   },   "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1" }` |
+| Param       | Value                                                                                                                                                                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `timestamp` | `1588769414.948146`                                                                                                                                                                                                                                    |
+| `svid`      | `employees/44799683`                                                                                                                                                                                                                                   |
+| `evid`      | `employees/44794453`                                                                                                                                                                                                                                   |
+| `depth`     | `4`                                                                                                                                                                                                                                                    |
+| `limit`     | `2`                                                                                                                                                                                                                                                    |
+| `body`      | <p><code>{</code><br>  <code>"edges": {</code><br>    <code>"reporting": "any",</code><br>    <code>"membership": "any"</code><br>  <code>},</code><br>  <code>"weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1"</code><br><code>}</code></p> |
 
 {% hint style="info" %}
 You can go real crazy with post-filter-like expressions, but it is probably best to keep them simple for the sake of readability.
@@ -273,7 +273,7 @@ You can go real crazy with post-filter-like expressions, but it is probably best
 
 **Response:**
 
-```text
+```
 [
   {
     "vertices": [
@@ -384,10 +384,10 @@ You can go real crazy with post-filter-like expressions, but it is probably best
 
 The 2-hop path now incurs a cost of 4! It is therefore, 2nd in the list.
 
-| \# | Path | Length | Cost |
-| :--- | :--- | ---: | ---: |
-| 1 | `KY -> KY -> E -> S` | 3 | 3 |
-| 2 | `KY -> M -> S` | 2 | 4 |
+| # | Path                 | Length | Cost |
+| - | -------------------- | -----: | ---: |
+| 1 | `KY -> KY -> E -> S` |      3 |    3 |
+| 2 | `KY -> M -> S`       |      2 |    4 |
 
 ### No Cartman
 
@@ -399,18 +399,18 @@ Vertex and edge filters also use post-filter syntax.
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588769414.948146` |
-| `svid` | `employees/44799683` |
-| `evid` | `employees/44794453` |
-| `depth` | `4` |
-| `limit` | `2` |
-| `body` | `{   "edges": {     "reporting": "any",     "membership": "any"   },   "weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1",   "vFilter": "_key !== '44794449'" }` |
+| Param       | Value                                                                                                                                                                                                                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timestamp` | `1588769414.948146`                                                                                                                                                                                                                                                                                        |
+| `svid`      | `employees/44799683`                                                                                                                                                                                                                                                                                       |
+| `evid`      | `employees/44794453`                                                                                                                                                                                                                                                                                       |
+| `depth`     | `4`                                                                                                                                                                                                                                                                                                        |
+| `limit`     | `2`                                                                                                                                                                                                                                                                                                        |
+| `body`      | <p><code>{</code><br>  <code>"edges": {</code><br>    <code>"reporting": "any",</code><br>    <code>"membership": "any"</code><br>  <code>},</code><br>  <code>"weightExpr": "_id.split('/')[0] === 'membership' ? 2 : 1",</code><br>  <code>"vFilter": "_key !== '44794449'"</code><br><code>}</code></p> |
 
 **Response:**
 
-```text
+```
 [
   {
     "vertices": [
@@ -518,7 +518,6 @@ Vertex and edge filters also use post-filter syntax.
 ]
 ```
 
-With Eric out of the loop, our 2-hop path \(still with cost 4\) emerges on top again!
+With Eric out of the loop, our 2-hop path (still with cost 4) emerges on top again!
 
-![Eric doesn&apos;t like being left out!](../../../.gitbook/assets/image%20%282%29.png)
-
+![Eric doesn't like being left out!](../../../.gitbook/assets/image.png)

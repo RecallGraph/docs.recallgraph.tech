@@ -8,27 +8,27 @@ description: >-
 
 ## The Story So Far...
 
-> Dogbert has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, Asok from the IT department only barely escaped with his internship intact \(and with a strong reprimand on record\).
+> Dogbert has been asking some very uncomfortable questions ever since he arrived at the plant. Just recently, Asok from the IT department only barely escaped with his internship intact (and with a strong reprimand on record).
 >
-> Eric hasn't had it easy either. He is currently under the scanner for his lax diligence while hiring what turned out be an unqualified Safety Officer \(Kenny had faked his certificates\). This lapse could have been easily avoided, had Eric had the foresight to hire a background-checking agency.
+> Eric hasn't had it easy either. He is currently under the scanner for his lax diligence while hiring what turned out be an unqualified Safety Officer (Kenny had faked his certificates). This lapse could have been easily avoided, had Eric had the foresight to hire a background-checking agency.
 >
-> Incidentally, Dogbert is a board member of just such an agency, and has openly expressed his intention to strongly recommend mandatory background checks for new hires to ACME's upper management \(no doubt as an unbiased 3rd party\).
+> Incidentally, Dogbert is a board member of just such an agency, and has openly expressed his intention to strongly recommend mandatory background checks for new hires to ACME's upper management (no doubt as an unbiased 3rd party).
 >
 > Eric can't wait to see the last of this pesky auditor, and does all he can to expedite the ongoing investigation.
 
 ## Current Org Structure
 
-We want to start by looking at the entire organization hierarchy in its current state. This can be achieved by running an AQL traversal, but RecallGraph is also capable of this \(and more, when it's time to time-travel\). We fire a `POST` query at the `TRAVERSE` endpoint with the following parameters:
+We want to start by looking at the entire organization hierarchy in its current state. This can be achieved by running an AQL traversal, but RecallGraph is also capable of this (and more, when it's time to time-travel). We fire a `POST` query at the `TRAVERSE` endpoint with the following parameters:
 
-| Param | Value |
-| :--- | :--- |
-| `svid` | `departments/44787802` |
-| `maxDepth` | `2` |
-| `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
+| Param      | Value                                                                                                                                                                            |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `svid`     | `departments/44787802`                                                                                                                                                           |
+| `maxDepth` | `2`                                                                                                                                                                              |
+| `body`     | <p><code>{</code><br>  <code>"edges": {</code><br>    <code>"reporting": "inbound",</code><br>    <code>"membership": "inbound"</code><br>  <code>}</code><br><code>}</code></p> |
 
 **Response:**
 
-```text
+```
 {
   "vertices": [
     {
@@ -116,16 +116,16 @@ Next, we want to travel back in time to a point when Kenny was still actively co
 
 **Request:**
 
-| Param | Value |
-| :--- | :--- |
-| `timestamp` | `1588815039.3459842` |
-| `svid` | `departments/44787802` |
-| `maxDepth` | `2` |
-| `body` | `{   "edges": {     "reporting": "inbound",     "membership": "inbound"   } }` |
+| Param       | Value                                                                                                                                                                            |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timestamp` | `1588815039.3459842`                                                                                                                                                             |
+| `svid`      | `departments/44787802`                                                                                                                                                           |
+| `maxDepth`  | `2`                                                                                                                                                                              |
+| `body`      | <p><code>{</code><br>  <code>"edges": {</code><br>    <code>"reporting": "inbound",</code><br>    <code>"membership": "inbound"</code><br>  <code>}</code><br><code>}</code></p> |
 
 Response:
 
-```text
+```
 {
   "vertices": [
     {
@@ -223,13 +223,13 @@ Response:
 }
 ```
 
-Here, we see Kenny's node present in the result, along with both its connections \(`reporting` and `membership`\).
+Here, we see Kenny's node present in the result, along with both its connections (`reporting` and `membership`).
 
 ## When Kenny was 'Reporting' to Kyle
 
 Let's look at the state of the graph when Kenny was incorrectly marked as reporting to Kyle. The request parameters are left as an exercise for the reader to work out. The response is shown below:
 
-```text
+```
 {
   "vertices": [
     {
@@ -329,14 +329,14 @@ Let's look at the state of the graph when Kenny was incorrectly marked as report
 {% hint style="info" %}
 Note that Stan had not been promoted at the time Kenny was 'reporting' to Kyle. As expected, he is shown as just a Plant Manager in the above result.
 
-Also note the last entry in the edge list \(the outbound reporting edge from Kenny\), where it clearly points to Kyle.
+Also note the last entry in the edge list (the outbound reporting edge from Kenny), where it clearly points to Kyle.
 {% endhint %}
 
 ## Before Kenny Joined
 
 Finally, let's go back in time to a point when all was well, before Kenny had joined the team. The result would be:
 
-```text
+```
 {
   "vertices": [
     {
@@ -412,7 +412,6 @@ Finally, let's go back in time to a point when all was well, before Kenny had jo
 
 ## The Conclusion
 
-> Dogbert has left the premises for now \(much to everyone's relief\), but not before inking a sweet deal for his background-checking agency, in exchange for leaving some critical lapses out of his audit report. However, he realizes that such convenient omissions will be impossible to sneak in the next time, as ACME Inc. has decided to purchase a full-blown ERP from the same vendor that sold them the HRMS. **This ERP also uses RecallGraph as its underlying data store. By now, Dogbert knows only too well that you can't hide anything from this clever foxx!**
+> Dogbert has left the premises for now (much to everyone's relief), but not before inking a sweet deal for his background-checking agency, in exchange for leaving some critical lapses out of his audit report. However, he realizes that such convenient omissions will be impossible to sneak in the next time, as ACME Inc. has decided to purchase a full-blown ERP from the same vendor that sold them the HRMS. **This ERP also uses RecallGraph as its underlying data store. By now, Dogbert knows only too well that you can't hide anything from this clever foxx!**
 >
 > All is well in ACME land again. All 10000 explosive tennis balls have been shipped to an ecstatic Mr. Coyote. Eric now has a few minutes to himself, until the next batch of orders comes through. He spends these moments wondering, for the first time, what anyone could possibly use these incendiary devils for. If you're wondering about the same thing, wonder no more. See the recorded demo at [https://www.dailymotion.com/video/x569rr7?start=374](https://www.dailymotion.com/video/x569rr7?start=374)
-

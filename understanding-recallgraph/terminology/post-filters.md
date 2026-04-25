@@ -1,5 +1,5 @@
 ---
-description: 'Filters applied on a query result AFTER grouping, sorting and slicing.'
+description: Filters applied on a query result AFTER grouping, sorting and slicing.
 ---
 
 # Post-Filters
@@ -10,7 +10,7 @@ Once a query returns some results, a post-filter can be applied on them to furth
 Post-filter expressions are processed in the V8 engine and **NOT the query engine**, using a [jsep](https://github.com/soney/jsep) expression parser that has been augmented with a few extensions.
 {% endhint %}
 
-The filter expression is applied individually to each item in the result array \(these items may be entire groups\). Only those items for which the expression evaluates to a _truthy_ value are passed through.
+The filter expression is applied individually to each item in the result array (these items may be entire groups). Only those items for which the expression evaluates to a _truthy_ value are passed through.
 
 {% hint style="warning" %}
 **Important:** _jsep_ does not support object literals, only array literals. This may be fixed in a fork, maintained by _RecallGraph_, in the future.
@@ -18,10 +18,10 @@ The filter expression is applied individually to each item in the result array \
 
 ## Core JS Operators
 
-Most of the following \(non-mutating\) standard operators are understood by _jsep_ out of the box. A few are implemented using extensions. Regardless, they are all processed exactly as they would be processed in a normal JavaScript runtime
+Most of the following (non-mutating) standard operators are understood by _jsep_ out of the box. A few are implemented using extensions. Regardless, they are all processed exactly as they would be processed in a normal JavaScript runtime
 
 * [All comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison)
-* [All **non-mutating** arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic) \(everything except increment and decrement\)
+* [All **non-mutating** arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic) (everything except increment and decrement)
 * [All bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise)
 * [All logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Logical)
 * [String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String)
@@ -29,12 +29,12 @@ Most of the following \(non-mutating\) standard operators are understood by _jse
 * [The `in` relational operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#in)
 * [The `this` keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#this)
 * [The grouping operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Grouping_operator)
-* Property accessors \(including method calls\)
-  * [Explicit](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors) \(dot and bracket notation; using `this` keyword to refer to current item in result array\)
-  * Implicit \(using implicit `this` context per item in a result array; **method calls on the `this` object not accessible with this style**\)
+* Property accessors (including method calls)
+  * [Explicit](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors) (dot and bracket notation; using `this` keyword to refer to current item in result array)
+  * Implicit (using implicit `this` context per item in a result array; **method calls on the `this` object not accessible with this style**)
 * Literals
-  * [All primitive types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) \(except `Symbol`\)
-  * [Array expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \(both literal and dynamic\)
+  * [All primitive types](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (except `Symbol`)
+  * [Array expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) (both literal and dynamic)
 
 ## _jsep_ Extensions
 
@@ -79,12 +79,12 @@ some(x, partialRight($_.lte, 2))
 Note that the default namespace is searched **only when a function call is made**, and not when just referencing the function as a member. In that case, the member will be searched for under the `this` context of the current object under iteration of the result array.
 {% endhint %}
 
-#### **$RG - The** _**RecallGraph**_ **Namespace for Special Functions**
+#### **$RG - The&#x20;**_**RecallGraph**_**&#x20;Namespace for Special Functions**
 
 This namespace is reserved for some special functions defined by RecallGraph. The supported methods are:
 
 {% tabs %}
-{% tab title="typeof\(<operand>\)" %}
+{% tab title="typeof(<operand>)" %}
 This method returns the type of the parameter passed to it.  Its behavior is identical to the [JavaScript `typeof` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof). For example:
 
 ```javascript
@@ -99,7 +99,7 @@ $RG.typeof(this[z])
 ```
 {% endtab %}
 
-{% tab title="glob\(str, pattern\)" %}
+{% tab title="glob(str, pattern)" %}
 This method performs a [glob match](./#glob-pattern) test on `str` against the provided `pattern`. For example:
 
 ```javascript
@@ -109,7 +109,7 @@ $RG.glob('aaabbbccc', '*b*')
 ```
 {% endtab %}
 
-{% tab title="regex\(str, pattern\)" %}
+{% tab title="regex(str, pattern)" %}
 This method performs a [regex match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) test on `str` against the provided `pattern`. For example:
 
 ```javascript
@@ -123,4 +123,3 @@ $RG.regex('aaabbbccc', 'a+b{3}c*')
 {% hint style="info" %}
 For more examples, take a look at the test cases defined in [`helpers.test.js`](https://github.com/RecallGraph/RecallGraph/blob/b1d01aaf73bb05037ac68718ab8c661e134ee980/test/unit/lib/operations/helpers.test.js#L31).
 {% endhint %}
-
